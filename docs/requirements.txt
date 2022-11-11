@@ -1,1 +1,2 @@
+sphinx<5
 pydata-sphinx-theme
