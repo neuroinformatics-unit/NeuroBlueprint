@@ -1,0 +1,25 @@
+name: docs
+
+on:
+  push:
+    branches:
+      - main
+      - modify-actions
+  pull_request:
+    branches:
+      - main
+  
+jobs:
+  check_sphinx_docs:
+    name: Check Sphinx Docs
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: neuroinformatics-unit/actions/check_sphinx_docs@add-docs-workflows
+
+  publish_sphinx_docs:
+    name: Publish Sphinx Docs
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: neuroinformatics-unit/actions/publish_sphinx_docs@add-docs-workflows
