@@ -1,5 +1,4 @@
-# Specification
-## Folders structure 
+# Folders structure 
 Your project folder containing raw data will be structured in a hierarchical way following BIDS standards:
 ```
 project/
@@ -21,7 +20,7 @@ my_project/
             ├── spike_sorted_data.mat
             └── notes.yaml
 ```
-## Naming convention
+## Naming folders
 
 ### Project
 Can have any name, this should be descriptive of the dataset contained in the folder.
