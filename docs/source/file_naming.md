@@ -1,3 +1,4 @@
+# Name files
 ## File Naming Conventions
 
 File names should be specified as a set of key-value pairs (key-value separated by a hyphen), with key-value pairs separated by underscores indicating the subject, session (REQUIRED)

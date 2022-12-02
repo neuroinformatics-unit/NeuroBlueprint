@@ -1,4 +1,4 @@
-## SWC BIDS - The SWC Folder Organisation Specification based on BIDS
+# SWC BIDS - The SWC Folder Organisation Specification based on BIDS
 
 A standardised folder structure used by researchers across neuroscience projects makes data organisation, analysis and collaboration easier. 
 This page will outline the folder structure and file naming standards recommended at the SWC, based on the BIDS format. The BIDS format is a project structure specification widely used in human research with ongoing initiatives to extend this to animal research. It is developed and maintained by the [BIDS community](https://bids.neuroimaging.io/).
