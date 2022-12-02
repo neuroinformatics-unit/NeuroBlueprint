@@ -8,7 +8,7 @@ in these instances should put in their own folder with the BIDS specification na
 
 An example filenames in an ephys folder structure may be:
 some key-value pairs such as task, run,  (e.g. task-escape, run (run-001). Finally, the filename
-can end with an suffix (OPTIONAL) that indicates a logical group to which it belongs. 
+can end with a suffix (OPTIONAL) that indicates a logical group to which it belongs. 
 Anything after the left-most stop (.) is considered the file extension. 
 
 ```
