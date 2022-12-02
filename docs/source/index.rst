@@ -16,11 +16,7 @@ If you troubleshoot an issue for yourself or someone else, remember to document 
    :maxdepth: 2
    :caption: Sections:
 
-   Behaviour.md
-   Electrophysiology.md
-   Imaging.md
-   Histology.md
-   Programming.md
+   folder_structure.md
 
 .. include:: readme_link.md
    :parser: myst_parser.sphinx_
