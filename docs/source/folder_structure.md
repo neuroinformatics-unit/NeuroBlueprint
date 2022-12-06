@@ -48,21 +48,21 @@ If collected, `histology` is REQUIRED to be the subject level.
 ## Example
 A real project folder may look like: 
 ```
-project
-  rawdata
-    sub-001
-      ses-001_date-20220516
-        ephys
-          recording.bin
-          probe.imec0
-        behav
-          camera_1.wav 
-          responses.csv 
-  derivatives
-    sub-001
-        ses-001_date-20220516
-          ephys
-            spike_sorted_data.mat
-          behav
-            tracking_results.csv
+└── project/
+    ├── rawdata/
+    │   └── sub-001/
+    │       └── ses-001_date-20220516/
+    │           ├── ephys/
+    │           │   ├── recording.bin
+    │           │   └── probe.imec0
+    │           └── behav/
+    │               ├── camera_1.wav 
+    │               └── responses.csv 
+    └── derivatives/
+        └── sub-001/
+            └── ses-001_date-20220516/
+                ├── ephys/
+                │   └── spike_sorted_data.mat
+                └── behav/
+                    └── tracking_results.csv
 ```
