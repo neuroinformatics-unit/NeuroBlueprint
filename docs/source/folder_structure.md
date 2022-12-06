@@ -20,7 +20,7 @@ The project folder may have any name descriptive of the project (that does not i
 project folder, data is separated into `rawdata` and `derivatives`. `rawdata` contains the raw
 data acquired during data collection. `derivatives` includes any processed data (e.g. ephys preprocessing, 
 behavioural movement tracking). The subject / session / datatype folder structure within derivatives should
-match the rawdata folder.
+match the rawdata folder whenever possible.
 
 Each subject (e.g. mouse, rat) in the project has a dedicated folder in which all data from 
 experimental sessions are stored.
@@ -43,7 +43,7 @@ The session folder will contain the acquired datatypes. Different sessions may h
 ## datatype
 Datatypes included at the session level are REQUIRED to have one of the following names `ephys, behav, imaging, histology`.
 If collected, `ephys, behav, imaging` are REQUIRED to be placed at the session label. 
-If collected, `histology` is REQUIRED to be the subject level. 
+If collected, `histology` is REQUIRED to be at subject level. 
 
 ## Example
 A real project folder may look like: 
