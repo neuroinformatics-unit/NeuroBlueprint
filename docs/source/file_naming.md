@@ -1,9 +1,9 @@
-## File Naming Conventions
+# File Naming Conventions
 
 File names should be specified as a set of key-value pairs (key-value separated by a hyphen), 
 with key-value pairs separated by underscores indicating the subject, session (REQUIRED)
-and other OPTIONAL information. In some instances, acquisition software may output data with its own required file naming convention - 
-in these instances should put in their own folder with the BIDS specification name. 
+and other OPTIONAL information. In some instances, acquisition software may output data with its required file naming convention - 
+in these instances should put in their folder with the BIDS specification name. 
 
 
 An example filenames in an ephys folder structure may be:

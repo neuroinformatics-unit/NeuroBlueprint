@@ -81,7 +81,7 @@ exclude_patterns = [
 # a list of builtin themes.
 #
 html_theme = 'pydata_sphinx_theme'
-html_title = 'Troubleshooting'
+html_title = 'SWC-BIDS'
 
 ## Cutomize the theme
 html_theme_options = {
