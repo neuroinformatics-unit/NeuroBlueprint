@@ -18,8 +18,8 @@ Standardized project folders containing raw data are hierarchically structured a
 
 The project folder may have any name descriptive of the project (that does not include spaces). Within the 
 project folder, data is separated into `rawdata` and `derivatives`. `rawdata` contains the raw
-data acquired during data collection. `derivatives` includes any processed data (e.g. ephys preprocessing, 
-behavioural movement tracking). The subject / session / datatype folder structure within derivatives should
+data acquired during data collection. `derivatives` includes any processed data (e.g. spike sorting or pose estimation). 
+The subject / session / datatype folder structure within derivatives should
 match the rawdata folder whenever possible.
 
 Each subject (e.g. mouse, rat) in the project has a dedicated folder in which all data from 
