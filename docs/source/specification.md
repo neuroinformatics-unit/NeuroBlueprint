@@ -1,3 +1,3 @@
 # The Specification
 
-Following the BIDS specification, we //tag specifications as //check REQUIRED, RECOMMENDED and OPTIONAL.
+Following the BIDS specification, we mark specifications as *required*, *recommended* and *optional*.

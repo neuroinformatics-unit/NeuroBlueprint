@@ -31,19 +31,19 @@ Subject and session folder names cannot contain spaces and must consist of key-v
 by underscores, e.g. `sub-001_date-06122022`. 
 
 ## Subject
-The subject level is prefixed with the REQUIRED "sub" key and optional value, e.g. `sub-001`. Only one subject
+The subject level is prefixed with the *required* "sub" key and optional value, e.g. `sub-001`. Only one subject
 folder per-subject is permitted, and subject labels must be unique to each subject.
 
 ## Session
 If data for the subject were acquired across multiple sessions,then within the subject 
-directory resides subdirectories named with the REQUIRED prefix "ses", e.g. `ses-<label>`. A session represents a recording, 
+directory resides subdirectories named with the *required* prefix "ses", e.g. `ses-<label>`. A session represents a recording, 
 functional imaging or behavioural experimental session, and may contain multiple blocks, or runs, of data acquisition.
 The session folder will contain the acquired datatypes. Different sessions may have different combinations of datatypes.
 
 ## Datatype
-Datatypes included at the session level are REQUIRED to have one of the following names `ephys, behav, funcimg, histology`.
-If collected, `ephys, behav, funcimg` are REQUIRED to be placed at the session label. 
-If collected, `histology` is REQUIRED to be at subject level. 
+Datatypes included at the session level are *required* to have one of the following names `ephys, behav, funcimg, histology`.
+If collected, `ephys, behav, funcimg` are *required* to be placed at the session label. 
+If collected, `histology` is *required* to be at subject level. 
 
 ## Example
 A real project folder may look like: 
