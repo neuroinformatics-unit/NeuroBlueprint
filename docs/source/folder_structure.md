@@ -31,14 +31,16 @@ Subject and session folder names cannot contain spaces and must consist of key-v
 by underscores, e.g. `sub-001_date-06122022`. 
 
 ## Subject
-The subject level is prefixed with the *required* "sub" key and optional value, e.g. `sub-001`. Only one subject
-folder per-subject is permitted, and subject labels must be unique to each subject.
+The subject level is prefixed with the *required* "sub" key - value pair, e.g. `sub-001`. Only one subject
+folder per-subject is permitted, and subject labels must be unique to each subject. *optional* key - value pairs 
+can be added after sub-<label> (e.g. `sub-001_id-123423`).
 
 ## Session
 If data for the subject were acquired across multiple sessions,then within the subject 
 directory resides subdirectories named with the *required* prefix "ses", e.g. `ses-<label>`. A session represents a recording, 
 functional imaging or behavioural experimental session, and may contain multiple blocks, or runs, of data acquisition.
-The session folder will contain the acquired datatypes. Different sessions may have different combinations of datatypes.
+Different sessions may have different combinations of datatypes. *optional* key - value pairs can be added after ses-<label>
+(e.g. `ses-001_date-220516`).
 
 ## Datatype
 Datatypes included at the session level are *required* to have one of the following names `ephys, behav, funcimg, histology`.
