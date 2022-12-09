@@ -25,7 +25,7 @@ match the rawdata folder whenever possible.
 Each subject (e.g. mouse, rat) in the project has a dedicated folder in which all data from 
 experimental sessions are stored.
 In the case of multiple sessions, each session has its own folder where acquired data, belonging to
-a dataype (e.g. `ephys, behav, imaging, histology`) are stored.
+a dataype (e.g. `ephys, behav, funcimg, histology`) are stored.
 
 Subject and session folder names cannot contain spaces and must consist of key-value pairs separated
 by underscores, e.g. `sub-001_date-06122022`. 
@@ -37,12 +37,12 @@ folder per-subject is permitted, and subject labels must be unique to each subje
 ## Session
 If data for the subject were acquired across multiple sessions,then within the subject 
 directory resides subdirectories named with the REQUIRED prefix "ses", e.g. `ses-<label>`. A session represents a recording, 
-imaging or behavioural experimental session, and may contain multiple blocks, or runs, of data acquisition.
+functional imaging or behavioural experimental session, and may contain multiple blocks, or runs, of data acquisition.
 The session folder will contain the acquired datatypes. Different sessions may have different combinations of datatypes.
 
 ## Datatype
-Datatypes included at the session level are REQUIRED to have one of the following names `ephys, behav, imaging, histology`.
-If collected, `ephys, behav, imaging` are REQUIRED to be placed at the session label. 
+Datatypes included at the session level are REQUIRED to have one of the following names `ephys, behav, funcimg, histology`.
+If collected, `ephys, behav, funcimg` are REQUIRED to be placed at the session label. 
 If collected, `histology` is REQUIRED to be at subject level. 
 
 ## Example
