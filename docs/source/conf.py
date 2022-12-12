@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'troubleshooting'
+project = 'SWC-BIDS'
 copyright = '2022, Neuroinformatics Unit'
 author = 'Neuroinformatics Unit'
 
