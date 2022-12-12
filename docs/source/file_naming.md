@@ -1,4 +1,8 @@
-# File Naming Conventions
+# Naming Conventions
+## The Specification
+
+Following the BIDS specification, we mark specifications as *required*, *recommended* and *optional*.
+## File Naming Conventions
 
 File names should be specified as a set of key-value pairs (key-value separated by a hyphen), 
 with key-value pairs separated by underscores indicating the subject, session (*required*)
