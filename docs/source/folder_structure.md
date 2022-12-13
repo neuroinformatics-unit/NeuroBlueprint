@@ -37,14 +37,14 @@ can be added after sub-<label> (e.g. `sub-001_id-123423`).
 
 ## Session
 If data for the subject were acquired across multiple sessions,then within the subject 
-directory resides subdirectories named with the *required* prefix "ses", e.g. `ses-<label>`. A session represents a recording, 
+directory reside subdirectories named with the *required* prefix "ses", e.g. `ses-<label>`. A session represents a recording, 
 functional imaging or behavioural experimental session, and may contain multiple blocks, or runs, of data acquisition.
 Different sessions may have different combinations of datatypes. *optional* key - value pairs can be added after ses-<label>
 (e.g. `ses-001_date-220516`).
 
 ## Datatype
 Datatypes included at the session level are *required* to have one of the following names `ephys, behav, funcimg, histology`.
-If collected, `ephys, behav, funcimg` are *required* to be placed at the session label. 
+If collected, `ephys, behav, funcimg` are *required* to be placed at the session level. 
 If collected, `histology` is *required* to be at subject level. 
 
 ## Example
@@ -60,6 +60,7 @@ A real project folder may look like:
     │           └── behav/
     │               ├── camera_1.wav 
     │               └── responses.csv 
+    │
     └── derivatives/
         └── sub-001/
             └── ses-001_date-20220516/
