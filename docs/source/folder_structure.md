@@ -28,12 +28,12 @@ In the case of multiple sessions, each session has its own folder where acquired
 a dataype (e.g. `ephys, behav, funcimg, histology`) are stored.
 
 Subject and session folder names cannot contain spaces and must consist of key-value pairs separated
-by underscores, e.g. `sub-001_date-06122022`. 
+by underscores, e.g. `sub-001_id-5645332`. 
 
 ## Subject
 The subject level is prefixed with the *required* "sub" key - value pair, e.g. `sub-001`. Only one subject
 folder per-subject is permitted, and subject labels must be unique to each subject. *optional* key - value pairs 
-can be added after sub-<label> (e.g. `sub-001_id-123423`).
+can be added after sub-<label> (e.g. `sub-001_id-5645332`).
 
 ## Session
 If data for the subject were acquired across multiple sessions,then within the subject 
@@ -53,19 +53,22 @@ A real project folder may look like:
 └── project/
     ├── rawdata/
     │   └── sub-001/
-    │       └── ses-001_date-20220516/
-    │           ├── ephys/
-    │           │   ├── recording.bin
-    │           │   └── probe.imec0
-    │           └── behav/
-    │               ├── camera_1.wav 
-    │               └── responses.csv 
-    │
+    │       ├── ses-001_id-5645332/
+    │       │   ├── ephys/
+    │       │   │   ├── recording.bin
+    │       │   │   └── probe.imec0
+    │       │   └── behav/
+    │       │       ├── camera_1.wav 
+    │       │       └── responses.csv 
+    │       └── histology/
+    │           └── brain_image.tiff
     └── derivatives/
         └── sub-001/
-            └── ses-001_date-20220516/
-                ├── ephys/
-                │   └── spike_sorted_data.mat
-                └── behav/
-                    └── tracking_results.csv
+            ├── ses-001_id-5645332/
+            │   ├── ephys/
+            │   │   └── spike_sorted_data.mat
+            │   └── behav/
+            │       └── tracking_results.csv
+            └── histology/
+                └── cell_counts.csv
 ```
