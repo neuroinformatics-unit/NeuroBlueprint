@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Folders structure &#8212; SWC-BIDS</title>
+    <title>Project Folder Structure &#8212; SWC-BIDS</title>
   
   
   
@@ -43,7 +43,7 @@
     <link rel="canonical" href="https://swc-bids.neuroinformatics.dev/folder_structure.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="File Naming Conventions" href="file_naming.html" />
+    <link rel="next" title="Naming Conventions" href="file_naming.html" />
     <link rel="prev" title="SWC BIDS" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="en">
@@ -119,21 +119,14 @@
         
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="#">
-                        Folders structure
+                        Project Folder Structure
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="file_naming.html">
-                        File Naming Conventions
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="specification.html">
-                        The Specification
+                        Naming Conventions
                       </a>
                     </li>
                 
@@ -220,21 +213,14 @@
         
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="#">
-                        Folders structure
+                        Project Folder Structure
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="file_naming.html">
-                        File Naming Conventions
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="specification.html">
-                        The Specification
+                        Naming Conventions
                       </a>
                     </li>
                 
@@ -302,57 +288,79 @@
             
             <article class="bd-article" role="main">
               
-  <section class="tex2jax_ignore mathjax_ignore" id="folders-structure">
-<h1>Folders structure<a class="headerlink" href="#folders-structure" title="Permalink to this heading">#</a></h1>
-<p>Your project folder containing raw data will be structured in a hierarchical way following BIDS standards:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project/
-└── subject/
-    └── session/
-        └── datatype/
-            ├── some_raw_data_file
-            ├── some_preprocessed_data_file
-            └── notes
+  <section class="tex2jax_ignore mathjax_ignore" id="project-folder-structure">
+<h1>Project Folder Structure<a class="headerlink" href="#project-folder-structure" title="Permalink to this heading">#</a></h1>
+<p>Standardized project folders containing raw data are hierarchically structured according to the
+<a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/02-common-principles.html">BIDS standard</a>. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── project/
+    ├── rawdata/
+    │   └── sub-&lt;label&gt;/
+    │       └── ses-&lt;label&gt;/
+    │           ├── &lt;datatype_1&gt;/
+    │           │   └── raw_data.file
+    │           └── &lt;datatype_2&gt;/
+    │               └── raw_data.file  
+    └── derivatives/
+        └── ...
 </pre></div>
 </div>
-<p>Here is an example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>my_project/
-└── mouse-01/
-    └── ses-01/
-        └── ephys/
-            ├── my_recording.wav
-            ├── spike_sorted_data.mat
-            └── notes.yaml
-</pre></div>
-</div>
-<section id="naming-folders">
-<h2>Naming folders<a class="headerlink" href="#naming-folders" title="Permalink to this heading">#</a></h2>
-<section id="project">
-<h3>Project<a class="headerlink" href="#project" title="Permalink to this heading">#</a></h3>
-<p>Can have any name, this should be descriptive of the dataset contained in the folder.</p>
-</section>
+<p>The project folder may have any name descriptive of the project (that does not include spaces). Within the
+project folder, data is separated into <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> and <code class="docutils literal notranslate"><span class="pre">derivatives</span></code>. <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> contains the raw
+data acquired during data collection. <code class="docutils literal notranslate"><span class="pre">derivatives</span></code> includes any processed data (e.g. spike sorting or pose estimation).
+The subject / session / datatype folder structure within derivatives should
+match the rawdata folder whenever possible.</p>
+<p>Each subject (e.g. mouse, rat) in the project has a dedicated folder in which all data from
+experimental sessions are stored.
+In the case of multiple sessions, each session has its own folder where acquired data, belonging to
+a dataype (e.g. <code class="docutils literal notranslate"><span class="pre">ephys,</span> <span class="pre">behav,</span> <span class="pre">funcimg,</span> <span class="pre">histology</span></code>) are stored.</p>
+<p>Subject and session folder names cannot contain spaces and must consist of key-value pairs separated
+by underscores, e.g. <code class="docutils literal notranslate"><span class="pre">sub-001_id-5645332</span></code>.</p>
 <section id="subject">
-<h3>Subject<a class="headerlink" href="#subject" title="Permalink to this heading">#</a></h3>
-<p>Structure: <code class="docutils literal notranslate"><span class="pre">sub-&lt;participant</span> <span class="pre">label&gt;</span></code>
-One folder per subject in this dataset. Labels should be unique for each subject.
-Example: <code class="docutils literal notranslate"><span class="pre">mouse-01</span></code></p>
+<h2>Subject<a class="headerlink" href="#subject" title="Permalink to this heading">#</a></h2>
+<p>The subject level is prefixed with the <em>required</em> “sub” key - value pair, e.g. <code class="docutils literal notranslate"><span class="pre">sub-001</span></code>. Only one subject
+folder per-subject is permitted, and subject labels must be unique to each subject. <em>optional</em> key - value pairs
+can be added after sub-<label> (e.g. <code class="docutils literal notranslate"><span class="pre">sub-001_id-5645332</span></code>).</p>
 </section>
 <section id="session">
-<h3>Session<a class="headerlink" href="#session" title="Permalink to this heading">#</a></h3>
-<p>Structure: <code class="docutils literal notranslate"><span class="pre">ses-&lt;session</span> <span class="pre">label&gt;</span></code></p>
-<p>In general, a session represents a recording, imaging or behavioural experiment, with a definite kind of techniques involved and a given set of parameters. You might have multiple sessions per subject if you collected data from them on several occasions.
-Example: <code class="docutils literal notranslate"><span class="pre">ses-01</span></code></p>
+<h2>Session<a class="headerlink" href="#session" title="Permalink to this heading">#</a></h2>
+<p>If data for the subject were acquired across multiple sessions,then within the subject
+directory reside subdirectories named with the <em>required</em> prefix “ses”, e.g. <code class="docutils literal notranslate"><span class="pre">ses-&lt;label&gt;</span></code>. A session represents a recording,
+functional imaging or behavioural experimental session, and may contain multiple blocks, or runs, of data acquisition.
+Different sessions may have different combinations of datatypes. <em>optional</em> key - value pairs can be added after ses-<label>
+(e.g. <code class="docutils literal notranslate"><span class="pre">ses-001_date-220516</span></code>).</p>
 </section>
 <section id="datatype">
-<h3>Datatype<a class="headerlink" href="#datatype" title="Permalink to this heading">#</a></h3>
-<p>Structure: <code class="docutils literal notranslate"><span class="pre">datatype</span></code>
-Represents different types of data. Must be one of:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ephys</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">imaging</span></code> (microscopy)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">behaviour</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">histology</span></code></p></li>
-</ul>
+<h2>Datatype<a class="headerlink" href="#datatype" title="Permalink to this heading">#</a></h2>
+<p>Datatypes included at the session level are <em>required</em> to have one of the following names <code class="docutils literal notranslate"><span class="pre">ephys,</span> <span class="pre">behav,</span> <span class="pre">funcimg,</span> <span class="pre">histology</span></code>.
+If collected, <code class="docutils literal notranslate"><span class="pre">ephys,</span> <span class="pre">behav,</span> <span class="pre">funcimg</span></code> are <em>required</em> to be placed at the session level.
+If collected, <code class="docutils literal notranslate"><span class="pre">histology</span></code> is <em>required</em> to be at subject level.</p>
 </section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
+<p>A real project folder may look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── project/
+    ├── rawdata/
+    │   └── sub-001/
+    │       ├── ses-001_id-5645332/
+    │       │   ├── ephys/
+    │       │   │   ├── recording.bin
+    │       │   │   └── probe.imec0
+    │       │   └── behav/
+    │       │       ├── camera_1.wav 
+    │       │       └── responses.csv 
+    │       └── histology/
+    │           └── brain_image.tiff
+    └── derivatives/
+        └── sub-001/
+            ├── ses-001_id-5645332/
+            │   ├── ephys/
+            │   │   └── spike_sorted_data.mat
+            │   └── behav/
+            │       └── tracking_results.csv
+            └── histology/
+                └── cell_counts.csv
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -374,7 +382,7 @@ Represents different types of data. Must be one of:</p>
   <a class='right-next' id="next-link" href="file_naming.html" title="next page">
   <div class="prev-next-info">
       <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">File Naming Conventions</p>
+      <p class="prev-next-title">Naming Conventions</p>
   </div>
   <i class="fa-solid fa-angle-right"></i>
   </a>
@@ -395,31 +403,24 @@ Represents different types of data. Must be one of:</p>
 <nav id="bd-toc-nav" class="page-toc">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#naming-folders">
-   Naming folders
+  <a class="reference internal nav-link" href="#subject">
+   Subject
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#project">
-     Project
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#subject">
-     Subject
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#session">
-     Session
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#datatype">
-     Datatype
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#session">
+   Session
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#datatype">
+   Datatype
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example">
+   Example
+  </a>
  </li>
 </ul>
 

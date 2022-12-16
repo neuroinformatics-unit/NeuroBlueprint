@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>File Naming Conventions &#8212; SWC-BIDS</title>
+    <title>Naming Conventions &#8212; SWC-BIDS</title>
   
   
   
@@ -43,8 +43,7 @@
     <link rel="canonical" href="https://swc-bids.neuroinformatics.dev/file_naming.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="The Specification" href="specification.html" />
-    <link rel="prev" title="Folders structure" href="folder_structure.html" />
+    <link rel="prev" title="Project Folder Structure" href="folder_structure.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="en">
   </head>
@@ -119,21 +118,14 @@
         
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="folder_structure.html">
-                        Folders structure
+                        Project Folder Structure
                       </a>
                     </li>
                 
 
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="#">
-                        File Naming Conventions
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="specification.html">
-                        The Specification
+                        Naming Conventions
                       </a>
                     </li>
                 
@@ -220,21 +212,14 @@
         
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="folder_structure.html">
-                        Folders structure
+                        Project Folder Structure
                       </a>
                     </li>
                 
 
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="#">
-                        File Naming Conventions
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="specification.html">
-                        The Specification
+                        Naming Conventions
                       </a>
                     </li>
                 
@@ -302,15 +287,21 @@
             
             <article class="bd-article" role="main">
               
-  <section id="file-naming-conventions">
-<h1>File Naming Conventions<a class="headerlink" href="#file-naming-conventions" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="naming-conventions">
+<h1>Naming Conventions<a class="headerlink" href="#naming-conventions" title="Permalink to this heading">#</a></h1>
+<section id="the-specification">
+<h2>The Specification<a class="headerlink" href="#the-specification" title="Permalink to this heading">#</a></h2>
+<p>Following the BIDS specification, we mark specifications as <em>required</em>, <em>recommended</em> and <em>optional</em>.</p>
+</section>
+<section id="file-naming-conventions">
+<h2>File Naming Conventions<a class="headerlink" href="#file-naming-conventions" title="Permalink to this heading">#</a></h2>
 <p>File names should be specified as a set of key-value pairs (key-value separated by a hyphen),
-with key-value pairs separated by underscores indicating the subject, session (REQUIRED)
-and other OPTIONAL information. In some instances, acquisition software may output data with its own required file naming convention -
-in these instances should put in their own folder with the BIDS specification name.</p>
+with key-value pairs separated by underscores indicating the subject, session (<em>required</em>)
+and other <em>optional</em> information. In some instances, acquisition software may output data with its <em>required</em> file naming convention -
+in these instances should put in their folder with the BIDS specification name.</p>
 <p>An example filenames in an ephys folder structure may be:
 some key-value pairs such as task, run,  (e.g. task-escape, run (run-001). Finally, the filename
-can end with a suffix (OPTIONAL) that indicates a logical group to which it belongs.
+can end with a suffix (<em>optional</em>) that indicates a logical group to which it belongs.
 Anything after the left-most stop (.) is considered the file extension.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── project/
     └── sub-001/
@@ -327,7 +318,8 @@ Anything after the left-most stop (.) is considered the file extension.</p>
                 └── sub-001_task-discrim_monitor-right_run-002.mp4
 </pre></div>
 </div>
-<p>the sub-<label> tag is REQUIRED in file names, but ses-<label> is OPTIONAL.</p>
+<p>the sub-<label> tag is <em>required</em> in file names, but ses-<label> is <em>optional</em>.</p>
+</section>
 </section>
 
 
@@ -342,15 +334,8 @@ Anything after the left-most stop (.) is considered the file extension.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Folders structure</p>
+          <p class="prev-next-title">Project Folder Structure</p>
       </div>
-  </a>
-  <a class='right-next' id="next-link" href="specification.html" title="next page">
-  <div class="prev-next-info">
-      <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">The Specification</p>
-  </div>
-  <i class="fa-solid fa-angle-right"></i>
   </a>
 </div>
             </footer>
@@ -361,6 +346,28 @@ Anything after the left-most stop (.) is considered the file extension.</p>
           
             <div class="bd-sidebar-secondary bd-toc">
               
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-specification">
+   The Specification
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#file-naming-conventions">
+   File Naming Conventions
+  </a>
+ </li>
+</ul>
+
+</nav>
+</div>
+
 <div class="toc-item">
   
 <div id="searchbox"></div>
