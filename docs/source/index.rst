@@ -15,7 +15,6 @@ SWC BIDS
 
    folder_structure.md
    file_naming.md 
-   specification.md
 
 .. include:: readme_link.md
    :parser: myst_parser.sphinx_

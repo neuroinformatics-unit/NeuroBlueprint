@@ -1,45 +1,74 @@
-# Folders structure 
-Your project folder containing raw data will be structured in a hierarchical way following BIDS standards:
+# Project Folder Structure 
+
+Standardized project folders containing raw data are hierarchically structured according to the 
+[BIDS standard](https://bids-specification.readthedocs.io/en/stable/02-common-principles.html). For example:
+
 ```
-project/
-└── subject/
-    └── session/
-        └── datatype/
-            ├── some_raw_data_file
-            ├── some_preprocessed_data_file
-            └── notes
+└── project/
+    ├── rawdata/
+    │   └── sub-<label>/
+    │       └── ses-<label>/
+    │           ├── <datatype_1>/
+    │           │   └── raw_data.file
+    │           └── <datatype_2>/
+    │               └── raw_data.file  
+    └── derivatives/
+        └── ...
 ```
 
-Here is an example:
+The project folder may have any name descriptive of the project (that does not include spaces). Within the 
+project folder, data is separated into `rawdata` and `derivatives`. `rawdata` contains the raw
+data acquired during data collection. `derivatives` includes any processed data (e.g. spike sorting or pose estimation). 
+The subject / session / datatype folder structure within derivatives should
+match the rawdata folder whenever possible.
+
+Each subject (e.g. mouse, rat) in the project has a dedicated folder in which all data from 
+experimental sessions are stored.
+In the case of multiple sessions, each session has its own folder where acquired data, belonging to
+a dataype (e.g. `ephys, behav, funcimg, histology`) are stored.
+
+Subject and session folder names cannot contain spaces and must consist of key-value pairs separated
+by underscores, e.g. `sub-001_id-5645332`. 
+
+## Subject
+The subject level is prefixed with the *required* "sub" key - value pair, e.g. `sub-001`. Only one subject
+folder per-subject is permitted, and subject labels must be unique to each subject. *optional* key - value pairs 
+can be added after sub-<label> (e.g. `sub-001_id-5645332`).
+
+## Session
+If data for the subject were acquired across multiple sessions,then within the subject 
+directory reside subdirectories named with the *required* prefix "ses", e.g. `ses-<label>`. A session represents a recording, 
+functional imaging or behavioural experimental session, and may contain multiple blocks, or runs, of data acquisition.
+Different sessions may have different combinations of datatypes. *optional* key - value pairs can be added after ses-<label>
+(e.g. `ses-001_date-220516`).
+
+## Datatype
+Datatypes included at the session level are *required* to have one of the following names `ephys, behav, funcimg, histology`.
+If collected, `ephys, behav, funcimg` are *required* to be placed at the session level. 
+If collected, `histology` is *required* to be at subject level. 
+
+## Example
+A real project folder may look like: 
 ```
-my_project/
-└── mouse-01/
-    └── ses-01/
-        └── ephys/
-            ├── my_recording.wav
-            ├── spike_sorted_data.mat
-            └── notes.yaml
+└── project/
+    ├── rawdata/
+    │   └── sub-001/
+    │       ├── ses-001_id-5645332/
+    │       │   ├── ephys/
+    │       │   │   ├── recording.bin
+    │       │   │   └── probe.imec0
+    │       │   └── behav/
+    │       │       ├── camera_1.wav 
+    │       │       └── responses.csv 
+    │       └── histology/
+    │           └── brain_image.tiff
+    └── derivatives/
+        └── sub-001/
+            ├── ses-001_id-5645332/
+            │   ├── ephys/
+            │   │   └── spike_sorted_data.mat
+            │   └── behav/
+            │       └── tracking_results.csv
+            └── histology/
+                └── cell_counts.csv
 ```
-## Naming folders
-
-### Project
-Can have any name, this should be descriptive of the dataset contained in the folder.
-
-### Subject
-Structure: `sub-<participant label>`
-One folder per subject in this dataset. Labels should be unique for each subject.
-Example: `mouse-01`
-
-### Session
-Structure: `ses-<session label>`
-
-In general, a session represents a recording, imaging or behavioural experiment, with a definite kind of techniques involved and a given set of parameters. You might have multiple sessions per subject if you collected data from them on several occasions. 
-Example: `ses-01`
-
-### Datatype
-Structure: `datatype`
-Represents different types of data. Must be one of:
-- `ephys`
-- `imaging` (microscopy)
-- `behaviour`
-- `histology`
