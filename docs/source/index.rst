@@ -13,7 +13,7 @@ SWC BIDS
    :maxdepth: 2
    :caption: Sections:
 
-   swc_bids_specification.md
+   specification.md
 
 .. include:: readme_link.md
    :parser: myst_parser.sphinx_

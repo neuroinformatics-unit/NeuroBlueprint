@@ -1,4 +1,4 @@
-# SWC-BIDS Specification
+# Specification
 
 ## Project Folder Structure 
 
