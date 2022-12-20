@@ -1,11 +1,9 @@
 # SWC BIDS - The SWC Folder Organisation Specification based on BIDS
 
-A standardised folder structure used by researchers across neuroscience projects makes data organisation, 
-analysis and collaboration easier. 
-This page will outline the folder structure and file naming standards recommended at the SWC, based on the 
-[BIDS specification](https://bids-specification.readthedocs.io/en/stable/)
-and its [Common Principles](https://bids-specification.readthedocs.io/en/stable/02-common-principles.html). 
-The BIDS format is a project structure specification widely used in human research with ongoing initiatives to extend 
-this to animal research. It is developed and maintained by the [BIDS community](https://bids.neuroimaging.io/).
+SWC-BIDS is a project folder structure specification for use in the SWC, based on the [BIDS specification](https://bids-specification.readthedocs.io/en/stable/) widely used in human neuroimaging. 
 
-The BIDS specification is very developed and in its entirety rather detailed and long. Here in the first instance, we aim to provide a brief subset of this specification aimed at introducing a standardised project folder structure across the SWC with minimal overhead for researchers. Future tools created by the neuroinformatics-unit for convenient, standardized data analysis pipelines will be built to interoperate seamlessly with this folder structure.
+The aim of this specification is to provide a set of rules and guidelines for project folder organisation ensuring consistent data management within and between labs. 
+
+SWC-BIDS aims to provide a subset of the wide-ranging BIDS specification for everyday use in the SWC with minimal overhead for researchers. We will also collaborate with [ongoing efforts](https://github.com/INCF/neuroscience-data-structure) to extend the BIDS specification to research with non-human animals by the [BIDS community](https://bids.neuroimaging.io/).
+
+Analysis tools developed at the Neuroinformatics Unit will prioritise interoperability with projects organised according to the SWC-BIDS specification.
