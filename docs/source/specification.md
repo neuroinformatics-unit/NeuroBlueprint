@@ -92,7 +92,20 @@ Anything after the left-most stop (`.`) is considered the file extension.
 If acquisition software outputs data with its own mandatory file naming convention, such are *required* 
 to be placed in a folder with the BIDS specification name.
 
-### Example
+e.g.
+```
+└── my_project/
+    └── rawdata/
+        └── sub-001/
+            └── ses-001/
+                └── behav/
+                    └── sub-001_task-discrimination_video/
+                        ├── required-software-output-name-3453234.mp4
+                        └── required-software-output-name-3453234.mp4
+```
+
+
+### Example Project Structure
 ```
 └── project/
     └── sub-001/
