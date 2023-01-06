@@ -48,7 +48,7 @@ Different sessions may have different combinations of datatypes. *optional* key 
 (e.g. `ses-001_date-220516`).
 
 ### Datatype
-Datatypes included at the session level are *required* to have one of the following names `ephys, behav, funcimg, histology`.
+Datatypes are *required* to have one of the following names `ephys, behav, funcimg, histology`.
 If collected, `ephys, behav, funcimg` are *required* to be placed at the session level. 
 If collected, `histology` is *required* to be at subject level. 
 
