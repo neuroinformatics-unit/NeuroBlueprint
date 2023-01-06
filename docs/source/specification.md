@@ -86,7 +86,7 @@ Key-value pairs are separated by underscores while the key and values
 separated by hypens (e.g. `sub-001_key1-value1_key2-value2.csv`). Key-value pairs other than the *required* `sub` or `ses` are *optional* and can contain 
 additional information. These might include the task name, or run number e.g. `sub-001_task-escape_run-001.csv`
 
-The filename may also end in an *optional* suffix, indicating a logical grouping to which it belongs (e.g. `sub-001_run-001_lightsoff.csv`). 
+The filename may also end in an *optional* suffix, indicating a logical grouping to which it belongs (e.g. `sub-001_run-001_retinotopy.csv`). 
 Anything after the left-most stop (`.`) is considered the file extension. 
 
 If acquisition software outputs data with its own mandatory file naming convention, such are *required* 
