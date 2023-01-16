@@ -100,7 +100,7 @@ e.g.
                 └── behav/
                     └── sub-001_ses-001_task-discrimination_video/
                         ├── required-software-output-name-3453234.mp4
-                        └── required-software-output-name-3453234.mp4
+                        └── required-software-output-name-3453235.mp4
 ```
 
 
