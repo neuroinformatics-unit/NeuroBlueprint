@@ -60,22 +60,22 @@ A real project folder may look like:
     │   └── sub-001/
     │       ├── ses-001_id-5645332/
     │       │   ├── ephys/
-    │       │   │   ├── recording.bin
-    │       │   │   └── probe.imec0
+    │       │   │   ├── sub-001_ses-001_recording.bin
+    │       │   │   └── sub-001_ses-001_probe.imec0
     │       │   └── behav/
-    │       │       ├── camera_1.wav 
-    │       │       └── responses.csv 
+    │       │       ├── sub-001_ses-001_camera_1.wav 
+    │       │       └── sub-001_ses-001_responses.csv 
     │       └── histology/
     │           └── brain_image.tiff
     └── derivatives/
         └── sub-001/
             ├── ses-001_id-5645332/
             │   ├── ephys/
-            │   │   └── spike_sorted_data.mat
+            │   │   └── sub-001_ses-001_spike_sorted_data.mat
             │   └── behav/
-            │       └── tracking_results.csv
+            │       └── sub-001_ses-001_tracking_results.csv
             └── histology/
-                └── cell_counts.csv
+                └── sub-001_ses-001_cell_counts.csv
 ```
 
 ## File Naming Conventions
@@ -111,14 +111,14 @@ e.g.
     └── sub-001/
         └── ses-001/
             ├── ephys/
-            │   ├── sub-001_probe.imec0
-            │   ├── sub-001_retinotopy.af.bin
-            │   ├── sub-001_task-discrim_monitor-right_run-001.ap.bin
-            │   ├── sub-001_task-discrim_monitor-left_run-001.ap.bin
-            │   └── sub-001_task-discrim_monitor-left_run-002.ap.bin
+            │   ├── sub-001_ses-001_probe.imec0
+            │   ├── sub-001_ses-001_retinotopy.af.bin
+            │   ├── sub-001_ses-001_task-discrim_monitor-right_run-001.ap.bin
+            │   ├── sub-001_ses-001_task-discrim_monitor-left_run-001.ap.bin
+            │   └── sub-001_ses-001_task-discrim_monitor-left_run-002.ap.bin
             └── behav/
-                ├── sub-001_task-discrim_monitor-right_run-001.mp4
-                ├── sub-001_task-discrim_monitor-left_run-001.mp4
-                └── sub-001_task-discrim_monitor-right_run-002.mp4
+                ├── sub-001_ses-001_task-discrim_monitor-right_run-001.mp4
+                ├── sub-001_ses-001_task-discrim_monitor-left_run-001.mp4
+                └── sub-001_ses-001_task-discrim_monitor-right_run-002.mp4
 ```
 
