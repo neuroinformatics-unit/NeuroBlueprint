@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Naming Conventions &#8212; SWC-BIDS</title>
+    <title>Specification &#8212; SWC-BIDS</title>
   
   
   
@@ -39,11 +39,11 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'file_naming';</script>
-    <link rel="canonical" href="https://swc-bids.neuroinformatics.dev/file_naming.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'specification';</script>
+    <link rel="canonical" href="https://swc-bids.neuroinformatics.dev/specification.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Project Folder Structure" href="folder_structure.html" />
+    <link rel="prev" title="SWC BIDS" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="en">
   </head>
@@ -116,16 +116,9 @@
     </p>
     <ul id="navbar-main-elements" class="navbar-nav">
         
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="folder_structure.html">
-                        Project Folder Structure
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="#">
-                        Naming Conventions
+                        Specification
                       </a>
                     </li>
                 
@@ -210,16 +203,9 @@
     </p>
     <ul id="navbar-main-elements" class="navbar-nav">
         
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="folder_structure.html">
-                        Project Folder Structure
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="#">
-                        Naming Conventions
+                        Specification
                       </a>
                     </li>
                 
@@ -287,38 +273,122 @@
             
             <article class="bd-article" role="main">
               
-  <section class="tex2jax_ignore mathjax_ignore" id="naming-conventions">
-<h1>Naming Conventions<a class="headerlink" href="#naming-conventions" title="Permalink to this heading">#</a></h1>
-<section id="the-specification">
-<h2>The Specification<a class="headerlink" href="#the-specification" title="Permalink to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="specification">
+<h1>Specification<a class="headerlink" href="#specification" title="Permalink to this heading">#</a></h1>
+<section id="project-folder-structure">
+<h2>Project Folder Structure<a class="headerlink" href="#project-folder-structure" title="Permalink to this heading">#</a></h2>
+<p>Standardized project folders containing raw data are hierarchically structured according to the
+<a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/02-common-principles.html">BIDS standard</a>.</p>
 <p>Following the BIDS specification, we mark specifications as <em>required</em>, <em>recommended</em> and <em>optional</em>.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── project/
+    ├── rawdata/
+    │   └── sub-&lt;label&gt;/
+    │       └── ses-&lt;label&gt;/
+    │           ├── &lt;datatype_1&gt;/
+    │           │   └── raw_data.file
+    │           └── &lt;datatype_2&gt;/
+    │               └── raw_data.file  
+    └── derivatives/
+        └── ...
+</pre></div>
+</div>
+<p>The project folder may have any name descriptive of the project (that does not include spaces). Within the
+project folder, data is separated into <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> and <code class="docutils literal notranslate"><span class="pre">derivatives</span></code>. <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> contains the raw
+data acquired during data collection. <code class="docutils literal notranslate"><span class="pre">derivatives</span></code> includes any processed data (e.g. spike sorting or pose estimation).
+The subject / session / datatype folder structure within derivatives should
+match the rawdata folder whenever possible.</p>
+<p>Each subject (e.g. mouse, rat) in the project has a dedicated folder in which all data from
+experimental sessions are stored.
+In the case of multiple sessions, each session has its own folder where acquired data, belonging to
+a dataype (e.g. <code class="docutils literal notranslate"><span class="pre">ephys,</span> <span class="pre">behav,</span> <span class="pre">funcimg,</span> <span class="pre">histology</span></code>) are stored.</p>
+<p>Subject and session folder names cannot contain spaces and must consist of key-value pairs separated
+by underscores, e.g. <code class="docutils literal notranslate"><span class="pre">sub-001_id-5645332</span></code>.</p>
+<section id="subject">
+<h3>Subject<a class="headerlink" href="#subject" title="Permalink to this heading">#</a></h3>
+<p>The subject level is prefixed with the <em>required</em> “sub” key - value pair, e.g. <code class="docutils literal notranslate"><span class="pre">sub-001</span></code>. Only one subject
+folder per-subject is permitted, and subject labels must be unique to each subject. <em>optional</em> key - value pairs
+can be added after sub-<label> (e.g. <code class="docutils literal notranslate"><span class="pre">sub-001_id-5645332</span></code>).</p>
+</section>
+<section id="session">
+<h3>Session<a class="headerlink" href="#session" title="Permalink to this heading">#</a></h3>
+<p>Within the subject directory reside session subdirectories named with the <em>required</em> prefix “ses”, e.g. <code class="docutils literal notranslate"><span class="pre">ses-&lt;label&gt;</span></code>. A session represents a recording,
+functional imaging or behavioural experimental session, and may contain multiple blocks, or runs, of data acquisition.
+Different sessions may have different combinations of datatypes. <em>optional</em> key - value pairs can be added after ses-<label>
+(e.g. <code class="docutils literal notranslate"><span class="pre">ses-001_date-220516</span></code>).</p>
+</section>
+<section id="datatype">
+<h3>Datatype<a class="headerlink" href="#datatype" title="Permalink to this heading">#</a></h3>
+<p>Datatypes are <em>required</em> to have one of the following names <code class="docutils literal notranslate"><span class="pre">ephys,</span> <span class="pre">behav,</span> <span class="pre">funcimg,</span> <span class="pre">histology</span></code>.
+If collected, <code class="docutils literal notranslate"><span class="pre">ephys,</span> <span class="pre">behav,</span> <span class="pre">funcimg</span></code> are <em>required</em> to be placed at the session level.
+If collected, <code class="docutils literal notranslate"><span class="pre">histology</span></code> is <em>required</em> to be at subject level.</p>
+</section>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h3>
+<p>A real project folder may look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── project/
+    ├── rawdata/
+    │   └── sub-001/
+    │       ├── ses-001_id-5645332/
+    │       │   ├── ephys/
+    │       │   │   ├── sub-001_ses-001_recording.bin
+    │       │   │   └── sub-001_ses-001_probe.imec0
+    │       │   └── behav/
+    │       │       ├── sub-001_ses-001_camera_1.wav 
+    │       │       └── sub-001_ses-001_responses.csv 
+    │       └── histology/
+    │           └── brain_image.tiff
+    └── derivatives/
+        └── sub-001/
+            ├── ses-001_id-5645332/
+            │   ├── ephys/
+            │   │   └── sub-001_ses-001_spike_sorted_data.mat
+            │   └── behav/
+            │       └── sub-001_ses-001_tracking_results.csv
+            └── histology/
+                └── sub-001_ses-001_cell_counts.csv
+</pre></div>
+</div>
+</section>
 </section>
 <section id="file-naming-conventions">
 <h2>File Naming Conventions<a class="headerlink" href="#file-naming-conventions" title="Permalink to this heading">#</a></h2>
-<p>File names should be specified as a set of key-value pairs (key-value separated by a hyphen),
-with key-value pairs separated by underscores indicating the subject, session (<em>required</em>)
-and other <em>optional</em> information. In some instances, acquisition software may output data with its <em>required</em> file naming convention -
-in these instances should put in their folder with the BIDS specification name.</p>
-<p>An example filenames in an ephys folder structure may be:
-some key-value pairs such as task, run,  (e.g. task-escape, run (run-001). Finally, the filename
-can end with a suffix (<em>optional</em>) that indicates a logical group to which it belongs.
-Anything after the left-most stop (.) is considered the file extension.</p>
+<p>File names are <em>recommended</em> to be formatted as set of key-value pairs ending with an <em>optional</em> suffix and <em>required</em> file extension (e.g. <code class="docutils literal notranslate"><span class="pre">sub-001_ses-001_date-20220516_retinotopy.ap.bin</span></code>).</p>
+<p>Key-value pairs should be separated by underscores while the keys and values are
+separated by hypens (e.g. <code class="docutils literal notranslate"><span class="pre">sub-001_ses-001_key1-value1_key2-value2.csv</span></code>). Key-value pairs may include the <em>recommended</em> <code class="docutils literal notranslate"><span class="pre">sub</span></code> or <code class="docutils literal notranslate"><span class="pre">ses</span></code> and additional <em>optional</em> information such as the task name, or run number e.g. <code class="docutils literal notranslate"><span class="pre">sub-001_ses-001_task-escape_run-001.csv</span></code></p>
+<p>The filename may also end in an <em>optional</em> suffix, indicating a logical grouping to which it belongs (e.g. <code class="docutils literal notranslate"><span class="pre">sub-001_ses-001_run-001_retinotopy.csv</span></code>).
+Anything after the left-most stop (<code class="docutils literal notranslate"><span class="pre">.</span></code>) is considered the file extension.</p>
+<p>If acquisition software outputs data with its own mandatory file naming convention, these are <em>recommended</em>
+to be placed in a folder with the BIDS specification name.</p>
+<p>e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── my_project/
+    └── rawdata/
+        └── sub-001/
+            └── ses-001/
+                └── behav/
+                    └── sub-001_ses-001_task-discrimination_video/
+                        ├── required-software-output-name-3453234.mp4
+                        └── required-software-output-name-3453235.mp4
+</pre></div>
+</div>
+<section id="example-project-structure">
+<h3>Example Project Structure<a class="headerlink" href="#example-project-structure" title="Permalink to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── project/
     └── sub-001/
         └── ses-001/
             ├── ephys/
-            │   ├── sub-001_probe.imec0
-            │   ├── sub-001_retinotopy.af.bin
-            │   ├── sub-001_task-discrim_monitor-right_run-001.ap.bin
-            │   ├── sub-001_task-discrim_monitor-left_run-001.ap.bin
-            │   └── sub-001_task-discrim_monitor-left_run-002.ap.bin
+            │   ├── sub-001_ses-001_probe.imec0
+            │   ├── sub-001_ses-001_retinotopy.af.bin
+            │   ├── sub-001_ses-001_task-discrim_monitor-right_run-001.ap.bin
+            │   ├── sub-001_ses-001_task-discrim_monitor-left_run-001.ap.bin
+            │   └── sub-001_ses-001_task-discrim_monitor-left_run-002.ap.bin
             └── behav/
-                ├── sub-001_task-discrim_monitor-right_run-001.mp4
-                ├── sub-001_task-discrim_monitor-left_run-001.mp4
-                └── sub-001_task-discrim_monitor-right_run-002.mp4
+                ├── sub-001_ses-001_task-discrim_monitor-right_run-001.mp4
+                ├── sub-001_ses-001_task-discrim_monitor-left_run-001.mp4
+                └── sub-001_ses-001_task-discrim_monitor-right_run-002.mp4
 </pre></div>
 </div>
-<p>the sub-<label> tag is <em>required</em> in file names, but ses-<label> is <em>optional</em>.</p>
+</section>
 </section>
 </section>
 
@@ -330,11 +400,11 @@ Anything after the left-most stop (.) is considered the file extension.</p>
             <footer class="bd-footer-article">
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="folder_structure.html" title="previous page">
+  <a class='left-prev' id="prev-link" href="index.html" title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Project Folder Structure</p>
+          <p class="prev-next-title">SWC BIDS</p>
       </div>
   </a>
 </div>
@@ -354,14 +424,43 @@ Anything after the left-most stop (.) is considered the file extension.</p>
 <nav id="bd-toc-nav" class="page-toc">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-specification">
-   The Specification
+  <a class="reference internal nav-link" href="#project-folder-structure">
+   Project Folder Structure
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subject">
+     Subject
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#session">
+     Session
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#datatype">
+     Datatype
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#file-naming-conventions">
    File Naming Conventions
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-project-structure">
+     Example Project Structure
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -380,7 +479,7 @@ Anything after the left-most stop (.) is considered the file extension.</p>
 <div class="toc-item">
   
 <div class="tocsection sourcelink">
-    <a href="_sources/file_naming.md.txt">
+    <a href="_sources/specification.md.txt">
         <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
 </div>
