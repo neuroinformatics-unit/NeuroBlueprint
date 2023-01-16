@@ -80,16 +80,15 @@ A real project folder may look like:
 
 ## File Naming Conventions
 
-File names are *required* to be formatted as set of key-value pairs ending with an *optional* suffix and *required* file extension (e.g. `ses-001_date-20220516_retinotopy.ap.bin`). 
+File names are *recommended* to be formatted as set of key-value pairs ending with an *optional* suffix and *required* file extension (e.g. `ses-001_date-20220516_retinotopy.ap.bin`). 
 
-Key-value pairs are separated by underscores while the key and values 
-separated by hypens (e.g. `sub-001_key1-value1_key2-value2.csv`). Key-value pairs other than the *required* `sub` or `ses` are *optional* and can contain 
-additional information. These might include the task name, or run number e.g. `sub-001_task-escape_run-001.csv`
+Key-value pairs should be separated by underscores while the keys and values are
+separated by hypens (e.g. `sub-001_key1-value1_key2-value2.csv`). Key-value pairs may include the *recommended* `sub` or `ses` and additional *optional* information such as the task name, or run number e.g. `sub-001_task-escape_run-001.csv`
 
 The filename may also end in an *optional* suffix, indicating a logical grouping to which it belongs (e.g. `sub-001_run-001_retinotopy.csv`). 
 Anything after the left-most stop (`.`) is considered the file extension. 
 
-If acquisition software outputs data with its own mandatory file naming convention, such are *required* 
+If acquisition software outputs data with its own mandatory file naming convention, such are *recommended* 
 to be placed in a folder with the BIDS specification name.
 
 e.g.
@@ -99,7 +98,7 @@ e.g.
         └── sub-001/
             └── ses-001/
                 └── behav/
-                    └── sub-001_task-discrimination_video/
+                    └── sub-001_ses_001_task-discrimination_video/
                         ├── required-software-output-name-3453234.mp4
                         └── required-software-output-name-3453234.mp4
 ```
