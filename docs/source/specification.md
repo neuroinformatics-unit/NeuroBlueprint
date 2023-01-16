@@ -88,7 +88,7 @@ separated by hypens (e.g. `sub-001_ses-001_key1-value1_key2-value2.csv`). Key-va
 The filename may also end in an *optional* suffix, indicating a logical grouping to which it belongs (e.g. `sub-001_ses-001_run-001_retinotopy.csv`). 
 Anything after the left-most stop (`.`) is considered the file extension. 
 
-If acquisition software outputs data with its own mandatory file naming convention, such are *recommended* 
+If acquisition software outputs data with its own mandatory file naming convention, these are *recommended* 
 to be placed in a folder with the BIDS specification name.
 
 e.g.
