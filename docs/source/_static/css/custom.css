@@ -13,3 +13,11 @@ display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
 }
+
+.img-sponsor {
+  height: 50px;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+}
