@@ -1,4 +1,4 @@
-# SWC BIDS - The SWC Folder Organisation Specification based on BIDS
+# SWC-BIDS: The SWC Folder Organisation Specification based on BIDS
 
 SWC-BIDS is a project folder structure specification for use in the SWC, based on the [BIDS specification](https://bids-specification.readthedocs.io/en/stable/) widely used in human neuroimaging. 
 
