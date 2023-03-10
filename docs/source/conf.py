@@ -17,8 +17,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'SWC-BIDS'
-copyright = '2022, Neuroinformatics Unit'
+project = 'SWC-Blueprint'
+copyright = '2022, UCL'
 author = 'Neuroinformatics Unit'
 
 # The full version, including alpha/beta/rc tags
@@ -58,7 +58,7 @@ myst_enable_extensions = [
     "substitution",
     "tasklist",
 ]
-# Automatically add achors to markdown headings
+# Automatically add anchors to markdown headings
 myst_heading_anchors = 3
 
 # Add any paths that contain templates here, relative to this directory.
@@ -81,12 +81,12 @@ exclude_patterns = [
 # a list of builtin themes.
 #
 html_theme = 'pydata_sphinx_theme'
-html_title = 'SWC-BIDS'
+html_title = 'SWC-Blueprint'
 
 # Redirect the webpage to another URL
 # Sphinx will create the appropriate CNAME file in the build directory
 # https://www.sphinx-doc.org/en/master/usage/extensions/githubpages.html
-html_baseurl = 'https://swc-bids.neuroinformatics.dev/'
+html_baseurl = 'https://swc-blueprint.neuroinformatics.dev/'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -100,22 +100,22 @@ html_css_files = [
 
 html_favicon = "_static/logo_light.png"
 
-## Cutomize the theme
+# Customise the theme
 html_theme_options = {
     "icon_links": [
         {
             # Label for this link
             "name": "GitHub",
             # URL where the link will redirect
-            "url": "https://github.com/neuroinformatics-unit/SWC-BIDS",  # required
+            "url": "https://github.com/neuroinformatics-unit/SWC-Blueprint",  # required
             # Icon class (if "type": "fontawesome"), or path to local image (if "type": "local")
             "icon": "fa-brands fa-github",
             # The type of image to be used (see below for details)
             "type": "fontawesome",
         }
-   ],
-   "logo": {
-        "text": "SWC-BIDS",
+    ],
+    "logo": {
+        "text": f"SWC-Blueprint v{release}",
         "image_light": "logo_light.png",
         "image_dark": "logo_dark.png",
     },
