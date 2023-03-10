@@ -118,5 +118,7 @@ html_theme_options = {
         "text": "SWC-BIDS",
         "image_light": "logo_light.png",
         "image_dark": "logo_dark.png",
-    }
+    },
+    "footer_start": ["custom_footer"],
+    "footer_end": ["footer_end"]
 }
