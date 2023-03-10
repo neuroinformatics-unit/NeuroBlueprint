@@ -31,7 +31,7 @@ match the rawdata folder whenever possible.
 Each subject (e.g. mouse, rat) in the project has a dedicated folder in which all data from 
 experimental sessions are stored.
 In the case of multiple sessions, each session has its own folder where acquired data, belonging to
-a dataype (e.g. `ephys, behav, funcimg, histology`) are stored.
+a datatype (e.g. `ephys, behav, funcimg, histology`) are stored.
 
 Subject and session folder names cannot contain spaces and must consist of key-value pairs separated
 by underscores, e.g. `sub-001_id-5645332`. 
