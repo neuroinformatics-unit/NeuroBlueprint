@@ -1,7 +1,7 @@
 # The specification
 
 :::{note}
-We mark specifications with ***keywords*** that should be interpreted as described in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt). In decreasing order of requirement, these are:
+We mark specifications with ***keywords*** that should be interpreted as described by the [Network Working Group](https://www.ietf.org/rfc/rfc2119.txt). In decreasing order of requirement, these are:
 
 * ***required, must, must not, shall, shall not***
 * ***recommended, not recommended, should, should not***
