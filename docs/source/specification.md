@@ -76,10 +76,10 @@ Below we describe each level of the `rawdata` folder hierarchy in more detail.
 
 The following datatypes are supported:
 
-* `ephys`: electrophysiology data (e.g. Neuropixel probes, tetrodes, etc.)
-* `behav`: behavioral data (video and audio files, response logs, etc.)
-* `funcimg`: functional imaging data (e.g. calcium imaging, voltage imaging, etc.)
-* `histology`: anatomical data (e.g. serial-2-photon images, histology slides, etc.)
+* `ephys`: electrophysiology data (e.g. Neuropixel probes, tetrodes)
+* `behav`: behavioral data (video and audio files, response logs)
+* `funcimg`: functional imaging data (e.g. calcium imaging, voltage imaging)
+* `histology`: anatomical data (e.g. serial-2-photon images, histology slides)
 
 :::{note}
 Unlike the first three `datatypes` that belong at the `session` level, `histology` belongs at the `subject` level.
