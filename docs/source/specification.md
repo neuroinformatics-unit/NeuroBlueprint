@@ -35,16 +35,13 @@ For example:
 
 * Data within the `rawdata` folder *must* be hierarchically structured into `subject/session/datatype` levels. Each level *must* contain at least one folder corresponding to the next (lower) level.
 
-* The `subject/session/datatype` folder structure within `derivatives` *should*
-match that of `rawdata` whenever possible.
-
 * `subject` and `session` folder names *must* consist of key-value pairs separated by underscores, withous spaces e.g. `sub-001_id-5645332`.
 
 * `datatype` folder names *must* be one of the following : `ephys`, `behav`, `funcimg`, `histology`.
 
 * If collected, `ephys`, `behav`, `funcimg` *must* be placed under the `session` level. If collected, `histology` *must* be placed under the `subject` level. 
 
-Below we describe each level of the `rawdata` folder hierarchy in more detail.
+Below we describe each level of the `rawdata` folder hierarchy in more detail. Though we impose no absolute requirements for the folder structure within `derivatives`, it *should* match the hierarchy in `rawdata` whenever possible.
 
 ### Subject
 
