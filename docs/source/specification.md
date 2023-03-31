@@ -119,7 +119,7 @@ A real project folder might look like:
 :::{admonition} What makes a good file name?
 :class: tip
 * be nice to humans -> readable and descriptive
-* be nice to computers -> parseable and consistent (e.g. use `key1-value1_key2-value2` convention)
+* be nice to computers -> parseable and consistent
 * use alphanumeric characters `Aa-Zz, 0-9`, dashes `-`, underscores `_`
 * avoid spaces and special characters
 * use appropriate extensions for each file type (e.g. `.csv`, `.avi`, `.tiff`)
@@ -127,7 +127,6 @@ A real project folder might look like:
 :::
 
 * File names *should* be formatted as series of key-value pairs, followed by an *optional* suffix, and ending with a file extension (e.g `sub-001_ses-001_date-20220516_retinotopy.bin`). 
-
 * Key-value pairs should be separated by underscores while the keys and values are
 separated by hyphens (e.g. `sub-001_ses-001_key1-value1_key2-value2.csv`).
 * It is *recommended* to include the `sub` and `ses` keys. This may seem redundant (given that the file is already in a subject or session folder), but it makes is easier to identify the file if it is moved out of its original folder.
