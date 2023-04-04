@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Specification &#8212; SWC-BIDS</title>
+    <title>The specification &#8212; SWC-Blueprint</title>
   
   
   
@@ -19,22 +19,23 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -42,13 +43,14 @@
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/design-tabs.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'specification';</script>
-    <link rel="canonical" href="https://swc-bids.neuroinformatics.dev/specification.html" />
+    <link rel="canonical" href="https://swc-blueprint.neuroinformatics.dev/specification.html" />
     <link rel="shortcut icon" href="_static/logo_light.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="SWC BIDS" href="index.html" />
+    <link rel="prev" title="SWC-Blueprint" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -118,7 +120,7 @@
     <script>document.write(`<img src="_static/logo_dark.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
-    <p class="title logo__title">SWC-BIDS</p>
+    <p class="title logo__title">SWC-Blueprint v0.1.0</p>
   
 </a></div>
     
@@ -140,7 +142,7 @@
     
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="#">
-                        Specification
+                        The specification
                       </a>
                     </li>
                 
@@ -186,7 +188,7 @@ document.write(`
           
           
           
-          <a href="https://github.com/neuroinformatics-unit/SWC-BIDS" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+          <a href="https://github.com/neuroinformatics-unit/SWC-Blueprint" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
 </ul></div>
@@ -239,7 +241,7 @@ document.write(`
     
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="#">
-                        Specification
+                        The specification
                       </a>
                     </li>
                 
@@ -274,7 +276,7 @@ document.write(`
           
           
           
-          <a href="https://github.com/neuroinformatics-unit/SWC-BIDS" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+          <a href="https://github.com/neuroinformatics-unit/SWC-Blueprint" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
 </ul></div>
@@ -315,7 +317,7 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">Specification</li>
+    <li class="breadcrumb-item active" aria-current="page">The specification</li>
   </ul>
 </nav>
 </div>
@@ -332,119 +334,211 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="specification">
-<h1>Specification<a class="headerlink" href="#specification" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-specification">
+<h1>The specification<a class="headerlink" href="#the-specification" title="Permalink to this heading">#</a></h1>
+<p>The current version of <code class="docutils literal notranslate"><span class="pre">SWC-Blueprint</span></code> mainly aims to enforce a uniform and consistent <a class="reference internal" href="#project-folder-structure">project folder structure</a>.
+In addition, it also includes some non-mandatory conventions for <a class="reference internal" href="#file-naming-conventions">naming files</a> and storing <a class="reference internal" href="#tabular-metadata">tabular metadata</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We mark requirements with italicised <em>keywords</em> that should be interpreted as described by the <a class="reference external" href="https://www.ietf.org/rfc/rfc2119.txt">Network Working Group</a>. In decreasing order of requirement, these are: <em>must</em> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-alert sd-text-danger" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path></svg>, <em>should</em> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-info sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>, and <em>may</em> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-check-circle sd-text-success" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM0 8a8 8 0 1116 0A8 8 0 010 8zm11.78-1.72a.75.75 0 00-1.06-1.06L6.75 9.19 5.28 7.72a.75.75 0 00-1.06 1.06l2 2a.75.75 0 001.06 0l4.5-4.5z"></path></svg>.</p>
+</div>
 <section id="project-folder-structure">
-<h2>Project Folder Structure<a class="headerlink" href="#project-folder-structure" title="Permalink to this heading">#</a></h2>
-<p>Standardized project folders containing raw data are hierarchically structured according to the
-<a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/02-common-principles.html">BIDS standard</a>.</p>
-<p>Following the BIDS specification, we mark specifications as <em>required</em>, <em>recommended</em> and <em>optional</em>.</p>
+<h2>Project folder structure<a class="headerlink" href="#project-folder-structure" title="Permalink to this heading">#</a></h2>
+<p>Standardised project folders contain data that are hierarchically structured according to the <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/02-common-principles.html">BIDS standard</a>.</p>
 <p>For example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── project/
     ├── rawdata/
     │   └── sub-&lt;label&gt;/
     │       └── ses-&lt;label&gt;/
-    │           ├── &lt;datatype_1&gt;/
+    │           ├── &lt;datatype-1&gt;/
     │           │   └── raw_data.file
-    │           └── &lt;datatype_2&gt;/
+    │           └── &lt;datatype-2&gt;/
     │               └── raw_data.file  
     └── derivatives/
         └── ...
 </pre></div>
 </div>
-<p>The project folder may have any name descriptive of the project (that does not include spaces). Within the
-project folder, data is separated into <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> and <code class="docutils literal notranslate"><span class="pre">derivatives</span></code>. <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> contains the raw
-data acquired during data collection. <code class="docutils literal notranslate"><span class="pre">derivatives</span></code> includes any processed data (e.g. spike sorting or pose estimation).
-The subject / session / datatype folder structure within derivatives should
-match the rawdata folder whenever possible.</p>
-<p>Each subject (e.g. mouse, rat) in the project has a dedicated folder in which all data from
-experimental sessions are stored.
-In the case of multiple sessions, each session has its own folder where acquired data, belonging to
-a dataype (e.g. <code class="docutils literal notranslate"><span class="pre">ephys,</span> <span class="pre">behav,</span> <span class="pre">funcimg,</span> <span class="pre">histology</span></code>) are stored.</p>
-<p>Subject and session folder names cannot contain spaces and must consist of key-value pairs separated
-by underscores, e.g. <code class="docutils literal notranslate"><span class="pre">sub-001_id-5645332</span></code>.</p>
+<section id="basic-principles">
+<h3>Basic principles<a class="headerlink" href="#basic-principles" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The project folder <em>may</em> have any name descriptive of the project, but it <em>must</em> be without spaces.</p></li>
+<li><p>Within the project folder, data <em>must</em> be separated into <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> and <code class="docutils literal notranslate"><span class="pre">derivatives</span></code>.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">rawdata</span></code>: coming out of the data acquisition system (e.g. binary files, tiffs, videos files).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">derivatives</span></code>: any processed data that is derived from <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> (e.g. spike sorting or pose estimation).</p></li>
+</ul>
+</li>
+<li><p>Data within the <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> folder <em>must</em> be hierarchically structured into <code class="docutils literal notranslate"><span class="pre">subject/session/datatype</span></code> levels. Each level <em>must</em> contain at least one folder corresponding to the next (lower) level.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subject</span></code> and <code class="docutils literal notranslate"><span class="pre">session</span></code> folder names <em>must</em> consist of key-value pairs separated by underscores, withous spaces e.g. <code class="docutils literal notranslate"><span class="pre">sub-001_id-5645332</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">datatype</span></code> folder names <em>must</em> be one of the following : <code class="docutils literal notranslate"><span class="pre">ephys</span></code>, <code class="docutils literal notranslate"><span class="pre">behav</span></code>, <code class="docutils literal notranslate"><span class="pre">funcimg</span></code>, <code class="docutils literal notranslate"><span class="pre">histology</span></code>.</p></li>
+<li><p>If collected, <code class="docutils literal notranslate"><span class="pre">ephys</span></code>, <code class="docutils literal notranslate"><span class="pre">behav</span></code>, <code class="docutils literal notranslate"><span class="pre">funcimg</span></code> <em>must</em> be placed under the <code class="docutils literal notranslate"><span class="pre">session</span></code> level. If collected, <code class="docutils literal notranslate"><span class="pre">histology</span></code> <em>must</em> be placed under the <code class="docutils literal notranslate"><span class="pre">subject</span></code> level.</p></li>
+</ul>
+<p>Below we describe each level of the <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> folder hierarchy in more detail. Though we impose no absolute requirements for the folder structure within <code class="docutils literal notranslate"><span class="pre">derivatives</span></code>, it <em>should</em> match the hierarchy in <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> whenever possible.</p>
+</section>
 <section id="subject">
 <h3>Subject<a class="headerlink" href="#subject" title="Permalink to this heading">#</a></h3>
-<p>The subject level is prefixed with the <em>required</em> “sub” key - value pair, e.g. <code class="docutils literal notranslate"><span class="pre">sub-001</span></code>. Only one subject
-folder per-subject is permitted, and subject labels must be unique to each subject. <em>optional</em> key - value pairs
-can be added after sub-<label> (e.g. <code class="docutils literal notranslate"><span class="pre">sub-001_id-5645332</span></code>).</p>
+<ul class="simple">
+<li><p>Each subject <em>must</em> have exactly one subject-level folder.</p></li>
+<li><p>Subject-level folders <em>must</em> be prefixed with a key-value pair that is unique for each subject. The key <em>must</em> be <code class="docutils literal notranslate"><span class="pre">sub</span></code> and the value <em>must</em> be numerical, e.g. <code class="docutils literal notranslate"><span class="pre">sub-001</span></code>.</p></li>
+<li><p>Subjects <em>should</em> be assigned ascending numerical labels as they are added to the project. The labels <em>should</em> be prefixed with an arbitrary number of 0s for consistent indentation and sorting, e.g. <code class="docutils literal notranslate"><span class="pre">sub-001</span></code>, <code class="docutils literal notranslate"><span class="pre">sub-002</span></code>, <code class="docutils literal notranslate"><span class="pre">sub-003</span></code>.</p></li>
+<li><p>Additional key-value pairs with alphanumerical labels <em>may</em> be appended after the <code class="docutils literal notranslate"><span class="pre">sub</span></code> key-value pair. For example, animal IDs (e.g. from the animal facility) can be added as follows: <code class="docutils literal notranslate"><span class="pre">sub-001_id-5645332</span></code>. The keys <em>should</em> be consistent across subjects.</p></li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<ul class="simple">
+<li><p>valid: <code class="docutils literal notranslate"><span class="pre">sub-02</span></code>, <code class="docutils literal notranslate"><span class="pre">sub-001_id-5645332_sex-F</span></code>, <code class="docutils literal notranslate"><span class="pre">sub-02_species-mouse</span></code></p></li>
+<li><p>invalid:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">mouse-01</span></code>: the first key should have been <code class="docutils literal notranslate"><span class="pre">sub</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sub-001_female</span></code>: <code class="docutils literal notranslate"><span class="pre">female</span></code> should have been written as a key-value pair (e.g. <code class="docutils literal notranslate"><span class="pre">sex-female</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sub-B</span></code>: the <code class="docutils literal notranslate"><span class="pre">sub</span></code> key should have a numerical value</p></li>
+</ul>
+</li>
+</ul>
+</div>
 </section>
 <section id="session">
 <h3>Session<a class="headerlink" href="#session" title="Permalink to this heading">#</a></h3>
-<p>Within the subject directory reside session subdirectories named with the <em>required</em> prefix “ses”, e.g. <code class="docutils literal notranslate"><span class="pre">ses-&lt;label&gt;</span></code>. A session represents a recording,
-functional imaging or behavioural experimental session, and may contain multiple blocks, or runs, of data acquisition.
-Different sessions may have different combinations of datatypes. <em>optional</em> key - value pairs can be added after ses-<label>
-(e.g. <code class="docutils literal notranslate"><span class="pre">ses-001_date-220516</span></code>).</p>
+<ul class="simple">
+<li><p>Each session <em>must</em> have exactly one session-level folder.</p></li>
+<li><p>Session-level folders <em>must</em> be prefixed with a key-value pair that is unique for each session. The key <em>must</em> be <code class="docutils literal notranslate"><span class="pre">ses</span></code> and the value <em>must</em> be numerical, e.g. <code class="docutils literal notranslate"><span class="pre">ses-01</span></code>.</p></li>
+<li><p>Sessions <em>should</em> be assigned ascending numerical labels as they are added to the project. The labels <em>should</em> be prefixed with an arbitrary number of 0s for consistent indentation and sorting, e.g. <code class="docutils literal notranslate"><span class="pre">ses-01</span></code>, <code class="docutils literal notranslate"><span class="pre">ses-02</span></code>, <code class="docutils literal notranslate"><span class="pre">ses-03</span></code>.</p></li>
+<li><p>Additional key-value pairs with alphanumerical labels <em>may</em> be appended after the <code class="docutils literal notranslate"><span class="pre">ses</span></code> key-value pair. For example, dates can be added as follows: <code class="docutils literal notranslate"><span class="pre">ses-001_date-20230310</span></code>. The keys <em>should</em> be consistent across subjects.</p></li>
+<li><p>If a date field is added, it <em>should</em> be in the format <code class="docutils literal notranslate"><span class="pre">YYYYMMDD</span></code>.</p></li>
+<li><p>Different sessions <em>may</em> contain different combinations of datatypes.</p></li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<ul class="simple">
+<li><p>valid: <code class="docutils literal notranslate"><span class="pre">ses-02</span></code>, <code class="docutils literal notranslate"><span class="pre">ses-2_date-20230204</span></code></p></li>
+<li><p>invalid:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">date-20230204_ses-01</span></code>: <code class="docutils literal notranslate"><span class="pre">ses</span></code> should have been the first key</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">session2</span></code>: should have been written as <code class="docutils literal notranslate"><span class="pre">ses-2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ses-A</span></code>: the <code class="docutils literal notranslate"><span class="pre">ses</span></code> key should have a numerical value</p></li>
+</ul>
+</li>
+</ul>
+</div>
 </section>
 <section id="datatype">
 <h3>Datatype<a class="headerlink" href="#datatype" title="Permalink to this heading">#</a></h3>
-<p>Datatypes are <em>required</em> to have one of the following names <code class="docutils literal notranslate"><span class="pre">ephys,</span> <span class="pre">behav,</span> <span class="pre">funcimg,</span> <span class="pre">histology</span></code>.
-If collected, <code class="docutils literal notranslate"><span class="pre">ephys,</span> <span class="pre">behav,</span> <span class="pre">funcimg</span></code> are <em>required</em> to be placed at the session level.
-If collected, <code class="docutils literal notranslate"><span class="pre">histology</span></code> is <em>required</em> to be at subject level.</p>
+<p>The following datatypes are supported:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ephys</span></code>: electrophysiology (e.g. Neuropixel probes, tetrodes)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">behav</span></code>: behavioural (e.g. video and audio files, response logs)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">funcimg</span></code>: functional imaging (e.g. calcium and voltage imaging)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">histology</span></code>: anatomical (e.g. serial-2-photon images)</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Unlike the first three <code class="docutils literal notranslate"><span class="pre">datatypes</span></code> that belong at the <code class="docutils literal notranslate"><span class="pre">session</span></code> level, <code class="docutils literal notranslate"><span class="pre">histology</span></code> belongs at the <code class="docutils literal notranslate"><span class="pre">subject</span></code> level.</p>
+</div>
 </section>
-<section id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h3>
-<p>A real project folder may look like:</p>
+<section id="example-project-folder">
+<h3>Example project folder<a class="headerlink" href="#example-project-folder" title="Permalink to this heading">#</a></h3>
+<p>A real project folder might look like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── project/
     ├── rawdata/
-    │   └── sub-001/
-    │       ├── ses-001_id-5645332/
+    │   └── sub-001_id-5645332/
+    │       ├── ses-01_date-20230310/
     │       │   ├── ephys/
-    │       │   │   ├── sub-001_ses-001_recording.bin
-    │       │   │   └── sub-001_ses-001_probe.imec0
+    │       │   │   ├── sub-001_ses-01_recording-01.bin
+    │       │   │   └── sub-001_ses-01_probe-3A.imec0
     │       │   └── behav/
-    │       │       ├── sub-001_ses-001_camera_1.wav 
-    │       │       └── sub-001_ses-001_responses.csv 
+    │       │       ├── sub-001_ses-01_camera-01.wav 
+    │       │       └── sub-001_ses-01_data-responses.csv 
     │       └── histology/
-    │           └── brain_image.tiff
+    │           └── sub-001_image-brain.tiff
     └── derivatives/
-        └── sub-001/
-            ├── ses-001_id-5645332/
+        └── sub-001_id-5645332/
+            ├── ses-01_date-20230310/
             │   ├── ephys/
-            │   │   └── sub-001_ses-001_spike_sorted_data.mat
+            │   │   └── sub-001_ses-01_data-spikes.npy
             │   └── behav/
-            │       └── sub-001_ses-001_tracking_results.csv
+            │       └── sub-001_ses-01_data-poses.csv
             └── histology/
-                └── sub-001_ses-001_cell_counts.csv
+                └── sub-001_ses-01_data-cellcounts.csv
 </pre></div>
 </div>
 </section>
 </section>
 <section id="file-naming-conventions">
-<h2>File Naming Conventions<a class="headerlink" href="#file-naming-conventions" title="Permalink to this heading">#</a></h2>
-<p>File names are <em>recommended</em> to be formatted as set of key-value pairs ending with an <em>optional</em> suffix and <em>required</em> file extension (e.g. <code class="docutils literal notranslate"><span class="pre">sub-001_ses-001_date-20220516_retinotopy.ap.bin</span></code>).</p>
-<p>Key-value pairs should be separated by underscores while the keys and values are
-separated by hypens (e.g. <code class="docutils literal notranslate"><span class="pre">sub-001_ses-001_key1-value1_key2-value2.csv</span></code>). Key-value pairs may include the <em>recommended</em> <code class="docutils literal notranslate"><span class="pre">sub</span></code> or <code class="docutils literal notranslate"><span class="pre">ses</span></code> and additional <em>optional</em> information such as the task name, or run number e.g. <code class="docutils literal notranslate"><span class="pre">sub-001_ses-001_task-escape_run-001.csv</span></code></p>
-<p>The filename may also end in an <em>optional</em> suffix, indicating a logical grouping to which it belongs (e.g. <code class="docutils literal notranslate"><span class="pre">sub-001_ses-001_run-001_retinotopy.csv</span></code>).
-Anything after the left-most stop (<code class="docutils literal notranslate"><span class="pre">.</span></code>) is considered the file extension.</p>
-<p>If acquisition software outputs data with its own mandatory file naming convention, these are <em>recommended</em>
-to be placed in a folder with the BIDS specification name.</p>
-<p>e.g.</p>
+<h2>File naming conventions<a class="headerlink" href="#file-naming-conventions" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">SWC-Blueprint</span></code> imposes no absolute requirements on file names. That said, below we provide some recommendations for file names, based on the <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#filenames">BIDS specification</a>.</p>
+<div class="tip admonition">
+<p class="admonition-title">What makes a good file name?</p>
+<ul class="simple">
+<li><p>be nice to humans -&gt; readable and descriptive</p></li>
+<li><p>be nice to computers -&gt; parseable and consistent</p></li>
+<li><p>use alphanumeric characters <code class="docutils literal notranslate"><span class="pre">Aa-Zz,</span> <span class="pre">0-9</span></code>, dashes <code class="docutils literal notranslate"><span class="pre">-</span></code>, underscores <code class="docutils literal notranslate"><span class="pre">_</span></code></p></li>
+<li><p>avoid spaces and special characters</p></li>
+<li><p>use appropriate extensions for each file type (e.g. <code class="docutils literal notranslate"><span class="pre">.csv</span></code>, <code class="docutils literal notranslate"><span class="pre">.avi</span></code>, <code class="docutils literal notranslate"><span class="pre">.tiff</span></code>)</p></li>
+<li><p>don’t rely on capitalization to distinguish files (some operating systems are case-insensitive)</p></li>
+</ul>
+</div>
+<ul class="simple">
+<li><p>File names <em>should</em> be formatted as series of key-value pairs ending with a file extension:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">key1</span><span class="o">&gt;-&lt;</span><span class="n">value1</span><span class="o">&gt;</span><span class="n">_</span><span class="o">&lt;</span><span class="n">key2</span><span class="o">&gt;-&lt;</span><span class="n">value2</span><span class="o">&gt;</span><span class="n">_</span><span class="o">&lt;</span><span class="n">key3</span><span class="o">&gt;-&lt;</span><span class="n">value3</span><span class="o">&gt;...&lt;</span><span class="n">keyN</span><span class="o">&gt;-&lt;</span><span class="n">valueN</span><span class="o">&gt;.&lt;</span><span class="n">extension</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Key-value pairs <em>should</em> be separated by underscores while the keys and values are separated by hyphens (e.g. <code class="docutils literal notranslate"><span class="pre">sub-001_ses-001_key1-value1_key2-value2.csv</span></code>).</p></li>
+<li><p>Anything after the left-most stop (<code class="docutils literal notranslate"><span class="pre">.</span></code>) is considered as the file extension.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sub</span></code> and <code class="docutils literal notranslate"><span class="pre">ses</span></code> <em>should</em> be included in the filename. This can seem redundant, given that the file is already in a <code class="docutils literal notranslate"><span class="pre">sub-&lt;label&gt;/ses-&lt;label&gt;</span></code> folder, but it makes it easier to identify the file if it is moved out of its original folder.</p></li>
+<li><p>Additional information, such as the task name, or run number, <em>may</em> be included as further key-value pairs, e.g. <code class="docutils literal notranslate"><span class="pre">sub-001_ses-001_task-escape_run-001.csv</span></code></p></li>
+<li><p>If the acquisition software outputs data with its own mandatory file naming convention, these <em>should</em> be placed under a folder that follows the <code class="docutils literal notranslate"><span class="pre">SWC-Blueprint</span></code> naming conventions, e.g.:</p></li>
+</ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── my_project/
     └── rawdata/
         └── sub-001/
             └── ses-001/
                 └── behav/
-                    └── sub-001_ses-001_task-discrimination_video/
+                    └── sub-001_ses-001_task-discrimination_software-cooltool/
                         ├── required-software-output-name-3453234.mp4
                         └── required-software-output-name-3453235.mp4
 </pre></div>
 </div>
-<section id="example-project-structure">
-<h3>Example Project Structure<a class="headerlink" href="#example-project-structure" title="Permalink to this heading">#</a></h3>
+<section id="example-file-names">
+<h3>Example file names<a class="headerlink" href="#example-file-names" title="Permalink to this heading">#</a></h3>
+<p>Below we provide some example file names adhering to the <code class="docutils literal notranslate"><span class="pre">SWC-Blueprint</span></code> naming conventions.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── project/
-    └── sub-001/
-        └── ses-001/
-            ├── ephys/
-            │   ├── sub-001_ses-001_probe.imec0
-            │   ├── sub-001_ses-001_retinotopy.af.bin
-            │   ├── sub-001_ses-001_task-discrim_monitor-right_run-001.ap.bin
-            │   ├── sub-001_ses-001_task-discrim_monitor-left_run-001.ap.bin
-            │   └── sub-001_ses-001_task-discrim_monitor-left_run-002.ap.bin
-            └── behav/
-                ├── sub-001_ses-001_task-discrim_monitor-right_run-001.mp4
-                ├── sub-001_ses-001_task-discrim_monitor-left_run-001.mp4
-                └── sub-001_ses-001_task-discrim_monitor-right_run-002.mp4
+    └── rawdata/
+        └── sub-001/
+            └── ses-01/
+                ├── ephys/
+                │   ├── sub-01_ses-01_probe-3A.imec0
+                │   ├── sub-01_ses-01_task-retinotopy.lf.bin
+                │   ├── sub-01_ses-01_task-discrim_monitor-right_run-01.ap.bin
+                │   ├── sub-01_ses-01_task-discrim_monitor-left_run-01.ap.bin
+                │   └── sub-01_ses-01_task-discrim_monitor-left_run-02.ap.bin
+                └── behav/
+                    ├── sub-01_ses-01_task-discrim_monitor-right_run-01.mp4
+                    ├── sub-01_ses-01_task-discrim_monitor-left_run-01.mp4
+                    └── sub-01_ses-01_task-discrim_monitor-right_run-02.mp4
+</pre></div>
+</div>
+</section>
+</section>
+<section id="metadata-conventions">
+<h2>Metadata conventions<a class="headerlink" href="#metadata-conventions" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">SWC-Blueprint</span></code> imposes no absolute requirements on how to store metadata. That said, we do outline some best practices, in accordance with the <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#tabular-files">BIDS specification on tabular files</a>.</p>
+<section id="tabular-metadata">
+<h3>Tabular metadata<a class="headerlink" href="#tabular-metadata" title="Permalink to this heading">#</a></h3>
+<p>Tabular metadata, e.g. a table describing the animals in the project, <em>should</em> be saved as a tab-separated value file (TSV, ending with <code class="docutils literal notranslate"><span class="pre">.tsv</span></code>) , that is, a CSV file where commas are replaced by tabs. The tab character is a less ambiguous delimiter compared to commas, as it is less likely to appear in data. This makes TSV less prone to parsing errors.</p>
+<p>If you are using TSV files, we recommend adhering to the following conventions:</p>
+<ul class="simple">
+<li><p>The first row of the file <em>should</em> contain descriptive column names, formatted as snake_case (e.g. <code class="docutils literal notranslate"><span class="pre">participant_id</span></code>, <code class="docutils literal notranslate"><span class="pre">species</span></code>, <code class="docutils literal notranslate"><span class="pre">date_of_birth</span></code>, <code class="docutils literal notranslate"><span class="pre">sex</span></code>, <code class="docutils literal notranslate"><span class="pre">group</span></code>). Avoid blank (that is, an empty string) or duplicate columns names.</p></li>
+<li><p>Missing and non-applicable values <em>should</em> be coded as <code class="docutils literal notranslate"><span class="pre">n/a</span></code>.</p></li>
+<li><p>Numerical values <em>should</em> employ the dot (.) as decimal separator and <em>may</em> be specified in scientific notation, using e or E to separate the significand from the exponent (e.g. <code class="docutils literal notranslate"><span class="pre">1.23e-4</span></code>)</p></li>
+<li><p>TSV files <em>should</em> be in UTF-8 encoding.</p></li>
+</ul>
+<p>Here is an example table containing metadata for animal subjects:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">subject_id</span>  <span class="n">species</span>         <span class="n">sex</span>     <span class="n">group</span>
+<span class="n">sub</span><span class="o">-</span><span class="mi">01</span>      <span class="n">mus</span> <span class="n">musculus</span>    <span class="n">M</span>       <span class="n">control</span>
+<span class="n">sub</span><span class="o">-</span><span class="mi">02</span>      <span class="n">mus</span> <span class="n">musculus</span>    <span class="n">F</span>       <span class="n">control</span>
+<span class="n">sub</span><span class="o">-</span><span class="mi">03</span>      <span class="n">mus</span> <span class="n">musculus</span>    <span class="n">M</span>       <span class="n">treatment</span>
 </pre></div>
 </div>
 </section>
@@ -457,7 +551,10 @@ to be placed in a folder with the BIDS specification name.</p>
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="index.html"
@@ -465,10 +562,13 @@ to be placed in a folder with the BIDS specification name.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">SWC BIDS</p>
+        <p class="prev-next-title">SWC-Blueprint</p>
       </div>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -483,15 +583,20 @@ to be placed in a folder with the BIDS specification name.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-folder-structure">Project Folder Structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-folder-structure">Project folder structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-principles">Basic principles</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subject">Subject</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#session">Session</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datatype">Datatype</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-project-folder">Example project folder</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-naming-conventions">File Naming Conventions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-project-structure">Example Project Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-naming-conventions">File naming conventions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-file-names">Example file names</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-conventions">Metadata conventions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular-metadata">Tabular metadata</a></li>
 </ul>
 </li>
 </ul>
@@ -510,7 +615,7 @@ to be placed in a folder with the BIDS specification name.</p>
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner"></div>
+            
           </footer>
         
       </main>
@@ -518,8 +623,8 @@ to be placed in a folder with the BIDS specification name.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -533,7 +638,7 @@ Created using <a href="https://sphinx-doc.org/">Sphinx</a> 5.3.0.
 <p class="theme-version">
 Built with the
 <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
-0.13.1.
+0.13.3.
 </p></div>
       
     </div>
