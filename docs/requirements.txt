@@ -1,6 +1,7 @@
-sphinx>=5.0,<6.0
+sphinx
 pydata-sphinx-theme
 myst-parser
+sphinx-design
 numpydoc
 nbsphinx
 linkify-it-py
