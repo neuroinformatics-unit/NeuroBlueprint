@@ -13,18 +13,7 @@ Standardised project folders contain data that are hierarchically structured acc
 
 For example:
 
-```
-└── project/
-    ├── rawdata/
-    │   └── sub-<label>/
-    │       └── ses-<label>/
-    │           ├── <datatype-1>/
-    │           │   └── raw_data.file
-    │           └── <datatype-2>/
-    │               └── raw_data.file  
-    └── derivatives/
-        └── ...
-```
+![](_static/swc-blueprint_project-tree.png)
 
 ### Basic principles
 
