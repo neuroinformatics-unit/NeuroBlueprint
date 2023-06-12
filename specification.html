@@ -333,8 +333,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="the-specification">
 <h1>The specification<a class="headerlink" href="#the-specification" title="Permalink to this heading">#</a></h1>
-<p>The current version of <code class="docutils literal notranslate"><span class="pre">SWC-Blueprint</span></code> mainly aims to enforce a uniform and consistent <a class="reference internal" href="#project-folder-structure">project folder structure</a>.
-In addition, it also includes some non-mandatory conventions for <a class="reference internal" href="#file-naming-conventions">naming files</a> and storing <a class="reference internal" href="#tabular-metadata">tabular metadata</a>.</p>
+<p>The current version of <code class="docutils literal notranslate"><span class="pre">SWC-Blueprint</span></code> mainly aims to enforce a uniform and consistent <a class="reference internal" href="#project-folder-structure"><span class="std std-ref">project folder structure</span></a>.
+In addition, it also includes some non-mandatory conventions for <a class="reference internal" href="#file-naming-conventions"><span class="std std-ref">naming files</span></a> and storing <a class="reference internal" href="#tabular-metadata"><span class="std std-ref">tabular metadata</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>We mark requirements with italicised <em>keywords</em> that should be interpreted as described by the <a class="reference external" href="https://www.ietf.org/rfc/rfc2119.txt">Network Working Group</a>. In decreasing order of requirement, these are: <em>must</em> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-alert sd-text-danger" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path></svg>, <em>should</em> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-info sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>, and <em>may</em> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-check-circle sd-text-success" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM0 8a8 8 0 1116 0A8 8 0 010 8zm11.78-1.72a.75.75 0 00-1.06-1.06L6.75 9.19 5.28 7.72a.75.75 0 00-1.06 1.06l2 2a.75.75 0 001.06 0l4.5-4.5z"></path></svg>.</p>
@@ -343,18 +343,8 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
 <h2>Project folder structure<a class="headerlink" href="#project-folder-structure" title="Permalink to this heading">#</a></h2>
 <p>Standardised project folders contain data that are hierarchically structured according to the <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/02-common-principles.html">BIDS standard</a>.</p>
 <p>For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── project/
-    ├── rawdata/
-    │   └── sub-&lt;label&gt;/
-    │       └── ses-&lt;label&gt;/
-    │           ├── &lt;datatype-1&gt;/
-    │           │   └── raw_data.file
-    │           └── &lt;datatype-2&gt;/
-    │               └── raw_data.file  
-    └── derivatives/
-        └── ...
-</pre></div>
-</div>
+<img alt="SWC-Blueprint logo" class="only-light img-responsive" src="_images/swc-blueprint_project_tree_light.png" />
+<img alt="SWC-Blueprint logo" class="only-dark img-responsive" src="_images/swc-blueprint_project_tree_dark.png" />
 <section id="basic-principles">
 <h3>Basic principles<a class="headerlink" href="#basic-principles" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
@@ -629,7 +619,7 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
     <div class="footer-items__start">
       
         <div class="footer-item"><p class="sphinx-version">
-Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.2.1.
 <br/>
 </p>
 <p class="theme-version">
