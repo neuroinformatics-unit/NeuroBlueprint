@@ -13,7 +13,8 @@ Standardised project folders contain data that are hierarchically structured acc
 
 For example:
 
-![](_static/swc-blueprint_project-tree.png)
+<img src="_static/swc-blueprint_project_tree_light.png" alt="SWC-Blueprint logo" class="only-light img-responsive"/>
+<img src="_static/swc-blueprint_project_tree_dark.png" alt="SWC-Blueprint logo" class="only-dark img-responsive"/>
 
 ### Basic principles
 

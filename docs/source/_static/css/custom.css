@@ -21,3 +21,10 @@ justify-content: space-between;
   padding-bottom: 5px;
   padding-left: 5px;
 }
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 5px auto;
+}

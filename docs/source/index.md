@@ -1,6 +1,7 @@
 # SWC-Blueprint
 
-![](_static/swc-blueprint_logo_web.png)
+<img src="_static/swc-blueprint_logo-light_no-text.png" alt="SWC-Blueprint logo" class="only-light img-responsive"/>
+<img src="_static/swc-blueprint_logo-dark_no-text.png" alt="SWC-Blueprint logo" class="only-dark img-responsive"/>
 
 
 `SWC-Blueprint` is a project folder structure specification designed for the [Sainsbury Wellcome Centre (SWC) for Neural Circuits and Behaviour](https://www.sainsburywellcome.org/).
