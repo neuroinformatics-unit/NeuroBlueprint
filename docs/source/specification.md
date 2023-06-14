@@ -1,6 +1,6 @@
 # The specification
 
-The current version of `SWC-Blueprint` mainly aims to enforce a uniform and consistent [project folder structure](#project-folder-structure).
+The current version of **SWC-Blueprint** mainly aims to enforce a uniform and consistent [project folder structure](#project-folder-structure).
 In addition, it also includes some non-mandatory conventions for [naming files](#file-naming-conventions) and storing [tabular metadata](#tabular-metadata).
 
 :::{note}
@@ -26,13 +26,13 @@ For example:
 
   * `derivatives`: any processed data that is derived from `rawdata` (e.g. spike sorting or pose estimation).
 
-* Data within the `rawdata` folder *must* be hierarchically structured into `subject/session/datatype` levels. Each level *must* contain at least one folder corresponding to the next (lower) level.
+* Data within the `rawdata` folder *must* be hierarchically structured into subject/session/datatype levels. Each level *must* contain at least one folder corresponding to the next (lower) level.
 
-* `subject` and `session` folder names *must* consist of key-value pairs separated by underscores, withous spaces e.g. `sub-001_id-5645332`.
+* Subject and session folder names *must* consist of key-value pairs separated by underscores, withous spaces e.g. `sub-001_id-5645332`.
 
-* `datatype` folder names *must* be one of the following : `ephys`, `behav`, `funcimg`, `histology`.
+* Datatype folder names *must* be one of the following : `ephys`, `behav`, `funcimg`, `histology`.
 
-* If collected, `ephys`, `behav`, `funcimg` *must* be placed under the `session` level. If collected, `histology` *must* be placed under the `subject` level. 
+* If collected, `ephys`, `behav`, `funcimg` *must* be placed under the session level. If collected, `histology` *must* be placed under the subject level. 
 
 Below we describe each level of the `rawdata` folder hierarchy in more detail. Though we impose no absolute requirements for the folder structure within `derivatives`, it *should* match the hierarchy in `rawdata` whenever possible.
 
@@ -78,7 +78,7 @@ The following datatypes are supported:
 * `histology`: anatomical (e.g. serial-2-photon images)
 
 :::{note}
-Unlike the first three `datatypes` that belong at the `session` level, `histology` belongs at the `subject` level.
+Unlike the first three datatypes that belong at the session level, `histology` belongs at the subject level.
 :::
 
 ### Example project folder
@@ -110,7 +110,7 @@ A real project folder might look like:
 
 ## File naming conventions
 
-`SWC-Blueprint` imposes no absolute requirements on file names. That said, below we provide some recommendations for file names, based on the [BIDS specification](https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#filenames).
+**SWC-Blueprint** imposes no absolute requirements on file names. That said, below we provide some recommendations for file names, based on the [BIDS specification](https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#filenames).
 
 :::{admonition} What makes a good file name?
 :class: tip
@@ -130,7 +130,7 @@ A real project folder might look like:
 * Anything after the left-most stop (`.`) is considered as the file extension.
 * `sub` and `ses` *should* be included in the filename. This can seem redundant, given that the file is already in a `sub-<label>/ses-<label>` folder, but it makes it easier to identify the file if it is moved out of its original folder.
 * Additional information, such as the task name, or run number, *may* be included as further key-value pairs, e.g. `sub-001_ses-001_task-escape_run-001.csv`
-* If the acquisition software outputs data with its own mandatory file naming convention, these *should* be placed under a folder that follows the `SWC-Blueprint` naming conventions, e.g.:
+* If the acquisition software outputs data with its own mandatory file naming convention, these *should* be placed under a folder that follows the **SWC-Blueprint** naming conventions, e.g.:
 
 ```
 └── my_project/
@@ -144,7 +144,7 @@ A real project folder might look like:
 ```
 
 ### Example file names
-Below we provide some example file names adhering to the `SWC-Blueprint` naming conventions.
+Below we provide some example file names adhering to the **SWC-Blueprint** naming conventions.
 
 ```
 └── project/
@@ -165,7 +165,7 @@ Below we provide some example file names adhering to the `SWC-Blueprint` naming 
 
 ## Metadata conventions
 
-`SWC-Blueprint` imposes no absolute requirements on how to store metadata. That said, we do outline some best practices, in accordance with the [BIDS specification on tabular files](https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#tabular-files).
+**SWC-Blueprint** imposes no absolute requirements on how to store metadata. That said, we do outline some best practices, in accordance with the [BIDS specification on tabular files](https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#tabular-files).
 
 ### Tabular metadata
 Tabular metadata, e.g. a table describing the animals in the project, *should* be saved as a tab-separated value file (TSV, ending with `.tsv`) , that is, a CSV file where commas are replaced by tabs. The tab character is a less ambiguous delimiter compared to commas, as it is less likely to appear in data. This makes TSV less prone to parsing errors.
