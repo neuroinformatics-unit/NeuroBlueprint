@@ -333,7 +333,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="the-specification">
 <h1>The specification<a class="headerlink" href="#the-specification" title="Permalink to this heading">#</a></h1>
-<p>The current version of <code class="docutils literal notranslate"><span class="pre">SWC-Blueprint</span></code> mainly aims to enforce a uniform and consistent <a class="reference internal" href="#project-folder-structure"><span class="std std-ref">project folder structure</span></a>.
+<p>The current version of <strong>SWC-Blueprint</strong> mainly aims to enforce a uniform and consistent <a class="reference internal" href="#project-folder-structure"><span class="std std-ref">project folder structure</span></a>.
 In addition, it also includes some non-mandatory conventions for <a class="reference internal" href="#file-naming-conventions"><span class="std std-ref">naming files</span></a> and storing <a class="reference internal" href="#tabular-metadata"><span class="std std-ref">tabular metadata</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -355,10 +355,10 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
 <li><p><code class="docutils literal notranslate"><span class="pre">derivatives</span></code>: any processed data that is derived from <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> (e.g. spike sorting or pose estimation).</p></li>
 </ul>
 </li>
-<li><p>Data within the <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> folder <em>must</em> be hierarchically structured into <code class="docutils literal notranslate"><span class="pre">subject/session/datatype</span></code> levels. Each level <em>must</em> contain at least one folder corresponding to the next (lower) level.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">subject</span></code> and <code class="docutils literal notranslate"><span class="pre">session</span></code> folder names <em>must</em> consist of key-value pairs separated by underscores, withous spaces e.g. <code class="docutils literal notranslate"><span class="pre">sub-001_id-5645332</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">datatype</span></code> folder names <em>must</em> be one of the following : <code class="docutils literal notranslate"><span class="pre">ephys</span></code>, <code class="docutils literal notranslate"><span class="pre">behav</span></code>, <code class="docutils literal notranslate"><span class="pre">funcimg</span></code>, <code class="docutils literal notranslate"><span class="pre">histology</span></code>.</p></li>
-<li><p>If collected, <code class="docutils literal notranslate"><span class="pre">ephys</span></code>, <code class="docutils literal notranslate"><span class="pre">behav</span></code>, <code class="docutils literal notranslate"><span class="pre">funcimg</span></code> <em>must</em> be placed under the <code class="docutils literal notranslate"><span class="pre">session</span></code> level. If collected, <code class="docutils literal notranslate"><span class="pre">histology</span></code> <em>must</em> be placed under the <code class="docutils literal notranslate"><span class="pre">subject</span></code> level.</p></li>
+<li><p>Data within the <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> folder <em>must</em> be hierarchically structured into subject/session/datatype levels. Each level <em>must</em> contain at least one folder corresponding to the next (lower) level.</p></li>
+<li><p>Subject and session folder names <em>must</em> consist of key-value pairs separated by underscores, without spaces e.g. <code class="docutils literal notranslate"><span class="pre">sub-001_id-5645332</span></code>.</p></li>
+<li><p>Datatype folder names <em>must</em> be one of the following : <code class="docutils literal notranslate"><span class="pre">ephys</span></code>, <code class="docutils literal notranslate"><span class="pre">behav</span></code>, <code class="docutils literal notranslate"><span class="pre">funcimg</span></code>, <code class="docutils literal notranslate"><span class="pre">histology</span></code>.</p></li>
+<li><p>If collected, <code class="docutils literal notranslate"><span class="pre">ephys</span></code>, <code class="docutils literal notranslate"><span class="pre">behav</span></code>, <code class="docutils literal notranslate"><span class="pre">funcimg</span></code> <em>must</em> be placed under the session level. If collected, <code class="docutils literal notranslate"><span class="pre">histology</span></code> <em>must</em> be placed under the subject level.</p></li>
 </ul>
 <p>Below we describe each level of the <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> folder hierarchy in more detail. Though we impose no absolute requirements for the folder structure within <code class="docutils literal notranslate"><span class="pre">derivatives</span></code>, it <em>should</em> match the hierarchy in <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> whenever possible.</p>
 </section>
@@ -419,7 +419,7 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Unlike the first three <code class="docutils literal notranslate"><span class="pre">datatypes</span></code> that belong at the <code class="docutils literal notranslate"><span class="pre">session</span></code> level, <code class="docutils literal notranslate"><span class="pre">histology</span></code> belongs at the <code class="docutils literal notranslate"><span class="pre">subject</span></code> level.</p>
+<p>Unlike the first three datatypes that belong at the session level, <code class="docutils literal notranslate"><span class="pre">histology</span></code> belongs at the subject level.</p>
 </div>
 </section>
 <section id="example-project-folder">
@@ -452,7 +452,7 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
 </section>
 <section id="file-naming-conventions">
 <h2>File naming conventions<a class="headerlink" href="#file-naming-conventions" title="Permalink to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">SWC-Blueprint</span></code> imposes no absolute requirements on file names. That said, below we provide some recommendations for file names, based on the <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#filenames">BIDS specification</a>.</p>
+<p><strong>SWC-Blueprint</strong> imposes no absolute requirements on file names. That said, below we provide some recommendations for file names, based on the <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#filenames">BIDS specification</a>.</p>
 <div class="tip admonition">
 <p class="admonition-title">What makes a good file name?</p>
 <ul class="simple">
@@ -475,7 +475,7 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
 <li><p>Anything after the left-most stop (<code class="docutils literal notranslate"><span class="pre">.</span></code>) is considered as the file extension.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">sub</span></code> and <code class="docutils literal notranslate"><span class="pre">ses</span></code> <em>should</em> be included in the filename. This can seem redundant, given that the file is already in a <code class="docutils literal notranslate"><span class="pre">sub-&lt;label&gt;/ses-&lt;label&gt;</span></code> folder, but it makes it easier to identify the file if it is moved out of its original folder.</p></li>
 <li><p>Additional information, such as the task name, or run number, <em>may</em> be included as further key-value pairs, e.g. <code class="docutils literal notranslate"><span class="pre">sub-001_ses-001_task-escape_run-001.csv</span></code></p></li>
-<li><p>If the acquisition software outputs data with its own mandatory file naming convention, these <em>should</em> be placed under a folder that follows the <code class="docutils literal notranslate"><span class="pre">SWC-Blueprint</span></code> naming conventions, e.g.:</p></li>
+<li><p>If the acquisition software outputs data with its own mandatory file naming convention, these <em>should</em> be placed under a folder that follows the <strong>SWC-Blueprint</strong> naming conventions, e.g.:</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── my_project/
     └── rawdata/
@@ -489,7 +489,7 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
 </div>
 <section id="example-file-names">
 <h3>Example file names<a class="headerlink" href="#example-file-names" title="Permalink to this heading">#</a></h3>
-<p>Below we provide some example file names adhering to the <code class="docutils literal notranslate"><span class="pre">SWC-Blueprint</span></code> naming conventions.</p>
+<p>Below we provide some example file names adhering to the <strong>SWC-Blueprint</strong> naming conventions.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── project/
     └── rawdata/
         └── sub-001/
@@ -510,7 +510,7 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
 </section>
 <section id="metadata-conventions">
 <h2>Metadata conventions<a class="headerlink" href="#metadata-conventions" title="Permalink to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">SWC-Blueprint</span></code> imposes no absolute requirements on how to store metadata. That said, we do outline some best practices, in accordance with the <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#tabular-files">BIDS specification on tabular files</a>.</p>
+<p><strong>SWC-Blueprint</strong> imposes no absolute requirements on how to store metadata. That said, we do outline some best practices, in accordance with the <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#tabular-files">BIDS specification on tabular files</a>.</p>
 <section id="tabular-metadata">
 <h3>Tabular metadata<a class="headerlink" href="#tabular-metadata" title="Permalink to this heading">#</a></h3>
 <p>Tabular metadata, e.g. a table describing the animals in the project, <em>should</em> be saved as a tab-separated value file (TSV, ending with <code class="docutils literal notranslate"><span class="pre">.tsv</span></code>) , that is, a CSV file where commas are replaced by tabs. The tab character is a less ambiguous delimiter compared to commas, as it is less likely to appear in data. This makes TSV less prone to parsing errors.</p>
