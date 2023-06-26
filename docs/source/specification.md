@@ -28,7 +28,7 @@ For example:
 
 * Data within the `rawdata` folder *must* be hierarchically structured into subject/session/datatype levels. Each level *must* contain at least one folder corresponding to the next (lower) level.
 
-* Subject and session folder names *must* consist of key-value pairs separated by underscores, withous spaces e.g. `sub-001_id-5645332`.
+* Subject and session folder names *must* consist of key-value pairs separated by underscores, without spaces e.g. `sub-001_id-5645332`.
 
 * Datatype folder names *must* be one of the following : `ephys`, `behav`, `funcimg`, `histology`.
 
