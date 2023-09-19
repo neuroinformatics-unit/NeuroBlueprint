@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>The specification &#8212; SWC-Blueprint</title>
   
@@ -19,28 +18,29 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=1015aea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/documentation_options.js?v=38b66d78"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'specification';</script>
     <link rel="canonical" href="https://swc-blueprint.neuroinformatics.dev/specification.html" />
@@ -58,6 +58,15 @@
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -98,7 +107,8 @@
     <span class="fa-solid fa-bars"></span>
   </label>
   
-  <div class="navbar-header-items__start">
+  
+  <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
   
@@ -122,7 +132,6 @@
 </a></div>
     
   </div>
-  
   
   <div class="col-lg-9 navbar-header-items">
     
@@ -153,23 +162,25 @@
       
         <div class="navbar-item navbar-persistent--container">
           
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__kbd-shortcut">Search</span>
+    <span><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
         </div>
       
       
         <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -185,8 +196,8 @@ document.write(`
           
           
           
-          <a href="https://github.com/neuroinformatics-unit/SWC-Blueprint" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a href="https://github.com/neuroinformatics-unit/SWC-Blueprint" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
       
@@ -196,18 +207,20 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__kbd-shortcut">Search</span>
+    <span><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
     </div>
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
       <span class="fa-solid fa-outdent"></span>
     </label>
   
@@ -254,10 +267,10 @@ document.write(`
           <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -273,8 +286,8 @@ document.write(`
           
           
           
-          <a href="https://github.com/neuroinformatics-unit/SWC-Blueprint" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a href="https://github.com/neuroinformatics-unit/SWC-Blueprint" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
         
@@ -306,8 +319,8 @@ document.write(`
 
 
 
-<nav aria-label="Breadcrumbs">
-  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
       <a href="index.html" class="nav-link" aria-label="Home">
@@ -332,7 +345,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="the-specification">
-<h1>The specification<a class="headerlink" href="#the-specification" title="Permalink to this heading">#</a></h1>
+<h1>The specification<a class="headerlink" href="#the-specification" title="Link to this heading">#</a></h1>
 <p>The current version of <strong>SWC-Blueprint</strong> mainly aims to enforce a uniform and consistent <a class="reference internal" href="#project-folder-structure"><span class="std std-ref">project folder structure</span></a>.
 In addition, it also includes some non-mandatory conventions for <a class="reference internal" href="#file-naming-conventions"><span class="std std-ref">naming files</span></a> and storing <a class="reference internal" href="#tabular-metadata"><span class="std std-ref">tabular metadata</span></a>.</p>
 <div class="admonition note">
@@ -340,13 +353,13 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
 <p>We mark requirements with italicised <em>keywords</em> that should be interpreted as described by the <a class="reference external" href="https://www.ietf.org/rfc/rfc2119.txt">Network Working Group</a>. In decreasing order of requirement, these are: <em>must</em> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-alert sd-text-danger" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path></svg>, <em>should</em> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-info sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>, and <em>may</em> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-check-circle sd-text-success" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM0 8a8 8 0 1116 0A8 8 0 010 8zm11.78-1.72a.75.75 0 00-1.06-1.06L6.75 9.19 5.28 7.72a.75.75 0 00-1.06 1.06l2 2a.75.75 0 001.06 0l4.5-4.5z"></path></svg>.</p>
 </div>
 <section id="project-folder-structure">
-<h2>Project folder structure<a class="headerlink" href="#project-folder-structure" title="Permalink to this heading">#</a></h2>
+<h2>Project folder structure<a class="headerlink" href="#project-folder-structure" title="Link to this heading">#</a></h2>
 <p>Standardised project folders contain data that are hierarchically structured according to the <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/02-common-principles.html">BIDS standard</a>.</p>
 <p>For example:</p>
 <img alt="SWC-Blueprint logo" class="only-light img-responsive" src="_images/swc-blueprint_project_tree_light.png" />
 <img alt="SWC-Blueprint logo" class="only-dark img-responsive" src="_images/swc-blueprint_project_tree_dark.png" />
 <section id="basic-principles">
-<h3>Basic principles<a class="headerlink" href="#basic-principles" title="Permalink to this heading">#</a></h3>
+<h3>Basic principles<a class="headerlink" href="#basic-principles" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>The project folder <em>may</em> have any name descriptive of the project, but it <em>must</em> be without spaces.</p></li>
 <li><p>Within the project folder, data <em>must</em> be separated into <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> and <code class="docutils literal notranslate"><span class="pre">derivatives</span></code>.</p>
@@ -363,7 +376,7 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
 <p>Below we describe each level of the <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> folder hierarchy in more detail. Though we impose no absolute requirements for the folder structure within <code class="docutils literal notranslate"><span class="pre">derivatives</span></code>, it <em>should</em> match the hierarchy in <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> whenever possible.</p>
 </section>
 <section id="subject">
-<h3>Subject<a class="headerlink" href="#subject" title="Permalink to this heading">#</a></h3>
+<h3>Subject<a class="headerlink" href="#subject" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Each subject <em>must</em> have exactly one subject-level folder.</p></li>
 <li><p>Subject-level folders <em>must</em> be prefixed with a key-value pair that is unique for each subject. The key <em>must</em> be <code class="docutils literal notranslate"><span class="pre">sub</span></code> and the value <em>must</em> be numerical, e.g. <code class="docutils literal notranslate"><span class="pre">sub-001</span></code>.</p></li>
@@ -385,7 +398,7 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
 </div>
 </section>
 <section id="session">
-<h3>Session<a class="headerlink" href="#session" title="Permalink to this heading">#</a></h3>
+<h3>Session<a class="headerlink" href="#session" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Each session <em>must</em> have exactly one session-level folder.</p></li>
 <li><p>Session-level folders <em>must</em> be prefixed with a key-value pair that is unique for each session. The key <em>must</em> be <code class="docutils literal notranslate"><span class="pre">ses</span></code> and the value <em>must</em> be numerical, e.g. <code class="docutils literal notranslate"><span class="pre">ses-01</span></code>.</p></li>
@@ -409,7 +422,7 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
 </div>
 </section>
 <section id="datatype">
-<h3>Datatype<a class="headerlink" href="#datatype" title="Permalink to this heading">#</a></h3>
+<h3>Datatype<a class="headerlink" href="#datatype" title="Link to this heading">#</a></h3>
 <p>The following datatypes are supported:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ephys</span></code>: electrophysiology (e.g. Neuropixel probes, tetrodes)</p></li>
@@ -423,7 +436,7 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
 </div>
 </section>
 <section id="example-project-folder">
-<h3>Example project folder<a class="headerlink" href="#example-project-folder" title="Permalink to this heading">#</a></h3>
+<h3>Example project folder<a class="headerlink" href="#example-project-folder" title="Link to this heading">#</a></h3>
 <p>A real project folder might look like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── project/
     ├── rawdata/
@@ -433,8 +446,8 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
     │       │   │   ├── sub-001_ses-01_recording-01.bin
     │       │   │   └── sub-001_ses-01_probe-3A.imec0
     │       │   └── behav/
-    │       │       ├── sub-001_ses-01_camera-01.wav 
-    │       │       └── sub-001_ses-01_data-responses.csv 
+    │       │       ├── sub-001_ses-01_camera-01.wav
+    │       │       └── sub-001_ses-01_data-responses.csv
     │       └── histology/
     │           └── sub-001_image-brain.tiff
     └── derivatives/
@@ -451,7 +464,7 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
 </section>
 </section>
 <section id="file-naming-conventions">
-<h2>File naming conventions<a class="headerlink" href="#file-naming-conventions" title="Permalink to this heading">#</a></h2>
+<h2>File naming conventions<a class="headerlink" href="#file-naming-conventions" title="Link to this heading">#</a></h2>
 <p><strong>SWC-Blueprint</strong> imposes no absolute requirements on file names. That said, below we provide some recommendations for file names, based on the <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#filenames">BIDS specification</a>.</p>
 <div class="tip admonition">
 <p class="admonition-title">What makes a good file name?</p>
@@ -488,7 +501,7 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
 </pre></div>
 </div>
 <section id="example-file-names">
-<h3>Example file names<a class="headerlink" href="#example-file-names" title="Permalink to this heading">#</a></h3>
+<h3>Example file names<a class="headerlink" href="#example-file-names" title="Link to this heading">#</a></h3>
 <p>Below we provide some example file names adhering to the <strong>SWC-Blueprint</strong> naming conventions.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── project/
     └── rawdata/
@@ -509,10 +522,10 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
 </section>
 </section>
 <section id="metadata-conventions">
-<h2>Metadata conventions<a class="headerlink" href="#metadata-conventions" title="Permalink to this heading">#</a></h2>
+<h2>Metadata conventions<a class="headerlink" href="#metadata-conventions" title="Link to this heading">#</a></h2>
 <p><strong>SWC-Blueprint</strong> imposes no absolute requirements on how to store metadata. That said, we do outline some best practices, in accordance with the <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#tabular-files">BIDS specification on tabular files</a>.</p>
 <section id="tabular-metadata">
-<h3>Tabular metadata<a class="headerlink" href="#tabular-metadata" title="Permalink to this heading">#</a></h3>
+<h3>Tabular metadata<a class="headerlink" href="#tabular-metadata" title="Link to this heading">#</a></h3>
 <p>Tabular metadata, e.g. a table describing the animals in the project, <em>should</em> be saved as a tab-separated value file (TSV, ending with <code class="docutils literal notranslate"><span class="pre">.tsv</span></code>) , that is, a CSV file where commas are replaced by tabs. The tab character is a less ambiguous delimiter compared to commas, as it is less likely to appear in data. This makes TSV less prone to parsing errors.</p>
 <p>If you are using TSV files, we recommend adhering to the following conventions:</p>
 <ul class="simple">
@@ -537,11 +550,10 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
               
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="index.html"
@@ -552,10 +564,7 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
         <p class="prev-next-title">SWC-Blueprint</p>
       </div>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -610,8 +619,8 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -619,16 +628,17 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
     <div class="footer-items__start">
       
         <div class="footer-item"><p class="sphinx-version">
-Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.2.1.
+Created using <a href="https://sphinx-doc.org/">Sphinx</a> 7.2.6.
 <br/>
 </p>
 <p class="theme-version">
 Built with the
 <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
-0.13.3.
+0.14.0.
 </p></div>
       
     </div>
+  
   
   
     <div class="footer-items__end">
