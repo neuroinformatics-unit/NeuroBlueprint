@@ -15,8 +15,20 @@ on:
   workflow_dispatch:
 
 jobs:
+  codespell:
+    name: Check for spelling errors
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Codespell
+        uses: codespell-project/actions-codespell@v2
+
   build_sphinx_docs:
     name: Build Sphinx Docs
+    needs: codespell
     runs-on: ubuntu-latest
     steps:
       - uses: neuroinformatics-unit/actions/build_sphinx_docs@v2

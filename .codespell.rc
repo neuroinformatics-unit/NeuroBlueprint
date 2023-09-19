@@ -1,0 +1,2 @@
+[codespell]
+skip = .git,*.pdf,*.svg,./docs/build
