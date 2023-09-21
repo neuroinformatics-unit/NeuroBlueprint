@@ -1,6 +1,6 @@
 # The specification
 
-The current version of **SWC-Blueprint** mainly aims to enforce a uniform and consistent [project folder structure](#project-folder-structure).
+The current version of **NeuroBlueprint** mainly aims to enforce a uniform and consistent [project folder structure](#project-folder-structure).
 In addition, it also includes some non-mandatory conventions for [naming files](#file-naming-conventions) and storing [tabular metadata](#tabular-metadata).
 
 :::{note}
@@ -13,8 +13,8 @@ Standardised project folders contain data that are hierarchically structured acc
 
 For example:
 
-<img src="_static/swc-blueprint_project_tree_light.png" alt="SWC-Blueprint logo" class="only-light img-responsive"/>
-<img src="_static/swc-blueprint_project_tree_dark.png" alt="SWC-Blueprint logo" class="only-dark img-responsive"/>
+<img src="_static/NeuroBlueprint_project_tree_light.png" alt="NeuroBlueprint logo" class="only-light img-responsive"/>
+<img src="_static/NeuroBlueprint_project_tree_dark.png" alt="NeuroBlueprint logo" class="only-dark img-responsive"/>
 
 ### Basic principles
 
@@ -110,7 +110,7 @@ A real project folder might look like:
 
 ## File naming conventions
 
-**SWC-Blueprint** imposes no absolute requirements on file names. That said, below we provide some recommendations for file names, based on the [BIDS specification](https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#filenames).
+**NeuroBlueprint** imposes no absolute requirements on file names. That said, below we provide some recommendations for file names, based on the [BIDS specification](https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#filenames).
 
 :::{admonition} What makes a good file name?
 :class: tip
@@ -130,7 +130,7 @@ A real project folder might look like:
 * Anything after the left-most stop (`.`) is considered as the file extension.
 * `sub` and `ses` *should* be included in the filename. This can seem redundant, given that the file is already in a `sub-<label>/ses-<label>` folder, but it makes it easier to identify the file if it is moved out of its original folder.
 * Additional information, such as the task name, or run number, *may* be included as further key-value pairs, e.g. `sub-001_ses-001_task-escape_run-001.csv`
-* If the acquisition software outputs data with its own mandatory file naming convention, these *should* be placed under a folder that follows the **SWC-Blueprint** naming conventions, e.g.:
+* If the acquisition software outputs data with its own mandatory file naming convention, these *should* be placed under a folder that follows the **NeuroBlueprint** naming conventions, e.g.:
 
 ```
 └── my_project/
@@ -144,7 +144,7 @@ A real project folder might look like:
 ```
 
 ### Example file names
-Below we provide some example file names adhering to the **SWC-Blueprint** naming conventions.
+Below we provide some example file names adhering to the **NeuroBlueprint** naming conventions.
 
 ```
 └── project/
@@ -165,7 +165,7 @@ Below we provide some example file names adhering to the **SWC-Blueprint** namin
 
 ## Metadata conventions
 
-**SWC-Blueprint** imposes no absolute requirements on how to store metadata. That said, we do outline some best practices, in accordance with the [BIDS specification on tabular files](https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#tabular-files).
+**NeuroBlueprint** imposes no absolute requirements on how to store metadata. That said, we do outline some best practices, in accordance with the [BIDS specification on tabular files](https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#tabular-files).
 
 ### Tabular metadata
 Tabular metadata, e.g. a table describing the animals in the project, *should* be saved as a tab-separated value file (TSV, ending with `.tsv`) , that is, a CSV file where commas are replaced by tabs. The tab character is a less ambiguous delimiter compared to commas, as it is less likely to appear in data. This makes TSV less prone to parsing errors.
