@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>The specification &#8212; SWC-Blueprint</title>
+    <title>The specification &#8212; NeuroBlueprint</title>
   
   
   
@@ -18,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -33,9 +33,9 @@
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=1015aea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script src="_static/documentation_options.js?v=38b66d78"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
@@ -43,11 +43,11 @@
     <script src="_static/design-tabs.js?v=36754332"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'specification';</script>
-    <link rel="canonical" href="https://swc-blueprint.neuroinformatics.dev/specification.html" />
+    <link rel="canonical" href="https://neuroblueprint.neuroinformatics.dev/specification.html" />
     <link rel="icon" href="_static/logo_light.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="SWC-Blueprint" href="index.html" />
+    <link rel="prev" title="NeuroBlueprint" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -127,7 +127,7 @@
     <script>document.write(`<img src="_static/logo_dark.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
-    <p class="title logo__title">SWC-Blueprint v0.1.0</p>
+    <p class="title logo__title">NeuroBlueprint v0.1.0</p>
   
 </a></div>
     
@@ -166,8 +166,8 @@
  document.write(`
    <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__kbd-shortcut">Search</span>
-    <span><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
    </button>
  `);
  </script>
@@ -196,7 +196,7 @@ document.write(`
           
           
           
-          <a href="https://github.com/neuroinformatics-unit/SWC-Blueprint" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+          <a href="https://github.com/neuroinformatics-unit/NeuroBlueprint" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
             <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
@@ -211,8 +211,8 @@ document.write(`
  document.write(`
    <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__kbd-shortcut">Search</span>
-    <span><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
    </button>
  `);
  </script>
@@ -286,7 +286,7 @@ document.write(`
           
           
           
-          <a href="https://github.com/neuroinformatics-unit/SWC-Blueprint" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+          <a href="https://github.com/neuroinformatics-unit/NeuroBlueprint" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
             <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
@@ -346,7 +346,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="the-specification">
 <h1>The specification<a class="headerlink" href="#the-specification" title="Link to this heading">#</a></h1>
-<p>The current version of <strong>SWC-Blueprint</strong> mainly aims to enforce a uniform and consistent <a class="reference internal" href="#project-folder-structure"><span class="std std-ref">project folder structure</span></a>.
+<p>The current version of <strong>NeuroBlueprint</strong> mainly aims to enforce a uniform and consistent <a class="reference internal" href="#project-folder-structure"><span class="std std-ref">project folder structure</span></a>.
 In addition, it also includes some non-mandatory conventions for <a class="reference internal" href="#file-naming-conventions"><span class="std std-ref">naming files</span></a> and storing <a class="reference internal" href="#tabular-metadata"><span class="std std-ref">tabular metadata</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -356,8 +356,8 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
 <h2>Project folder structure<a class="headerlink" href="#project-folder-structure" title="Link to this heading">#</a></h2>
 <p>Standardised project folders contain data that are hierarchically structured according to the <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/02-common-principles.html">BIDS standard</a>.</p>
 <p>For example:</p>
-<img alt="SWC-Blueprint logo" class="only-light img-responsive" src="_images/swc-blueprint_project_tree_light.png" />
-<img alt="SWC-Blueprint logo" class="only-dark img-responsive" src="_images/swc-blueprint_project_tree_dark.png" />
+<img alt="NeuroBlueprint logo" class="only-light img-responsive" src="_images/NeuroBlueprint_project_tree_light.png" />
+<img alt="NeuroBlueprint logo" class="only-dark img-responsive" src="_images/NeuroBlueprint_project_tree_dark.png" />
 <section id="basic-principles">
 <h3>Basic principles<a class="headerlink" href="#basic-principles" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -465,7 +465,7 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
 </section>
 <section id="file-naming-conventions">
 <h2>File naming conventions<a class="headerlink" href="#file-naming-conventions" title="Link to this heading">#</a></h2>
-<p><strong>SWC-Blueprint</strong> imposes no absolute requirements on file names. That said, below we provide some recommendations for file names, based on the <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#filenames">BIDS specification</a>.</p>
+<p><strong>NeuroBlueprint</strong> imposes no absolute requirements on file names. That said, below we provide some recommendations for file names, based on the <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#filenames">BIDS specification</a>.</p>
 <div class="tip admonition">
 <p class="admonition-title">What makes a good file name?</p>
 <ul class="simple">
@@ -488,7 +488,7 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
 <li><p>Anything after the left-most stop (<code class="docutils literal notranslate"><span class="pre">.</span></code>) is considered as the file extension.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">sub</span></code> and <code class="docutils literal notranslate"><span class="pre">ses</span></code> <em>should</em> be included in the filename. This can seem redundant, given that the file is already in a <code class="docutils literal notranslate"><span class="pre">sub-&lt;label&gt;/ses-&lt;label&gt;</span></code> folder, but it makes it easier to identify the file if it is moved out of its original folder.</p></li>
 <li><p>Additional information, such as the task name, or run number, <em>may</em> be included as further key-value pairs, e.g. <code class="docutils literal notranslate"><span class="pre">sub-001_ses-001_task-escape_run-001.csv</span></code></p></li>
-<li><p>If the acquisition software outputs data with its own mandatory file naming convention, these <em>should</em> be placed under a folder that follows the <strong>SWC-Blueprint</strong> naming conventions, e.g.:</p></li>
+<li><p>If the acquisition software outputs data with its own mandatory file naming convention, these <em>should</em> be placed under a folder that follows the <strong>NeuroBlueprint</strong> naming conventions, e.g.:</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── my_project/
     └── rawdata/
@@ -502,7 +502,7 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
 </div>
 <section id="example-file-names">
 <h3>Example file names<a class="headerlink" href="#example-file-names" title="Link to this heading">#</a></h3>
-<p>Below we provide some example file names adhering to the <strong>SWC-Blueprint</strong> naming conventions.</p>
+<p>Below we provide some example file names adhering to the <strong>NeuroBlueprint</strong> naming conventions.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── project/
     └── rawdata/
         └── sub-001/
@@ -523,7 +523,7 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
 </section>
 <section id="metadata-conventions">
 <h2>Metadata conventions<a class="headerlink" href="#metadata-conventions" title="Link to this heading">#</a></h2>
-<p><strong>SWC-Blueprint</strong> imposes no absolute requirements on how to store metadata. That said, we do outline some best practices, in accordance with the <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#tabular-files">BIDS specification on tabular files</a>.</p>
+<p><strong>NeuroBlueprint</strong> imposes no absolute requirements on how to store metadata. That said, we do outline some best practices, in accordance with the <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#tabular-files">BIDS specification on tabular files</a>.</p>
 <section id="tabular-metadata">
 <h3>Tabular metadata<a class="headerlink" href="#tabular-metadata" title="Link to this heading">#</a></h3>
 <p>Tabular metadata, e.g. a table describing the animals in the project, <em>should</em> be saved as a tab-separated value file (TSV, ending with <code class="docutils literal notranslate"><span class="pre">.tsv</span></code>) , that is, a CSV file where commas are replaced by tabs. The tab character is a less ambiguous delimiter compared to commas, as it is less likely to appear in data. This makes TSV less prone to parsing errors.</p>
@@ -561,7 +561,7 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">SWC-Blueprint</p>
+        <p class="prev-next-title">NeuroBlueprint</p>
       </div>
     </a>
 </div>
@@ -619,8 +619,8 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -634,7 +634,7 @@ Created using <a href="https://sphinx-doc.org/">Sphinx</a> 7.2.6.
 <p class="theme-version">
 Built with the
 <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
-0.14.0.
+0.14.1.
 </p></div>
       
     </div>
