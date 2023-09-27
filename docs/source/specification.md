@@ -165,6 +165,10 @@ Below we provide some example file names adhering to the **NeuroBlueprint** nami
                     └── sub-01_ses-01_task-discrim_monitor-right_run-02.mp4
 ```
 
+NeuroBlueprint makes has no requirements as to permitted file formats. However, it is good to always consider
+SHARABILITY and aim to use non-properitary formats that can be shared freely. To read more about this,
+check out our page on FAIR PRINCIPLES. [LINK]
+
 ## Metadata conventions
 
 **NeuroBlueprint** imposes no absolute requirements on how to store metadata. That said, we do outline some best practices, in accordance with the [BIDS specification on tabular files](https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#tabular-files).
