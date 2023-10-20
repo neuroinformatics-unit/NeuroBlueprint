@@ -370,8 +370,8 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
 </li>
 <li><p>Data within the <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> folder <em>must</em> be hierarchically structured into subject/session/datatype levels. Each level <em>must</em> contain at least one folder corresponding to the next (lower) level.</p></li>
 <li><p>Subject and session folder names <em>must</em> consist of key-value pairs separated by underscores, without spaces e.g. <code class="docutils literal notranslate"><span class="pre">sub-001_id-5645332</span></code>.</p></li>
-<li><p>Datatype folder names <em>must</em> be one of the following : <code class="docutils literal notranslate"><span class="pre">ephys</span></code>, <code class="docutils literal notranslate"><span class="pre">behav</span></code>, <code class="docutils literal notranslate"><span class="pre">funcimg</span></code>, <code class="docutils literal notranslate"><span class="pre">histology</span></code>.</p></li>
-<li><p>If collected, <code class="docutils literal notranslate"><span class="pre">ephys</span></code>, <code class="docutils literal notranslate"><span class="pre">behav</span></code>, <code class="docutils literal notranslate"><span class="pre">funcimg</span></code> <em>must</em> be placed under the session level. If collected, <code class="docutils literal notranslate"><span class="pre">histology</span></code> <em>must</em> be placed under the subject level.</p></li>
+<li><p>Datatype folder names <em>must</em> be one of the following : <code class="docutils literal notranslate"><span class="pre">ephys</span></code>, <code class="docutils literal notranslate"><span class="pre">behav</span></code>, <code class="docutils literal notranslate"><span class="pre">funcimg</span></code>, <code class="docutils literal notranslate"><span class="pre">anat</span></code>.</p></li>
+<li><p>Datatype folders <em>must</em> be placed under the session level.</p></li>
 </ul>
 <p>Below we describe each level of the <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> folder hierarchy in more detail. Though we impose no absolute requirements for the folder structure within <code class="docutils literal notranslate"><span class="pre">derivatives</span></code>, it <em>should</em> match the hierarchy in <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> whenever possible.</p>
 </section>
@@ -430,12 +430,8 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
 <li><p><code class="docutils literal notranslate"><span class="pre">ephys</span></code>: electrophysiology (e.g. Neuropixel probes, tetrodes)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">behav</span></code>: behavioural (e.g. video and audio files, response logs)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">funcimg</span></code>: functional imaging (e.g. calcium and voltage imaging)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">histology</span></code>: anatomical (e.g. serial-2-photon images)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">anat</span></code>: anatomical (e.g. histology, using confocal or lightsheet)</p></li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Unlike the first three datatypes that belong at the session level, <code class="docutils literal notranslate"><span class="pre">histology</span></code> belongs at the subject level.</p>
-</div>
 </section>
 <section id="example-project-folder">
 <h3>Example project folder<a class="headerlink" href="#example-project-folder" title="Link to this heading">#</a></h3>
@@ -450,8 +446,9 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
     │       │   └── behav/
     │       │       ├── sub-001_ses-01_camera-01.wav
     │       │       └── sub-001_ses-01_data-responses.csv
-    │       └── histology/
-    │           └── sub-001_image-brain.tiff
+    │       └── ses-02_date-20230311/
+    │           └── anat/
+    │               └── sub-001_image-brain.tiff
     └── derivatives/
         └── sub-001_id-5645332/
             ├── ses-01_date-20230310/
@@ -459,8 +456,9 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
             │   │   └── sub-001_ses-01_data-spikes.npy
             │   └── behav/
             │       └── sub-001_ses-01_data-poses.csv
-            └── histology/
-                └── sub-001_ses-01_data-cellcounts.csv
+            └── ses-02_date-20230311/
+                └── anat/
+                    └── sub-001_data-cellcounts.csv
 </pre></div>
 </div>
 </section>

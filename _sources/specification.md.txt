@@ -30,9 +30,9 @@ For example:
 
 * Subject and session folder names *must* consist of key-value pairs separated by underscores, without spaces e.g. `sub-001_id-5645332`.
 
-* Datatype folder names *must* be one of the following : `ephys`, `behav`, `funcimg`, `histology`.
+* Datatype folder names *must* be one of the following : `ephys`, `behav`, `funcimg`, `anat`.
 
-* If collected, `ephys`, `behav`, `funcimg` *must* be placed under the session level. If collected, `histology` *must* be placed under the subject level.
+* Datatype folders *must* be placed under the session level. 
 
 Below we describe each level of the `rawdata` folder hierarchy in more detail. Though we impose no absolute requirements for the folder structure within `derivatives`, it *should* match the hierarchy in `rawdata` whenever possible.
 
@@ -77,11 +77,8 @@ The following datatypes are supported:
 * `ephys`: electrophysiology (e.g. Neuropixel probes, tetrodes)
 * `behav`: behavioural (e.g. video and audio files, response logs)
 * `funcimg`: functional imaging (e.g. calcium and voltage imaging)
-* `histology`: anatomical (e.g. serial-2-photon images)
+* `anat`: anatomical (e.g. histology, using confocal or lightsheet)
 
-:::{note}
-Unlike the first three datatypes that belong at the session level, `histology` belongs at the subject level.
-:::
 
 ### Example project folder
 A real project folder might look like:
@@ -97,8 +94,9 @@ A real project folder might look like:
     │       │   └── behav/
     │       │       ├── sub-001_ses-01_camera-01.wav
     │       │       └── sub-001_ses-01_data-responses.csv
-    │       └── histology/
-    │           └── sub-001_image-brain.tiff
+    │       └── ses-02_date-20230311/
+    │           └── anat/
+    │               └── sub-001_image-brain.tiff
     └── derivatives/
         └── sub-001_id-5645332/
             ├── ses-01_date-20230310/
@@ -106,8 +104,9 @@ A real project folder might look like:
             │   │   └── sub-001_ses-01_data-spikes.npy
             │   └── behav/
             │       └── sub-001_ses-01_data-poses.csv
-            └── histology/
-                └── sub-001_ses-01_data-cellcounts.csv
+            └── ses-02_date-20230311/
+                └── anat/
+                    └── sub-001_data-cellcounts.csv
 ```
 
 ## File naming conventions
