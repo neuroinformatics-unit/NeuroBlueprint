@@ -3,5 +3,6 @@ myst-parser
 nbsphinx
 numpydoc
 pydata-sphinx-theme
+setuptools-scm
 sphinx
 sphinx-design
