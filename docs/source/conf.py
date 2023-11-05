@@ -120,7 +120,18 @@ html_theme_options = {
             "icon": "fa-brands fa-github",
             # The type of image to be used (see below for details)
             "type": "fontawesome",
-        }
+        },
+        {
+            # Label for this link
+            "name": "Zulip (chat)",
+            # URL where the link will redirect
+            "url": "https://neuroinformatics.zulipchat.com/#narrow/stream/406000-SWC-Blueprint",  # required
+            # Icon class (if "type": "fontawesome"), or path to local image (if
+            # "type": "local")
+            "icon": "fa-solid fa-comments",
+            # The type of image to be used (see below for details)
+            "type": "fontawesome",
+        },
     ],
     "logo": {
         "text": f"NeuroBlueprint v{release}",
