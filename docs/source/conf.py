@@ -120,7 +120,13 @@ html_theme_options = {
             "icon": "fa-brands fa-github",
             # The type of image to be used (see below for details)
             "type": "fontawesome",
-        }
+        },
+        {
+            "name": "Zulip (chat)",
+            "url": "https://neuroinformatics.zulipchat.com/#narrow/stream/406000-NeuroBlueprint",  # required
+            "icon": "fa-solid fa-comments",
+            "type": "fontawesome",
+        },
     ],
     "logo": {
         "text": f"NeuroBlueprint v{release}",
