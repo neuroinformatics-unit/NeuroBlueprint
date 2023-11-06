@@ -14,7 +14,7 @@ by members of the [Neuroinformatics Unit (NIU)](https://neuroinformatics.dev/). 
 
 That said, the specification is designed to be as general as possible, and should be useful to anyone within the neuroscience field. 
 We (the NIU) welcome feedback and contributions from the wider community and commit to maintaining the specification as a living and evolving document. 
-Check out the NeuroBlueprint [Zulip chat](https://neuroinformatics.zulipchat.com/#narrow/stream/406000-SWC-Blueprint) or 
+Check out the NeuroBlueprint [Zulip chat](https://neuroinformatics.zulipchat.com/#narrow/stream/406000-NeuroBlueprint) or 
 raise a [GitHub Issue](https://github.com/neuroinformatics-unit/NeuroBlueprint/issues) to get in touch. 
 We will also collaborate with [ongoing efforts](https://github.com/INCF/neuroscience-data-structure) by the [INCF](https://www.incf.org/) 
 and [BIDS community](https://bids.neuroimaging.io/) to extend the BIDS specification to non-human animal research.
