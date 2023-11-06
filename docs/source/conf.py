@@ -122,14 +122,9 @@ html_theme_options = {
             "type": "fontawesome",
         },
         {
-            # Label for this link
             "name": "Zulip (chat)",
-            # URL where the link will redirect
             "url": "https://neuroinformatics.zulipchat.com/#narrow/stream/406000-NeuroBlueprint",  # required
-            # Icon class (if "type": "fontawesome"), or path to local image (if
-            # "type": "local")
             "icon": "fa-solid fa-comments",
-            # The type of image to be used (see below for details)
             "type": "fontawesome",
         },
     ],
