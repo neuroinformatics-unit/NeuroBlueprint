@@ -125,7 +125,7 @@ html_theme_options = {
             # Label for this link
             "name": "Zulip (chat)",
             # URL where the link will redirect
-            "url": "https://neuroinformatics.zulipchat.com/#narrow/stream/406000-SWC-Blueprint",  # required
+            "url": "https://neuroinformatics.zulipchat.com/#narrow/stream/406000-NeuroBlueprint",  # required
             # Icon class (if "type": "fontawesome"), or path to local image (if
             # "type": "local")
             "icon": "fa-solid fa-comments",
