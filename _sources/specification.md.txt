@@ -32,7 +32,7 @@ For example:
 
 * Datatype folder names *must* be one of the following : `ephys`, `behav`, `funcimg`, `anat`.
 
-* Datatype folders *must* be placed under the session level. 
+* Datatype folders *must* be placed under the session level.
 
 Below we describe each level of the `rawdata` folder hierarchy in more detail. Though we impose no absolute requirements for the folder structure within `derivatives`, it *should* match the hierarchy in `rawdata` whenever possible.
 
