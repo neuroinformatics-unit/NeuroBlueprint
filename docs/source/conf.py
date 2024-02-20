@@ -137,3 +137,5 @@ html_theme_options = {
     "footer_end": ["footer_end"]
 }
 
+# link-check cannot check anchors
+linkcheck_ignore = ['https://bids-specification.readthedocs.io', 'https://neuroinformatics.zulipchat.com']
