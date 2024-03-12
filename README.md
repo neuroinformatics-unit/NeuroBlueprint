@@ -14,9 +14,15 @@ between labs. The focus is on ensuring minimal overhead for researchers.
 [Sainsbury Wellcome Centre (SWC) for Neural Circuits and Behaviour](https://www.sainsburywellcome.org/)
 by members of the [Neuroinformatics Unit (NIU)](https://neuroinformatics.dev/).
 As such, it prioritizes interoperability with NIU-developed data analysis tools.
-
 That said, the specification is designed to be as general as possible, and
-should be useful to anyone within the neuroscience field. We (the NIU) welcome feedback and contributions
+should be useful to anyone within the neuroscience field.
+
+To facilitate `NeuroBlueprint`'s pain-free adoption we are also developing
+[datashuttle](https://datashuttle.neuroinformatics.dev/)—a tool that integrates
+into data acquisition workflows and automates the creation and transfer
+of `NeuroBlueprint`-compliant folders.
+
+We (the NIU) welcome feedback and contributions
 from the wider community and commit to maintaining the specification as a living and evolving document.
 Check out the NeuroBlueprint [Zulip chat](https://neuroinformatics.zulipchat.com/#narrow/stream/406000-NeuroBlueprint)
 or raise a [GitHub Issue](https://github.com/neuroinformatics-unit/NeuroBlueprint/issues) to get in touch.
