@@ -31,4 +31,3 @@ and [BIDS community](https://bids.neuroimaging.io/) to extend the BIDS specifica
 specification
 community
 ```
-
