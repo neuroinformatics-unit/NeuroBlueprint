@@ -11,8 +11,9 @@ The roadmap is responsive to the requirements
 of the community and we encourage people to get in
 contact to outline their needs and priorities.
 
-The aim of NeuroBlueprint v2.0 was to
-provide a lightweight specification
+The aim of NeuroBlueprint
+[v0.2](https://github.com/neuroinformatics-unit/NeuroBlueprint/releases)
+is to provide a lightweight specification
 enabling automatic discovery of raw data and
 derivatives for different data types (e.g., behavior, electrophysiology).
 
@@ -21,10 +22,12 @@ multimodal analysis. This will require metadata standardisation,
 and we will decide on an existing metadata standard to adopt and minimal
 set of required keywords.
 
-**Q3 2024**
-
-- Investigate and adopt a metadata standard (e.g. BIDS or Allen AIND)
-
 **Q4 2024**
 
-- Add required metadata for automated multimodal behavioural and electrophysiological analysis to the specification.
+- Investigate and adopt a metadata standard (e.g.
+[Brain Imaging Data Structure](https://bids-specification.readthedocs.io/en/stable/derivatives/common-data-types.html)
+or
+[Allen Institute for Neural Dynamics](https://github.com/AllenNeuralDynamics/aind-data-schema)
+)
+- Add required metadata for automated multimodal behavioural and electrophysiological
+analysis to the specification.
