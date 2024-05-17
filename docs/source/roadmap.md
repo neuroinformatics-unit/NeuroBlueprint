@@ -27,6 +27,8 @@ set of required keywords.
 - Investigate and adopt a metadata standard (e.g.
 [Brain Imaging Data Structure](https://bids-specification.readthedocs.io/en/stable/derivatives/common-data-types.html)
 or
-[Allen Institute for Neural Dynamics](https://github.com/AllenNeuralDynamics/aind-data-schema)).
+[Allen Institute for Neural Dynamics](https://github.com/AllenNeuralDynamics/aind-data-schema)
+).
+
 - Add required metadata for automated multimodal behavioural and electrophysiological
 analysis to the specification.
