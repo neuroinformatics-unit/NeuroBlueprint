@@ -1,21 +1,21 @@
 # Roadmap
 
-The roadmap for NeuroBlueprint
+The roadmap for **NeuroBlueprint**
 contains our development plans for the specification.
-It is closely aligned with
-[datashuttle roadmap](https://datashuttle.neuroinformatics.dev/pages/community/roadmap.html)
+It is closely aligned with the
+[**datashuttle** roadmap](https://datashuttle.neuroinformatics.dev/pages/community/roadmap.html)
 and our
 [Guiding Principles](https://datashuttle.neuroinformatics.dev/pages/community/guiding-principles.html)
 
 The roadmap is responsive to the requirements
-of the community and we encourage people to get in
+of the community, and we encourage people to get in
 contact to outline their needs and priorities.
 
-The aim of NeuroBlueprint
+The aim of **NeuroBlueprint**
 [v0.2](https://github.com/neuroinformatics-unit/NeuroBlueprint/releases)
 is to provide a lightweight specification
-enabling automatic discovery of raw data and
-derivatives for different data types (e.g., behavior, electrophysiology).
+enabling automatic discovery of raw data for
+different data types (e.g., behavior, electrophysiology).
 
 Next, we plan to extend the specification to support automated
 multimodal analysis. This will require metadata standardisation,

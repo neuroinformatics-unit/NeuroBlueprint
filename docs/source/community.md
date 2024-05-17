@@ -1,6 +1,6 @@
 # Community
 
-NeuroBlueprint is developed by the
+**NeuroBlueprint** is developed by the
 [NeuroInformatics Unit](https://neuroinformatics.dev)
 at the Sainsbury Wellcome Centre. We are very interested in feedback on the
 specification, please get in contact through our
