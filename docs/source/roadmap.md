@@ -27,4 +27,4 @@ set of required keywords.
 
 **Q4 2024**
 
-- Add required metadata for automated multimodal behavioural and electrophysiolgical analysis to the specification.
+- Add required metadata for automated multimodal behavioural and electrophysiological analysis to the specification.
