@@ -3,9 +3,9 @@
 The roadmap for NeuroBlueprint
 contains our development plans for the specification.
 It is closely aligned with
-[datashuttle roadmap]()
+[datashuttle roadmap](https://datashuttle.neuroinformatics.dev/pages/community/roadmap.html)
 and our
-[guiding principles]().
+[Guiding Principles](https://datashuttle.neuroinformatics.dev/pages/community/guiding-principles.html)
 
 The roadmap is responsive to the requirements
 of the community and we encourage people to get in
