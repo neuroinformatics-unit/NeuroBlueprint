@@ -1,7 +1,7 @@
 # Roadmap
 
 The roadmap for NeuroBlueprint
-contains our development plans for the package.
+contains our development plans for the specification.
 It is closely aligned with
 [datashuttle roadmap]()
 and our
