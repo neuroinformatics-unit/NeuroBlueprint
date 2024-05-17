@@ -2,7 +2,9 @@
 
 **NeuroBlueprint** is developed by the
 [NeuroInformatics Unit](https://neuroinformatics.dev)
-at the Sainsbury Wellcome Centre. We are very interested in feedback on the
+at the
+[Sainsbury Wellcome Centre](https://www.sainsburywellcome.org/web/).
+We are very interested in feedback on the
 specification, please get in contact through our
 [GitHub Issues](https://github.com/neuroinformatics-unit/NeuroBlueprint)
 or
