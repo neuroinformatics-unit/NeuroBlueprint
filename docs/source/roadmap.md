@@ -2,10 +2,6 @@
 
 The roadmap for **NeuroBlueprint**
 contains our development plans for the specification.
-It is closely aligned with the
-[**datashuttle** roadmap](https://datashuttle.neuroinformatics.dev/pages/community/roadmap.html)
-and our
-[Guiding Principles](https://datashuttle.neuroinformatics.dev/pages/community/guiding-principles.html).
 
 The roadmap is responsive to the requirements
 of the community, and we encourage people to get in
@@ -27,8 +23,7 @@ set of required keywords.
 - Investigate and adopt a metadata standard (e.g.
 [Brain Imaging Data Structure](https://bids-specification.readthedocs.io/en/stable/derivatives/common-data-types.html)
 or
-[Allen Institute for Neural Dynamics](https://github.com/AllenNeuralDynamics/aind-data-schema)
-).
+[Allen Institute for Neural Dynamics](https://github.com/AllenNeuralDynamics/aind-data-schema)).
 
 - Add required metadata for automated multimodal behavioural and electrophysiological
 analysis to the specification.

@@ -15,10 +15,8 @@ We are keen to work closely with ongoing standardisation efforts in the
 and
 [NWB](https://www.nwb.org)
 communities. Please see our
-[Guiding Principles](https://datashuttle.neuroinformatics.dev/pages/community/guiding-principles.html)
-and
 [Roadmap](roadmap.md)
-for more details on our future plans.
+for details on our future plans.
 
 ```{toctree}
 :maxdepth: 3
