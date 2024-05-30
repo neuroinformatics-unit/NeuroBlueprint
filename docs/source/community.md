@@ -6,7 +6,7 @@ at the
 [Sainsbury Wellcome Centre](https://www.sainsburywellcome.org/web/).
 We are very interested in feedback on the
 specification, please get in contact through our
-[GitHub Issues](https://github.com/neuroinformatics-unit/NeuroBlueprint)
+[GitHub Issues](https://github.com/neuroinformatics-unit/NeuroBlueprint/issues)
 or
 [Zulip Chat](https://neuroinformatics.zulipchat.com/#narrow/stream/406000-NeuroBlueprint)!
 
