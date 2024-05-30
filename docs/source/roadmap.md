@@ -11,7 +11,7 @@ The aim of **NeuroBlueprint**
 [v0.2](https://github.com/neuroinformatics-unit/NeuroBlueprint/releases)
 was to provide a lightweight specification
 enabling automatic discovery of raw data for
-different data types (e.g., behavior, electrophysiology).
+different data types (e.g. behaviour, electrophysiology).
 
 Next, we plan to extend the specification to support automated
 multimodal analysis. This will require metadata standardisation,
