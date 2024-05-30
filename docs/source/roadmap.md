@@ -15,7 +15,7 @@ different data types (e.g., behavior, electrophysiology).
 
 Next, we plan to extend the specification to support automated
 multimodal analysis. This will require metadata standardisation,
-and we will decide on an existing metadata standard to adopt and minimal
+and we will decide on an existing metadata standard to adopt and a minimal
 set of required keywords.
 
 **Q4 2024**
