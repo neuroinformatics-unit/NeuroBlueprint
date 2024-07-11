@@ -72,12 +72,63 @@ Below we describe each level of the `rawdata` folder hierarchy in more detail. T
 
 ### Datatype
 
-The following datatypes are supported:
+The datatype folder, placed in the session level folder, is where 
+data is stored. Two sets of datatype folder names are supported,
+either '*Broad*' or '*Narrow*'. The *Broad* datatype names are designed to
+cover most use cases:
 
 * `ephys`: electrophysiology (e.g. Neuropixel probes, tetrodes)
 * `behav`: behavioural (e.g. video and audio files, response logs)
 * `funcimg`: functional imaging (e.g. calcium and voltage imaging)
 * `anat`: anatomical (e.g. histology, using confocal or lightsheet)
+
+In some cases, the *Broad* datatype names may not be specific enough,
+for example if a session includes two different types of electrophysiological
+recordings, or anatomical imaging methods. In this case, the *Broad* datatype
+name can be substituted for a *Narrow* datatype name. See the dropdown below for
+the full list of supported *Narrow* datatype names.
+
+:::{dropdown} Narrow datatypes
+
+If a *Broad* datatype is replaced with a corresponding *Narrow* datatype, 
+the *Broad* datatype should not be used.
+
+If you have a modality that does not fit into the current datatype options,
+please get in contact!
+
+**ephys**
+- `icephys`: intracellular electrophysiology
+- `ecephys`: extracellular electrophysiology
+
+**funcimg**
+- `f2pe`: Functional 2-photon excitation imaging
+- `fmri`: Functional magnetic resonance imaging
+- `cscope`: A head-mounted widefield macroscope
+
+**anat**
+
+These are taken from [BIDS microscopy](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/microscopy.html).
+
+- `2pe`: 2-photon excitation microscopy
+- `bf`: Bright-field microscopy
+- `cars`: Coherent anti-Stokes Raman spectroscopy
+- `conf`: Confocal microscopy
+- `dic`:  Differential interference contrast microscopy 
+- `df`: Dark-field microscopy
+- `fluo`: Fluorescence microscopy
+- `mpe`: Multi-photon excitation microscopy 
+- `nlo`: Nonlinear optical microscopy 
+- `oct`: Optical coherence tomography
+- `pc`: Phase-contrast microscopy
+- `pli`: Polarized-light microscopy 
+- `sem`: Scanning electron microscopy 
+- `spim`: Selective plane illumination microscopy
+- `sr`: Super-resolution microscopy 
+- `tem`: Transmission electron microscopy
+- `uct`: Micro-CT
+- `mri`: Magnetic resonance imaging
+
+:::
 
 
 ### Example project folder
