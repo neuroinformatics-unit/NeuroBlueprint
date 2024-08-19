@@ -85,48 +85,84 @@ cover most use cases:
 In some cases, the *Broad* datatype names may not be specific enough,
 for example if a session includes two different types of electrophysiological
 recordings, or anatomical imaging methods. In this case, the *Broad* datatype
-name can be substituted for a *Narrow* datatype name. See the dropdown below for
+name *must* be substituted for a *Narrow* datatype name rather than place two
+different datatypes in a *Broad* datatype folder. See the dropdown below for
 the full list of supported *Narrow* datatype names.
 
 :::{dropdown} Narrow datatypes
+:color: info
+:icon: info
 
-If a *Broad* datatype is replaced with a corresponding *Narrow* datatype,
-the *Broad* datatype should not be used.
+If a *Broad* datatype is replaced with a corresponding *Narrow* datatype for any
+session within a particular subject, the *Broad* datatype *must* not be used for
+that subject. It is not then necessary to use the *Narrow* datatype
+for all subjects in the experiment, although it is recommended.
 
 If you have a modality that does not fit into the current datatype options,
 please get in contact!
 
 **ephys**
-- `icephys`: intracellular electrophysiology
 - `ecephys`: extracellular electrophysiology
+- `icephys`: intracellular electrophysiology
 
 **funcimg**
-- `f2pe`: Functional 2-photon excitation imaging
-- `fmri`: Functional magnetic resonance imaging
-- `cscope`: A head-mounted widefield macroscope
+- `cscope`: head-mounted widefield macroscope
+- `f2pe`: functional 2-photon excitation imaging
+- `fmri`: functional magnetic resonance imaging
+- `fusi`: functional ultra-sound imaging
+
 
 **anat**
 
-These are taken from [BIDS microscopy](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/microscopy.html).
+These are taken from [BIDS microscopy](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/microscopy.html)
+(with the exception of `mri`).
 
 - `2pe`: 2-photon excitation microscopy
-- `bf`: Bright-field microscopy
-- `cars`: Coherent anti-Stokes Raman spectroscopy
-- `conf`: Confocal microscopy
-- `dic`:  Differential interference contrast microscopy
-- `df`: Dark-field microscopy
-- `fluo`: Fluorescence microscopy
-- `mpe`: Multi-photon excitation microscopy
-- `nlo`: Nonlinear optical microscopy
-- `oct`: Optical coherence tomography
-- `pc`: Phase-contrast microscopy
-- `pli`: Polarized-light microscopy
-- `sem`: Scanning electron microscopy
-- `spim`: Selective plane illumination microscopy
-- `sr`: Super-resolution microscopy
-- `tem`: Transmission electron microscopy
-- `uct`: Micro-CT
-- `mri`: Magnetic resonance imaging
+- `bf`: bright-field microscopy
+- `cars`: coherent anti-Stokes Raman spectroscopy
+- `conf`: confocal microscopy
+- `dic`:  differential interference contrast microscopy
+- `df`: dark-field microscopy
+- `fluo`: fluorescence microscopy
+- `mpe`: multi-photon excitation microscopy
+- `nlo`: nonlinear optical microscopy
+- `oct`: optical coherence tomography
+- `pc`: phase-contrast microscopy
+- `pli`: polarized-light microscopy
+- `sem`: scanning electron microscopy
+- `spim`: selective plane illumination microscopy
+- `sr`: super-resolution microscopy
+- `tem`: transmission electron microscopy
+- `uct`: micro-CT
+- `mri`: magnetic resonance imaging
+
+**Example**
+
+In this example experiment, both functional
+magnetic resonance imaging (`fmri`) and
+functional two-photon imaging (`f2pe`) were run
+across two difference sessions. Then, anatomical
+imaging was performed at the end (here stored in a
+single session) using both brightfield (`bf`) and
+two-photon imaging (`2pe`).
+
+Optional key-value pairs in the [filename](#file-naming-conventions)
+are used to again indicate the datatype, but this is not required.
+```
+.
+└── sub-001/
+    ├── ses-001/
+    │   └── fmri/
+    │       └── sub-001_ses-001_dtype-fmri.nii
+    ├── ses-002/
+    │   └── f2pe/
+    │       └── sub-001_ses-02_dtype-f2pe.mat
+    └── ses-005_type-histology/
+        ├── bf/
+        │   └── sub-001_ses-004_dtype-bf.tif
+        └── 2pe/
+            └── sub-001_ses-004_dtype-2pe.tif
+```
 
 :::
 
