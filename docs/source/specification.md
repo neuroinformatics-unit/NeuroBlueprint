@@ -83,11 +83,11 @@ cover most use cases:
 * `anat`: anatomical (e.g. histology, using confocal or lightsheet)
 
 In some cases, the *Broad* datatype names may not be specific enough,
-for example if a session includes two different types of electrophysiological
-recordings, or anatomical imaging methods. In this case, the *Broad* datatype
-name *must* be substituted for a *Narrow* datatype name rather than place two
-different datatypes in a *Broad* datatype folder. See the dropdown below for
-the full list of supported *Narrow* datatype names.
+for example if two different types of electrophysiological (`ephys`)
+recording were run. In this case, the *Broad* datatype
+name *must* be substituted for a *Narrow* datatype name (rather than placing two
+different datatypes in a *Broad* datatype folder). See the dropdown below for
+the full list of supported *Narrow* datatypes.
 
 :::{dropdown} Narrow datatypes
 :color: info
@@ -156,12 +156,12 @@ are used to again indicate the datatype, but this is not required.
     │       └── sub-001_ses-001_dtype-fmri.nii
     ├── ses-002/
     │   └── f2pe/
-    │       └── sub-001_ses-02_dtype-f2pe.mat
+    │       └── sub-001_ses-002_dtype-f2pe.mat
     └── ses-005_type-histology/
         ├── bf/
-        │   └── sub-001_ses-004_dtype-bf.tif
+        │   └── sub-001_ses-003_dtype-bf.tif
         └── 2pe/
-            └── sub-001_ses-004_dtype-2pe.tif
+            └── sub-001_ses-003_dtype-2pe.tif
 ```
 
 :::
