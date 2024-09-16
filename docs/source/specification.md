@@ -73,7 +73,7 @@ Below we describe each level of the `rawdata` folder hierarchy in more detail. T
 ### Datatype
 
 The datatype folder, placed in the session level folder, is where
-data is stored. Two sets of datatype folder names are supported,
+data are stored. Two sets of datatype folder names are supported,
 either '*Broad*' or '*Narrow*'. The *Broad* datatype names are designed to
 cover most use cases:
 
