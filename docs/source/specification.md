@@ -93,10 +93,9 @@ the full list of supported *Narrow* datatypes.
 :color: info
 :icon: info
 
-If a *Broad* datatype is replaced with a corresponding *Narrow* datatype for any
-session within a particular subject, the *Broad* datatype *must* not be used for
-that subject. It is not then necessary to use the *Narrow* datatype
-for all subjects in the experiment, although it is recommended.
+If a *Narrow* datatype is used instead of a *Broad* datatype anywhere
+in the project, the *Narrow* datatype *must* be used across the entire
+project. The *Broad* datatype for that category *must* no longer be used.
 
 If you have a modality that does not fit into the current datatype options,
 please get in contact!
