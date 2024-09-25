@@ -72,12 +72,98 @@ Below we describe each level of the `rawdata` folder hierarchy in more detail. T
 
 ### Datatype
 
-The following datatypes are supported:
+The datatype folder, placed in the session level folder, is where
+data are stored. Two sets of datatype folder names are supported,
+either '*Broad*' or '*Narrow*'. The *Broad* datatype names are designed to
+cover most use cases:
 
 * `ephys`: electrophysiology (e.g. Neuropixel probes, tetrodes)
 * `behav`: behavioural (e.g. video and audio files, response logs)
 * `funcimg`: functional imaging (e.g. calcium and voltage imaging)
 * `anat`: anatomical (e.g. histology, using confocal or lightsheet)
+
+In some cases, the *Broad* datatype names may not be specific enough,
+for example if two different types of electrophysiological (`ephys`)
+recording were run. In this case, the *Broad* datatype
+name *must* be substituted for a *Narrow* datatype name (rather than placing two
+different datatypes in a *Broad* datatype folder). See the dropdown below for
+the full list of supported *Narrow* datatypes.
+
+:::{dropdown} Narrow datatypes
+:color: info
+:icon: info
+
+If a *Narrow* datatype is used instead of a *Broad* datatype anywhere
+in the project, the *Narrow* datatype *must* be used across the entire
+project. The *Broad* datatype for that category *must* no longer be used.
+
+If you have a modality that does not fit into the current datatype options,
+please get in contact!
+
+**ephys**
+- `ecephys`: extracellular electrophysiology
+- `icephys`: intracellular electrophysiology
+
+**funcimg**
+- `cscope`: head-mounted widefield macroscope
+- `f2pe`: functional 2-photon excitation imaging
+- `fmri`: functional magnetic resonance imaging
+- `fusi`: functional ultra-sound imaging
+
+
+**anat**
+
+These are taken from [BIDS microscopy](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/microscopy.html)
+(with the exception of `mri`).
+
+- `2pe`: 2-photon excitation microscopy
+- `bf`: bright-field microscopy
+- `cars`: coherent anti-Stokes Raman spectroscopy
+- `conf`: confocal microscopy
+- `dic`:  differential interference contrast microscopy
+- `df`: dark-field microscopy
+- `fluo`: fluorescence microscopy
+- `mpe`: multi-photon excitation microscopy
+- `nlo`: nonlinear optical microscopy
+- `oct`: optical coherence tomography
+- `pc`: phase-contrast microscopy
+- `pli`: polarized-light microscopy
+- `sem`: scanning electron microscopy
+- `spim`: selective plane illumination microscopy
+- `sr`: super-resolution microscopy
+- `tem`: transmission electron microscopy
+- `uct`: micro-CT
+- `mri`: magnetic resonance imaging
+
+**Example**
+
+In this example experiment, both functional
+magnetic resonance imaging (`fmri`) and
+functional two-photon imaging (`f2pe`) were run
+across two difference sessions. Then, anatomical
+imaging was performed at the end (here stored in a
+single session) using both brightfield (`bf`) and
+two-photon imaging (`2pe`).
+
+Optional key-value pairs in the [filename](#file-naming-conventions)
+are used to again indicate the datatype, but this is not required.
+```
+.
+└── sub-001/
+    ├── ses-001/
+    │   └── fmri/
+    │       └── sub-001_ses-001_dtype-fmri.nii
+    ├── ses-002/
+    │   └── f2pe/
+    │       └── sub-001_ses-002_dtype-f2pe.mat
+    └── ses-005_type-histology/
+        ├── bf/
+        │   └── sub-001_ses-003_dtype-bf.tif
+        └── 2pe/
+            └── sub-001_ses-003_dtype-2pe.tif
+```
+
+:::
 
 
 ### Example project folder
