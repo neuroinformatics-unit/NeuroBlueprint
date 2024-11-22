@@ -1,7 +1,11 @@
 [
     {
-        "name": "v0.3.1 (stable)",
-        "version": "0.3.1",
+        "version": "dev",
+        "url": "https://neuroblueprint.neuroinformatics.dev/latest/"
+    },
+    {
+        "name": "v0.3.0 (stable)",
+        "version": "0.3.0",
         "url": "https://neuroblueprint.neuroinformatics.dev/"
     }
 ]

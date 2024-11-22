@@ -143,4 +143,8 @@ html_theme_options = {
 }
 
 # link-check cannot check anchors
-linkcheck_ignore = ['https://bids-specification.readthedocs.io', 'https://neuroinformatics.zulipchat.com', 'https://www.incf.org']
+linkcheck_ignore = [
+    'https://bids-specification.readthedocs.io',
+    'https://neuroinformatics.zulipchat.com',
+    'https://www.incf.org/',  # due to SSLCertVerificationError
+]
