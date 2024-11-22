@@ -85,6 +85,71 @@ jobs:
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
-      - uses: neuroinformatics-unit/actions/deploy_sphinx_docs@v2
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Fetch the built docs from the "build" job
+      - name: Download HTML documentation artifact
+        uses: actions/download-artifact@v4
         with:
-          secret_input: ${{ secrets.GITHUB_TOKEN }}
+          name: docs-${{ github.sha }}
+          path: docs/build
+
+      - name: Checkout the gh-pages branch in a separate folder
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages-test
+          # Checkout to this folder instead of the current one
+          path: deploy
+          # Download the entire history
+          fetch-depth: 0
+
+      - name: Push the built HTML to gh-pages
+      run: |
+        # Detect if this is a release or from the main branch
+        if [[ "${{ github.event_name }}" == "release" ]]; then
+            # Get the tag name without the "refs/tags/" part
+            version="${GITHUB_REF#refs/*/}"
+        else
+            version=dev
+        fi
+        echo "Deploying version: $version"
+        # Make the new commit message. Needs to happen before cd into deploy
+        # to get the right commit hash.
+        message="Deploy $version from $(git rev-parse --short HEAD)"
+        cd deploy
+        # Need to have this file so that Github doesn't try to run Jekyll
+        touch .nojekyll
+        # Delete all the files and replace with our new  set
+        echo -e "\nRemoving old files from previous builds of ${version}:"
+        rm -rvf ${version}
+        echo -e "\nCopying HTML files to ${version}:"
+        cp -Rvf ../docs/build ${version}/
+        # If this is a new release, update the link from /latest to it
+        if [[ "${version}" != "dev" ]]; then
+            echo -e "\nSetup link from ${version} to 'latest'."
+            rm -f latest
+            ln -sf ${version} latest
+        fi
+        # Stage the commit
+        git add -A .
+        echo -e "\nChanges to be applied:"
+        git status
+        # Configure git to be the GitHub Actions account
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git config user.name "github-actions[bot]"
+        # If this is a dev build and the last commit was from a dev build
+        # (detect if "dev" was in the previous commit message), reuse the
+        # same commit
+        if [[ "${version}" == "dev" && `git log -1 --format='%s'` == *"dev"* ]]; then
+            echo -e "\nAmending last commit:"
+            git commit --amend --reset-author -m "$message"
+        else
+            echo -e "\nMaking a new commit:"
+            git commit -m "$message"
+        fi
+        # Make the push quiet just in case there is anything that could leak
+        # sensitive information.
+        echo -e "\nPushing changes to gh-pages."
+        git push -fq origin gh-pages 2>&1 >/dev/null
+        echo -e "\nFinished uploading generated files."
