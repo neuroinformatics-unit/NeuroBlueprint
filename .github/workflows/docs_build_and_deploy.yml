@@ -12,9 +12,6 @@ on:
       - '*'
   pull_request:
   workflow_dispatch:
-  release:
-    types:
-      - published
 
 jobs:
   linting:
@@ -113,7 +110,7 @@ jobs:
           # Detect if this is a release or from the main branch
           echo "Event name: ${{ github.event_name }}"
           echo "Ref type: ${{ github.ref_type }}"
-          if [[ "${{ github.event_name }}" == "push"]] && [[ "${{ github.ref_type }}" == "tag"]]; then
+          if [ "${{ github.event_name }}" = "push" ] && [ "${{ github.ref_type }}" = "tag" ]; then
               # Get the tag name without the "refs/tags/" part
               version="${GITHUB_REF#refs/*/}"
           else
