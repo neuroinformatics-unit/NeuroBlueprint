@@ -112,7 +112,8 @@ jobs:
         run: |
           # Detect if this is a release or from the main branch
           echo "Event name: ${{ github.event_name }}"
-          if [[ "${{ github.event_name }}" == "release" ]]; then
+          echo "Ref type: ${{ github.ref_type }}"
+          if [[ "${{ github.event_name }}" == "push"]] && [[ "${{ github.ref_type }}" == "tag"]]; then
               # Get the tag name without the "refs/tags/" part
               version="${GITHUB_REF#refs/*/}"
           else
