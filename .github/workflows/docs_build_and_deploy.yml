@@ -88,7 +88,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Fetch the built docs from the "build" job
+      # Fetch the built docs from the "build_sphinx_docs" job
       - name: Download HTML documentation artifact
         uses: actions/download-artifact@v4
         with:
