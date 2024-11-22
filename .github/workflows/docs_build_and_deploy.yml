@@ -12,6 +12,9 @@ on:
       - '*'
   pull_request:
   workflow_dispatch:
+  release:
+    types:
+      - published
 
 jobs:
   linting:
@@ -108,6 +111,7 @@ jobs:
       - name: Push the built HTML to gh-pages-test
         run: |
           # Detect if this is a release or from the main branch
+          echo "Event name: ${{ github.event_name }}"
           if [[ "${{ github.event_name }}" == "release" ]]; then
               # Get the tag name without the "refs/tags/" part
               version="${GITHUB_REF#refs/*/}"
