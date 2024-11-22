@@ -1,0 +1,786 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The specification &#8212; NeuroBlueprint</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=1015aea7" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=29d04658"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'specification';</script>
+    <link rel="canonical" href="https://neuroblueprint.neuroinformatics.dev/specification.html" />
+    <link rel="icon" href="_static/logo_light.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Community" href="community.html" />
+    <link rel="prev" title="NeuroBlueprint" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo_light.png" class="logo__image only-light" alt=""/>
+    <img src="_static/logo_dark.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">NeuroBlueprint v0.3.7</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    The specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="community.html">
+    Community
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/neuroinformatics-unit/NeuroBlueprint" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://neuroinformatics.zulipchat.com/#narrow/stream/406000-NeuroBlueprint" title="Zulip (chat)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-comments fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Zulip (chat)</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    The specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="community.html">
+    Community
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/neuroinformatics-unit/NeuroBlueprint" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://neuroinformatics.zulipchat.com/#narrow/stream/406000-NeuroBlueprint" title="Zulip (chat)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-comments fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Zulip (chat)</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">The specification</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-specification">
+<h1>The specification<a class="headerlink" href="#the-specification" title="Link to this heading">#</a></h1>
+<p>The current version of <strong>NeuroBlueprint</strong> mainly aims to enforce a uniform and consistent <a class="reference internal" href="#project-folder-structure"><span class="std std-ref">project folder structure</span></a>.
+In addition, it also includes some non-mandatory conventions for <a class="reference internal" href="#file-naming-conventions"><span class="std std-ref">naming files</span></a> and storing <a class="reference internal" href="#tabular-metadata"><span class="std std-ref">tabular metadata</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We mark requirements with italicised <em>keywords</em> that should be interpreted as described by the <a class="reference external" href="https://www.ietf.org/rfc/rfc2119.txt">Network Working Group</a>. In decreasing order of requirement, these are: <em>must</em> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-alert sd-text-danger" viewBox="0 0 16 16" aria-hidden="true"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>, <em>should</em> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-info sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>, and <em>may</em> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-check-circle sd-text-success" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm1.5 0a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm10.28-1.72-4.5 4.5a.75.75 0 0 1-1.06 0l-2-2a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l1.47 1.47 3.97-3.97a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"></path></svg>.</p>
+</div>
+<section id="project-folder-structure">
+<h2>Project folder structure<a class="headerlink" href="#project-folder-structure" title="Link to this heading">#</a></h2>
+<p>Standardised project folders contain data that are hierarchically structured according to the <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/02-common-principles.html">BIDS standard</a>.</p>
+<p>For example:</p>
+<img alt="NeuroBlueprint logo" class="only-light img-responsive" src="_images/NeuroBlueprint_project_tree_light.png" />
+<img alt="NeuroBlueprint logo" class="only-dark img-responsive" src="_images/NeuroBlueprint_project_tree_dark.png" />
+<section id="basic-principles">
+<h3>Basic principles<a class="headerlink" href="#basic-principles" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The project folder <em>may</em> have any name descriptive of the project, but it <em>must</em> be without spaces.</p></li>
+<li><p>Within the project folder, data <em>must</em> be separated into <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> and <code class="docutils literal notranslate"><span class="pre">derivatives</span></code>.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">rawdata</span></code>: coming out of the data acquisition system (e.g. binary files, tiffs, videos files).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">derivatives</span></code>: any processed data that is derived from <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> (e.g. spike sorting or pose estimation).</p></li>
+</ul>
+</li>
+<li><p>Data within the <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> folder <em>must</em> be hierarchically structured into subject/session/datatype levels. Each level <em>must</em> contain at least one folder corresponding to the next (lower) level.</p></li>
+<li><p>Subject and session folder names <em>must</em> consist of key-value pairs separated by underscores, without spaces e.g. <code class="docutils literal notranslate"><span class="pre">sub-001_id-5645332</span></code>.</p></li>
+<li><p>Datatype folder names <em>must</em> be one of the following : <code class="docutils literal notranslate"><span class="pre">ephys</span></code>, <code class="docutils literal notranslate"><span class="pre">behav</span></code>, <code class="docutils literal notranslate"><span class="pre">funcimg</span></code>, <code class="docutils literal notranslate"><span class="pre">anat</span></code>.</p></li>
+<li><p>Datatype folders <em>must</em> be placed under the session level.</p></li>
+</ul>
+<p>Below we describe each level of the <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> folder hierarchy in more detail. Though we impose no absolute requirements for the folder structure within <code class="docutils literal notranslate"><span class="pre">derivatives</span></code>, it <em>should</em> match the hierarchy in <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> whenever possible.</p>
+</section>
+<section id="subject">
+<h3>Subject<a class="headerlink" href="#subject" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Each subject <em>must</em> have exactly one subject-level folder.</p></li>
+<li><p>Subject-level folders <em>must</em> be prefixed with a key-value pair that is unique for each subject. The key <em>must</em> be <code class="docutils literal notranslate"><span class="pre">sub</span></code> and the value <em>must</em> be numerical, e.g. <code class="docutils literal notranslate"><span class="pre">sub-001</span></code>.</p></li>
+<li><p>Subjects <em>should</em> be assigned ascending numerical labels as they are added to the project. The labels <em>should</em> be prefixed with an arbitrary number of 0s for consistent indentation and sorting, e.g. <code class="docutils literal notranslate"><span class="pre">sub-001</span></code>, <code class="docutils literal notranslate"><span class="pre">sub-002</span></code>, <code class="docutils literal notranslate"><span class="pre">sub-003</span></code>.</p></li>
+<li><p>Additional key-value pairs with alphanumerical labels <em>may</em> be appended after the <code class="docutils literal notranslate"><span class="pre">sub</span></code> key-value pair. For example, animal IDs (e.g. from the animal facility) can be added as follows: <code class="docutils literal notranslate"><span class="pre">sub-001_id-5645332</span></code>. The keys <em>should</em> be consistent across subjects.</p></li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<ul class="simple">
+<li><p>valid: <code class="docutils literal notranslate"><span class="pre">sub-02</span></code>, <code class="docutils literal notranslate"><span class="pre">sub-001_id-5645332_sex-F</span></code>, <code class="docutils literal notranslate"><span class="pre">sub-02_species-mouse</span></code></p></li>
+<li><p>invalid:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">mouse-01</span></code>: the first key should have been <code class="docutils literal notranslate"><span class="pre">sub</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sub-001_female</span></code>: <code class="docutils literal notranslate"><span class="pre">female</span></code> should have been written as a key-value pair (e.g. <code class="docutils literal notranslate"><span class="pre">sex-female</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sub-B</span></code>: the <code class="docutils literal notranslate"><span class="pre">sub</span></code> key should have a numerical value</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="session">
+<h3>Session<a class="headerlink" href="#session" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Each session <em>must</em> have exactly one session-level folder.</p></li>
+<li><p>Session-level folders <em>must</em> be prefixed with a key-value pair that is unique for each session. The key <em>must</em> be <code class="docutils literal notranslate"><span class="pre">ses</span></code> and the value <em>must</em> be numerical, e.g. <code class="docutils literal notranslate"><span class="pre">ses-01</span></code>.</p></li>
+<li><p>Sessions <em>should</em> be assigned ascending numerical labels as they are added to the project. The labels <em>should</em> be prefixed with an arbitrary number of 0s for consistent indentation and sorting, e.g. <code class="docutils literal notranslate"><span class="pre">ses-01</span></code>, <code class="docutils literal notranslate"><span class="pre">ses-02</span></code>, <code class="docutils literal notranslate"><span class="pre">ses-03</span></code>.</p></li>
+<li><p>Additional key-value pairs with alphanumerical labels <em>may</em> be appended after the <code class="docutils literal notranslate"><span class="pre">ses</span></code> key-value pair. For example, dates can be added as follows: <code class="docutils literal notranslate"><span class="pre">ses-001_date-20230310</span></code>. The keys <em>should</em> be consistent across subjects.</p></li>
+<li><p>If a <code class="docutils literal notranslate"><span class="pre">date</span></code> field is added, it <em>should</em> be in the format <code class="docutils literal notranslate"><span class="pre">YYYYMMDD</span></code>.</p></li>
+<li><p>If a <code class="docutils literal notranslate"><span class="pre">time</span></code> field is added, it <em>should</em> be in the format <code class="docutils literal notranslate"><span class="pre">HHMMSS</span></code></p></li>
+<li><p>If a <code class="docutils literal notranslate"><span class="pre">datetime</span></code> field is added, it <em>should</em> be in <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_8601">ISO8601</a> format <code class="docutils literal notranslate"><span class="pre">YYYYMMDDTHHMMSS</span></code> e.g. <code class="docutils literal notranslate"><span class="pre">20231225T133015</span></code>.</p></li>
+<li><p>Different sessions <em>may</em> contain different combinations of datatypes.</p></li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<ul class="simple">
+<li><p>valid: <code class="docutils literal notranslate"><span class="pre">ses-02</span></code>, <code class="docutils literal notranslate"><span class="pre">ses-2_date-20230204</span></code></p></li>
+<li><p>invalid:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">date-20230204_ses-01</span></code>: <code class="docutils literal notranslate"><span class="pre">ses</span></code> should have been the first key</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">session2</span></code>: should have been written as <code class="docutils literal notranslate"><span class="pre">ses-2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ses-A</span></code>: the <code class="docutils literal notranslate"><span class="pre">ses</span></code> key should have a numerical value</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="datatype">
+<h3>Datatype<a class="headerlink" href="#datatype" title="Link to this heading">#</a></h3>
+<p>The datatype folder, placed in the session level folder, is where
+data are stored. Two sets of datatype folder names are supported,
+either ‘<em>Broad</em>’ or ‘<em>Narrow</em>’. The <em>Broad</em> datatype names are designed to
+cover most use cases:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ephys</span></code>: electrophysiology (e.g. Neuropixel probes, tetrodes)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">behav</span></code>: behavioural (e.g. video and audio files, response logs)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">funcimg</span></code>: functional imaging (e.g. calcium and voltage imaging)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">anat</span></code>: anatomical (e.g. histology, using confocal or lightsheet)</p></li>
+</ul>
+<p>In some cases, the <em>Broad</em> datatype names may not be specific enough,
+for example if two different types of electrophysiological (<code class="docutils literal notranslate"><span class="pre">ephys</span></code>)
+recording were run. In this case, the <em>Broad</em> datatype
+name <em>must</em> be substituted for a <em>Narrow</em> datatype name (rather than placing two
+different datatypes in a <em>Broad</em> datatype folder). See the dropdown below for
+the full list of supported <em>Narrow</em> datatypes.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-info" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg></span><span class="sd-summary-text">Narrow datatypes</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">If a <em>Narrow</em> datatype is used instead of a <em>Broad</em> datatype anywhere
+in the project, the <em>Narrow</em> datatype <em>must</em> be used across the entire
+project. The <em>Broad</em> datatype for that category <em>must</em> no longer be used.</p>
+<p class="sd-card-text">If you have a modality that does not fit into the current datatype options,
+please get in contact!</p>
+<p class="sd-card-text"><strong>ephys</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ecephys</span></code>: extracellular electrophysiology</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">icephys</span></code>: intracellular electrophysiology</p></li>
+</ul>
+<p class="sd-card-text"><strong>funcimg</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">cscope</span></code>: head-mounted widefield macroscope</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">f2pe</span></code>: functional 2-photon excitation imaging</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">fmri</span></code>: functional magnetic resonance imaging</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">fusi</span></code>: functional ultra-sound imaging</p></li>
+</ul>
+<p class="sd-card-text"><strong>anat</strong></p>
+<p class="sd-card-text">These are taken from <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/modality-specific-files/microscopy.html">BIDS microscopy</a>
+(with the exception of <code class="docutils literal notranslate"><span class="pre">mri</span></code>).</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">2pe</span></code>: 2-photon excitation microscopy</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">bf</span></code>: bright-field microscopy</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">cars</span></code>: coherent anti-Stokes Raman spectroscopy</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">conf</span></code>: confocal microscopy</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">dic</span></code>:  differential interference contrast microscopy</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">df</span></code>: dark-field microscopy</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">fluo</span></code>: fluorescence microscopy</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">mpe</span></code>: multi-photon excitation microscopy</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">nlo</span></code>: nonlinear optical microscopy</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">oct</span></code>: optical coherence tomography</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">pc</span></code>: phase-contrast microscopy</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">pli</span></code>: polarized-light microscopy</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">sem</span></code>: scanning electron microscopy</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">spim</span></code>: selective plane illumination microscopy</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">sr</span></code>: super-resolution microscopy</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">tem</span></code>: transmission electron microscopy</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">uct</span></code>: micro-CT</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">mri</span></code>: magnetic resonance imaging</p></li>
+</ul>
+<p class="sd-card-text"><strong>Example</strong></p>
+<p class="sd-card-text">In this example experiment, both functional
+magnetic resonance imaging (<code class="docutils literal notranslate"><span class="pre">fmri</span></code>) and
+functional two-photon imaging (<code class="docutils literal notranslate"><span class="pre">f2pe</span></code>) were run
+across two difference sessions. Then, anatomical
+imaging was performed at the end (here stored in a
+single session) using both brightfield (<code class="docutils literal notranslate"><span class="pre">bf</span></code>) and
+two-photon imaging (<code class="docutils literal notranslate"><span class="pre">2pe</span></code>).</p>
+<p class="sd-card-text">Optional key-value pairs in the <a class="reference internal" href="#file-naming-conventions"><span class="std std-ref">filename</span></a>
+are used to again indicate the datatype, but this is not required.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.
+└── sub-001/
+    ├── ses-001/
+    │   └── fmri/
+    │       └── sub-001_ses-001_dtype-fmri.nii
+    ├── ses-002/
+    │   └── f2pe/
+    │       └── sub-001_ses-002_dtype-f2pe.mat
+    └── ses-005_type-histology/
+        ├── bf/
+        │   └── sub-001_ses-003_dtype-bf.tif
+        └── 2pe/
+            └── sub-001_ses-003_dtype-2pe.tif
+</pre></div>
+</div>
+</div>
+</details></section>
+<section id="example-project-folder">
+<h3>Example project folder<a class="headerlink" href="#example-project-folder" title="Link to this heading">#</a></h3>
+<p>A real project folder might look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── project/
+    ├── rawdata/
+    │   └── sub-001_id-5645332/
+    │       ├── ses-01_date-20230310/
+    │       │   ├── ephys/
+    │       │   │   ├── sub-001_ses-01_recording-01.bin
+    │       │   │   └── sub-001_ses-01_probe-3A.imec0
+    │       │   └── behav/
+    │       │       ├── sub-001_ses-01_camera-01.wav
+    │       │       └── sub-001_ses-01_data-responses.csv
+    │       └── ses-02_date-20230311/
+    │           └── anat/
+    │               └── sub-001_image-brain.tiff
+    └── derivatives/
+        └── sub-001_id-5645332/
+            ├── ses-01_date-20230310/
+            │   ├── ephys/
+            │   │   └── sub-001_ses-01_data-spikes.npy
+            │   └── behav/
+            │       └── sub-001_ses-01_data-poses.csv
+            └── ses-02_date-20230311/
+                └── anat/
+                    └── sub-001_data-cellcounts.csv
+</pre></div>
+</div>
+</section>
+</section>
+<section id="file-naming-conventions">
+<h2>File naming conventions<a class="headerlink" href="#file-naming-conventions" title="Link to this heading">#</a></h2>
+<p><strong>NeuroBlueprint</strong> imposes no absolute requirements on file names. That said, below we provide some recommendations for file names, based on the <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#filenames">BIDS specification</a>.</p>
+<div class="tip admonition">
+<p class="admonition-title">What makes a good file name?</p>
+<ul class="simple">
+<li><p>be nice to humans -&gt; readable and descriptive</p></li>
+<li><p>be nice to computers -&gt; parseable and consistent</p></li>
+<li><p>use alphanumeric characters <code class="docutils literal notranslate"><span class="pre">Aa-Zz,</span> <span class="pre">0-9</span></code>, dashes <code class="docutils literal notranslate"><span class="pre">-</span></code>, underscores <code class="docutils literal notranslate"><span class="pre">_</span></code></p></li>
+<li><p>avoid spaces and special characters</p></li>
+<li><p>use appropriate extensions for each file type (e.g. <code class="docutils literal notranslate"><span class="pre">.csv</span></code>, <code class="docutils literal notranslate"><span class="pre">.avi</span></code>, <code class="docutils literal notranslate"><span class="pre">.tiff</span></code>)</p></li>
+<li><p>don’t rely on capitalization to distinguish files (some operating systems are case-insensitive)</p></li>
+</ul>
+</div>
+<ul class="simple">
+<li><p>File names <em>should</em> be formatted as series of key-value pairs ending with a file extension:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">key1</span><span class="o">&gt;-&lt;</span><span class="n">value1</span><span class="o">&gt;</span><span class="n">_</span><span class="o">&lt;</span><span class="n">key2</span><span class="o">&gt;-&lt;</span><span class="n">value2</span><span class="o">&gt;</span><span class="n">_</span><span class="o">&lt;</span><span class="n">key3</span><span class="o">&gt;-&lt;</span><span class="n">value3</span><span class="o">&gt;...&lt;</span><span class="n">keyN</span><span class="o">&gt;-&lt;</span><span class="n">valueN</span><span class="o">&gt;.&lt;</span><span class="n">extension</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Key-value pairs <em>should</em> be separated by underscores while the keys and values are separated by hyphens (e.g. <code class="docutils literal notranslate"><span class="pre">sub-001_ses-001_key1-value1_key2-value2.csv</span></code>).</p></li>
+<li><p>Anything after the left-most stop (<code class="docutils literal notranslate"><span class="pre">.</span></code>) is considered as the file extension.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sub</span></code> and <code class="docutils literal notranslate"><span class="pre">ses</span></code> <em>should</em> be included in the filename. This can seem redundant, given that the file is already in a <code class="docutils literal notranslate"><span class="pre">sub-&lt;label&gt;/ses-&lt;label&gt;</span></code> folder, but it makes it easier to identify the file if it is moved out of its original folder.</p></li>
+<li><p>Additional information, such as the task name, or run number, <em>may</em> be included as further key-value pairs, e.g. <code class="docutils literal notranslate"><span class="pre">sub-001_ses-001_task-escape_run-001.csv</span></code></p></li>
+<li><p>If the acquisition software outputs data with its own mandatory file naming convention, these <em>should</em> be placed under a folder that follows the <strong>NeuroBlueprint</strong> naming conventions, e.g.:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── my_project/
+    └── rawdata/
+        └── sub-001/
+            └── ses-001/
+                └── behav/
+                    └── sub-001_ses-001_task-discrimination_software-cooltool/
+                        ├── required-software-output-name-3453234.mp4
+                        └── required-software-output-name-3453235.mp4
+</pre></div>
+</div>
+<section id="example-file-names">
+<h3>Example file names<a class="headerlink" href="#example-file-names" title="Link to this heading">#</a></h3>
+<p>Below we provide some example file names adhering to the <strong>NeuroBlueprint</strong> naming conventions.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── project/
+    └── rawdata/
+        └── sub-001/
+            └── ses-01/
+                ├── ephys/
+                │   ├── sub-01_ses-01_probe-3A.imec0
+                │   ├── sub-01_ses-01_task-retinotopy.lf.bin
+                │   ├── sub-01_ses-01_task-discrim_monitor-right_run-01.ap.bin
+                │   ├── sub-01_ses-01_task-discrim_monitor-left_run-01.ap.bin
+                │   └── sub-01_ses-01_task-discrim_monitor-left_run-02.ap.bin
+                └── behav/
+                    ├── sub-01_ses-01_task-discrim_monitor-right_run-01.mp4
+                    ├── sub-01_ses-01_task-discrim_monitor-left_run-01.mp4
+                    └── sub-01_ses-01_task-discrim_monitor-right_run-02.mp4
+</pre></div>
+</div>
+</section>
+</section>
+<section id="metadata-conventions">
+<h2>Metadata conventions<a class="headerlink" href="#metadata-conventions" title="Link to this heading">#</a></h2>
+<p><strong>NeuroBlueprint</strong> imposes no absolute requirements on how to store metadata. That said, we do outline some best practices, in accordance with the <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#tabular-files">BIDS specification on tabular files</a>.</p>
+<section id="tabular-metadata">
+<h3>Tabular metadata<a class="headerlink" href="#tabular-metadata" title="Link to this heading">#</a></h3>
+<p>Tabular metadata, e.g. a table describing the animals in the project, <em>should</em> be saved as a tab-separated value file (TSV, ending with <code class="docutils literal notranslate"><span class="pre">.tsv</span></code>) , that is, a CSV file where commas are replaced by tabs. The tab character is a less ambiguous delimiter compared to commas, as it is less likely to appear in data. This makes TSV less prone to parsing errors.</p>
+<p>If you are using TSV files, we recommend adhering to the following conventions:</p>
+<ul class="simple">
+<li><p>The first row of the file <em>should</em> contain descriptive column names, formatted as snake_case (e.g. <code class="docutils literal notranslate"><span class="pre">participant_id</span></code>, <code class="docutils literal notranslate"><span class="pre">species</span></code>, <code class="docutils literal notranslate"><span class="pre">date_of_birth</span></code>, <code class="docutils literal notranslate"><span class="pre">sex</span></code>, <code class="docutils literal notranslate"><span class="pre">group</span></code>). Avoid blank (that is, an empty string) or duplicate columns names.</p></li>
+<li><p>Missing and non-applicable values <em>should</em> be coded as <code class="docutils literal notranslate"><span class="pre">n/a</span></code>.</p></li>
+<li><p>Numerical values <em>should</em> employ the dot (.) as decimal separator and <em>may</em> be specified in scientific notation, using e or E to separate the significand from the exponent (e.g. <code class="docutils literal notranslate"><span class="pre">1.23e-4</span></code>)</p></li>
+<li><p>TSV files <em>should</em> be in UTF-8 encoding.</p></li>
+</ul>
+<p>Here is an example table containing metadata for animal subjects:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">subject_id</span>  <span class="n">species</span>         <span class="n">sex</span>     <span class="n">group</span>
+<span class="n">sub</span><span class="o">-</span><span class="mi">01</span>      <span class="n">mus</span> <span class="n">musculus</span>    <span class="n">M</span>       <span class="n">control</span>
+<span class="n">sub</span><span class="o">-</span><span class="mi">02</span>      <span class="n">mus</span> <span class="n">musculus</span>    <span class="n">F</span>       <span class="n">control</span>
+<span class="n">sub</span><span class="o">-</span><span class="mi">03</span>      <span class="n">mus</span> <span class="n">musculus</span>    <span class="n">M</span>       <span class="n">treatment</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">NeuroBlueprint</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="community.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Community</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-folder-structure">Project folder structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-principles">Basic principles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subject">Subject</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#session">Session</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datatype">Datatype</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-project-folder">Example project folder</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-naming-conventions">File naming conventions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-file-names">Example file names</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-conventions">Metadata conventions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular-metadata">Tabular metadata</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/specification.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p class="sphinx-version">
+Created using <a href="https://sphinx-doc.org/">Sphinx</a> 8.1.3.
+<br/>
+</p>
+<p class="theme-version">
+Built with the
+<a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
+0.16.0.
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><div class="things-in-a-row">
+    <a href="https://www.sainsburywellcome.org/web/">
+        <img src="_static/light-logo-swc.png" alt="Sponsors" class="only-light img-sponsor"/>
+        <img src="_static/dark-logo-swc.png" alt="Sponsors" class="only-dark img-sponsor"/>
+    </a>
+    <a href="https://www.ucl.ac.uk/gatsby/gatsby-computational-neuroscience-unit">
+        <img src="_static/light-logo-gatsby.png" alt="Sponsors" class="only-light img-sponsor"/>
+        <img src="_static/dark-logo-gatsby.png" alt="Sponsors" class="only-dark img-sponsor"/>
+    </a>
+    <a href="https://www.ucl.ac.uk/">
+        <img src="_static/light-logo-ucl.png" alt="Sponsors" class="only-light img-sponsor"/>
+        <img src="_static/dark-logo-ucl.png" alt="Sponsors" class="only-dark img-sponsor"/>
+    </a>
+</div></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
