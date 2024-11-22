@@ -128,14 +128,19 @@ html_theme_options = {
             "type": "fontawesome",
         },
     ],
+    "switcher": {
+        "json_url": "https://neuroblueprint.neuroinformatics.dev/_static/switcher.json",
+        "version_match": release,
+    },
     "logo": {
         "text": f"NeuroBlueprint v{release}",
         "image_light": "logo_light.png",
         "image_dark": "logo_dark.png",
     },
+    "navbar_end": ["navbar-icon-links", "version-switcher"],
     "footer_start": ["custom_footer"],
     "footer_end": ["footer_end"]
 }
 
 # link-check cannot check anchors
-linkcheck_ignore = ['https://bids-specification.readthedocs.io', 'https://neuroinformatics.zulipchat.com']
+linkcheck_ignore = ['https://bids-specification.readthedocs.io', 'https://neuroinformatics.zulipchat.com', 'https://www.incf.org']
