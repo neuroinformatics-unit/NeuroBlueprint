@@ -26,8 +26,6 @@ jobs:
     needs: linting
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-
     # Need the tags so that setuptools-scm can form a valid version number
     - name: Fetch git tags
       run: git fetch origin 'refs/tags/*:refs/tags/*'
