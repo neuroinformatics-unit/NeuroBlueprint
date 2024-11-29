@@ -137,7 +137,7 @@ jobs:
             NEW_URL="${BASE_URL}/stable/"
             # Extract the current latest version entry
             FIRST_ENTRY=$(jq '.[0]' <<< "${SWITCHER_CONTENT}")
-            CURRENT_LATEST_VERSION=${$(jq '.[1].version' <<< "${SWITCHER_CONTENT}")//\"/}
+            CURRENT_LATEST_VERSION=$(echo $(jq '.[1].version' <<< "${SWITCHER_CONTENT}") | tr -d '"')
 
             # Remove the "name" field from the current latest entry
             UPDATED_CURRENT_LATEST_ENTRY=$(jq --arg url "${BASE_URL}/${CURRENT_LATEST_VERSION}" '.[1] | .url = $url | del(.name)' <<< "$SWITCHER_CONTENT")
