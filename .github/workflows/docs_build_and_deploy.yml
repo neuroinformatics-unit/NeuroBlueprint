@@ -133,25 +133,22 @@ jobs:
             # Updated switcher.json file
             SWITCHER_FILE="${version}/_static/switcher.json"
             SWITCHER_CONTENT=$(cat "${SWITCHER_FILE}")
-            BASE_URL="$(jq -r '.[1].url|split("/")[0:-2]|join("/")' $SWITCHER_FILE)"
-            NEW_URL="${BASE_URL}/${version}/"
-
+            BASE_URL="$(jq -r '.[1].url|split("/")[0:3]|join("/")' $SWITCHER_FILE)"
+            NEW_URL="${BASE_URL}/stable/"
             # Extract the current latest version entry
             FIRST_ENTRY=$(jq '.[0]' <<< "${SWITCHER_CONTENT}")
-            CURRENT_LATEST_ENTRY=$(jq '.[1]' <<< "${SWITCHER_CONTENT}")
+            CURRENT_LATEST_VERSION=${$(jq '.[1].version' <<< "${SWITCHER_CONTENT}")//\"/}
 
             # Remove the "name" field from the current latest entry
-            UPDATED_CURRENT_LATEST_ENTRY=$(jq '.[1] | del(.name)' <<< "$SWITCHER_CONTENT")
+            UPDATED_CURRENT_LATEST_ENTRY=$(jq --arg url "${BASE_URL}/${CURRENT_LATEST_VERSION}" '.[1] | .url = $url | del(.name)' <<< "$SWITCHER_CONTENT")
 
-            # Create the new version entry with the "latest" tag
-            NEW_ENTRY=$(jq -n --arg version "${version}" --arg url "$NEW_URL" \
-            '{version: $version, url: $url, name: "($version) (latest)"}')
+            # Create the new version entry with the "stable" tag
+            NEW_ENTRY=$(jq -n --arg version "${version}" --arg url "$NEW_URL" --arg name "$version (stable)" \
+            '{name: $name, version: $version, url: $url}')
+
 
             # Combine the entries in the desired order
-            UPDATED_SWITCHER_CONTENT=$(jq --argjson first_entry "$FIRST_ENTRY" \
-              --argjson new_entry "$NEW_ENTRY" \
-              --argjson updated_current_stable_entry "$UPDATED_CURRENT_STABLE_ENTRY" \
-              '[$first_entry, $new_entry, $updated_current_stable_entry] + .[2:]' <<< "$SWITCHER_CONTENT")
+            UPDATED_SWITCHER_CONTENT=$(jq --argjson first_entry "$FIRST_ENTRY" --argjson new_entry "$NEW_ENTRY" --argjson updated_current_stable "$UPDATED_CURRENT_LATEST_ENTRY" '[$first_entry, $new_entry, $updated_current_stable] + .[2:]' <<< "$SWITCHER_CONTENT")
 
             # Write the updated content back to switcher.json
             echo "$UPDATED_SWITCHER_CONTENT" > "$SWITCHER_FILE"
