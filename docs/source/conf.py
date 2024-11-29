@@ -129,7 +129,7 @@ html_theme_options = {
         },
     ],
     "switcher": {
-        "json_url": "https://neuroblueprint.neuroinformatics.dev/_static/switcher.json",
+        "json_url": "https://neuroblueprint.neuroinformatics.dev/latest/_static/switcher.json",
         "version_match": release,
     },
     "logo": {
@@ -143,4 +143,8 @@ html_theme_options = {
 }
 
 # link-check cannot check anchors
-linkcheck_ignore = ['https://bids-specification.readthedocs.io', 'https://neuroinformatics.zulipchat.com', 'https://www.incf.org']
+linkcheck_ignore = [
+    'https://bids-specification.readthedocs.io',
+    'https://neuroinformatics.zulipchat.com',
+    'https://www.incf.org/',  # due to SSLCertVerificationError
+]
