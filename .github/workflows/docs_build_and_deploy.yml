@@ -148,10 +148,11 @@ jobs:
             # Combine the entries in the desired order
             UPDATED_SWITCHER_CONTENT=$(jq --argjson first_entry "$FIRST_ENTRY" --argjson new_entry "$NEW_ENTRY" --argjson updated_current_latest "$UPDATED_CURRENT_LATEST_ENTRY" '[$first_entry, $new_entry, $updated_current_latest] + .[2:]' <<< "$SWITCHER_CONTENT")
 
+            SWITCHER_FILE="${version}/_static/switcher.json"
             # Write the updated content back to switcher.json
             echo "$UPDATED_SWITCHER_CONTENT" > "$SWITCHER_FILE"
 
-            echo "switcher.json has been updated successfully."
+            echo "${version}/_static/switcher.json has been updated successfully."
           fi
 
           # If this is a new release, update the link from /latest to it
