@@ -132,7 +132,7 @@ jobs:
           if [[ "${version}" != "dev" ]]; then
             # Updated switcher.json file
             SWITCHER_CONTENT=$(curl https://neuroblueprint.neuroinformatics.dev/latest/_static/switcher.json)
-            BASE_URL="$(jq -r '.[1].url|split("/")[0:3]|join("/")' $SWITCHER_FILE)"
+            BASE_URL="$(jq -r '.[1].url|split("/")[0:3]|join("/")' <<< $SWITCHER_CONTENT)"
             NEW_URL="${BASE_URL}/latest/"
             # Extract the current latest version entry
             FIRST_ENTRY=$(jq '.[0]' <<< "${SWITCHER_CONTENT}")
