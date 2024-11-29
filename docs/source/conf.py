@@ -129,7 +129,7 @@ html_theme_options = {
         },
     ],
     "switcher": {
-        "json_url": "https://neuroblueprint.neuroinformatics.dev/_static/switcher.json",
+        "json_url": "https://neuroblueprint.neuroinformatics.dev/latest/_static/switcher.json",
         "version_match": release,
     },
     "logo": {

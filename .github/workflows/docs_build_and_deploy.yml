@@ -96,16 +96,16 @@ jobs:
           name: docs-${{ github.sha }}
           path: docs/build
 
-      - name: Checkout the gh-pages-test branch in a separate folder
+      - name: Checkout the gh-pages branch in a separate folder
         uses: actions/checkout@v4
         with:
-          ref: gh-pages-test
+          ref: gh-pages
           # Checkout to this folder instead of the current one
           path: deploy
           # Download the entire history
           fetch-depth: 0
 
-      - name: Push the built HTML to gh-pages-test
+      - name: Push the built HTML to gh-pages
         run: |
           # Detect if this is a release or from the main branch
           echo "Event name: ${{ github.event_name }}"
@@ -131,8 +131,7 @@ jobs:
 
           if [[ "${version}" != "dev" ]]; then
             # Updated switcher.json file
-            SWITCHER_FILE="${version}/_static/switcher.json"
-            SWITCHER_CONTENT=$(cat "${SWITCHER_FILE}")
+            SWITCHER_CONTENT=$(curl https://neuroblueprint.neuroinformatics.dev/latest/_static/switcher.json)
             BASE_URL="$(jq -r '.[1].url|split("/")[0:3]|join("/")' $SWITCHER_FILE)"
             NEW_URL="${BASE_URL}/latest/"
             # Extract the current latest version entry
@@ -145,7 +144,6 @@ jobs:
             # Create the new version entry with the "latest" tag
             NEW_ENTRY=$(jq -n --arg version "${version}" --arg url "$NEW_URL" --arg name "$version (latest)" \
             '{name: $name, version: $version, url: $url}')
-
 
             # Combine the entries in the desired order
             UPDATED_SWITCHER_CONTENT=$(jq --argjson first_entry "$FIRST_ENTRY" --argjson new_entry "$NEW_ENTRY" --argjson updated_current_latest "$UPDATED_CURRENT_LATEST_ENTRY" '[$first_entry, $new_entry, $updated_current_latest] + .[2:]' <<< "$SWITCHER_CONTENT")
@@ -181,6 +179,6 @@ jobs:
           fi
           # Make the push quiet just in case there is anything that could leak
           # sensitive information.
-          echo -e "\nPushing changes to gh-pages-test."
-          git push -fq origin gh-pages-test 2>&1 >/dev/null
+          echo -e "\nPushing changes to gh-pages."
+          git push -fq origin gh-pages 2>&1 >/dev/null
           echo -e "\nFinished uploading generated files."
