@@ -108,7 +108,7 @@ please get in contact!
 - `cscope`: head-mounted widefield macroscope
 - `f2pe`: functional 2-photon excitation imaging
 - `fmri`: functional magnetic resonance imaging
-- `fusi`: functional ultra-sound imaging
+- `fusi`: functional ultrasound imaging
 
 
 **anat**
