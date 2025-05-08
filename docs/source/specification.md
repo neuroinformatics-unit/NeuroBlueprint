@@ -100,6 +100,9 @@ project. The *Broad* datatype for that category *must* no longer be used.
 If you have a modality that does not fit into the current datatype options,
 please get in contact!
 
+**behav**
+- `motion`: motion tracking, e.g. from marker-based motion capture systems, marker-less pose estimation, or inertial measurement units (IMUs)
+
 **ephys**
 - `ecephys`: extracellular electrophysiology
 - `icephys`: intracellular electrophysiology
