@@ -103,6 +103,7 @@ please get in contact!
 **ephys**
 - `ecephys`: extracellular electrophysiology
 - `icephys`: intracellular electrophysiology
+- `emg`: electromyography
 
 **funcimg**
 - `cscope`: head-mounted widefield macroscope
