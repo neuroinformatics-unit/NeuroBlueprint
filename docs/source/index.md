@@ -4,7 +4,7 @@
 <img src="_static/NeuroBlueprint_logo-dark_no-text.png" alt="NeuroBlueprint logo" class="only-dark img-responsive"/>
 
 **NeuroBlueprint** is a folder structure specification for (systems) neuroscience research projects.
-The [NeuroBlueprint specification](specification.md) provides a set of rules and guidelines for project folder organisation,
+It provides a set of [rules and guidelines](specification.md) for project folder organisation,
 ensuring consistent data management within and between labs. The focus is on ensuring minimal overhead for researchers.
 
 **NeuroBlueprint** is being developed at the [Sainsbury Wellcome Centre (SWC) for Neural Circuits and Behaviour](https://www.sainsburywellcome.org/)
