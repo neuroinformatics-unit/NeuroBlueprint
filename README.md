@@ -3,8 +3,8 @@
 ![](docs/source/_static/NeuroBlueprint_logo-dark_no-text.png)
 
 `NeuroBlueprint` is a folder structure specification for (systems) neuroscience research projects.
-The [NeuroBlueprint specification](https://neuroblueprint.neuroinformatics.dev/specification.html) provides
-a set of rules and guidelines for project folder organisation, ensuring consistent data management within and
+It provides a set of [rules and guidelines](https://neuroblueprint.neuroinformatics.dev/specification.html)
+for project folder organisation, ensuring consistent data management within and
 between labs. The focus is on ensuring minimal overhead for researchers.
 
 `NeuroBlueprint` is being developed at the
