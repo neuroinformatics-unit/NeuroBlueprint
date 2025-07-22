@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+title: NeuroBlueprint
+message: >-
+  If you use NeuroBlueprint in your work, please cite the following Zenodo DOI.
+authors:
+  - given-names: Joseph J.
+    family-names: Ziminski
+    orcid: 'https://orcid.org/0000-0003-4286-6868'
+    email: joseph.j.ziminski@gmail.com
+  - given-names: Nikoloz
+    family-names: Sirmpilatze
+    orcid: 'https://orcid.org/0000-0003-1778-2427'
+    email: niko.sirbiladze@gmail.com
+  - given-names: Laura
+    family-names: Porta
+  - given-names: Viktor
+    family-names: Plattner
+  - given-names: Adam L.
+    family-names: Tyson
+    orcid: 'https://orcid.org/0000-0003-3225-1130'
+    email: code@adamltyson.com
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.15720970
+    description: 'A collection of archived snapshots of NeuroBlueprint on Zenodo.'
+repository-code: 'https://github.com/neuroinformatics-unit/neuroblueprint'
+url: 'https://neuroblueprint.neuroinformatics.dev/'
+abstract: >-
+  A lightweight specification for organising neuroscience data.
+keywords:
+    - neuroscience
+    - systems neuroscience
+    - data specification
+    - data standards
+    - FAIR data
+license: CC-BY-4.0
