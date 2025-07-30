@@ -56,9 +56,9 @@ Below we describe each level of the `rawdata` folder hierarchy in more detail. T
 * Session-level folders *must* be prefixed with a key-value pair that is unique for each session. The key *must* be `ses` and the value *must* be alphanumerical, e.g. `ses-01A`.
 * Sessions *should* be assigned ascending numerical labels as they are added to the project e.g. `ses-01`, `ses-02`. The labels *should* be prefixed with an arbitrary number of 0s to ensure labels are the same length for consistent indentation and sorting.
 * Additional key-value pairs with alphanumerical labels *may* be appended after the `ses` key-value pair. For example, dates can be added as follows: `ses-001_date-20230310`. The keys *should* be consistent across subjects.
-* If a `date` field is added, it *must* be in [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) format `YYYYMMDD` and *should* be paired with a `date-` key e.g. `date-20250101`.
-* If a `time` field is added, it *must* be in [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) format `HHMMSS` and *should* be paired with a `time-` key e.g. `time-181210`.
-* If a `datetime` field is added, it *must* be in [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) format `YYYYMMDDTHHMMSS` and *should* be paired with a `datetime` key e.g. `datetime-20231225T133015`.
+* If a `date` field is added, it *should* be in the format `YYYYMMDD`.
+* If a `time` field is added, it *should* be in the format `HHMMSS`
+* If a `datetime` field is added, it *should* be in [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) format `YYYYMMDDTHHMMSS` e.g. `20231225T133015`.
 * Different sessions *may* contain different combinations of datatypes.
 
 :::{hint}
