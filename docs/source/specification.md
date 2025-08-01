@@ -39,7 +39,7 @@ Below we describe each level of the `rawdata` folder hierarchy in more detail. T
 ### Subject
 
 * Each subject *must* have exactly one subject-level folder.
-* Subject-level folders *must* be prefixed with a key-value pair that is unique for each subject. The key *must* be `sub` and the value *must* be alphanumerical, e.g. `sub-123A`.
+* Subject-level folders *must* be prefixed with a key-value pair that is unique for each subject. The key *must* be `sub` and the value *must* be alphanumerical, e.g. `sub-123`, `sub-ABC`, `sub-123A`.
 * Subjects *should* be assigned ascending numerical labels e.g. `sub-001`, `sub-002` increasing as they are added to the project. The labels *should* be prefixed with an arbitrary number of 0s to ensure labels are the same length for consistent indentation and sorting.
 * Additional key-value pairs with alphanumerical labels *may* be appended after the `sub` key-value pair. For example, animal IDs (e.g. from the animal facility) can be added as follows: `sub-001_id-5645332`. The keys *should* be consistent across subjects.
 
@@ -53,7 +53,7 @@ Below we describe each level of the `rawdata` folder hierarchy in more detail. T
 ### Session
 
 * Each session *must* have exactly one session-level folder.
-* Session-level folders *must* be prefixed with a key-value pair that is unique for each session. The key *must* be `ses` and the value *must* be alphanumerical, e.g. `ses-01A`.
+* Session-level folders *must* be prefixed with a key-value pair that is unique for each session. The key *must* be `ses` and the value *must* be alphanumerical, e.g. `ses-123`, `ses-ABC`, `ses-123A`.
 * Sessions *should* be assigned ascending numerical labels e.g. `ses-01`, `ses-02` increasing as they are added to the project. The labels *should* be prefixed with an arbitrary number of 0s to ensure labels are the same length for consistent indentation and sorting.
 * Additional key-value pairs with alphanumerical labels *may* be appended after the `ses` key-value pair. For example, dates can be added as follows: `ses-001_date-20230310`. The keys *should* be consistent across subjects.
 * If a `date` field is added, it *should* be in the format `YYYYMMDD`.
