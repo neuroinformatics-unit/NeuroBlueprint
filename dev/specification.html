@@ -483,9 +483,14 @@ In addition, it also includes some non-mandatory conventions for <a class="refer
 <li><p>Session-level folders <em>must</em> be prefixed with a key-value pair that is unique for each session. The key <em>must</em> be <code class="docutils literal notranslate"><span class="pre">ses</span></code> and the value <em>must</em> be numerical, e.g. <code class="docutils literal notranslate"><span class="pre">ses-01</span></code>.</p></li>
 <li><p>Sessions <em>should</em> be assigned ascending numerical labels as they are added to the project. The labels <em>should</em> be prefixed with an arbitrary number of 0s for consistent indentation and sorting, e.g. <code class="docutils literal notranslate"><span class="pre">ses-01</span></code>, <code class="docutils literal notranslate"><span class="pre">ses-02</span></code>, <code class="docutils literal notranslate"><span class="pre">ses-03</span></code>.</p></li>
 <li><p>Additional key-value pairs with alphanumerical labels <em>may</em> be appended after the <code class="docutils literal notranslate"><span class="pre">ses</span></code> key-value pair. For example, dates can be added as follows: <code class="docutils literal notranslate"><span class="pre">ses-001_date-20230310</span></code>. The keys <em>should</em> be consistent across subjects.</p></li>
-<li><p>If a <code class="docutils literal notranslate"><span class="pre">date</span></code> field is added, it <em>should</em> be in the format <code class="docutils literal notranslate"><span class="pre">YYYYMMDD</span></code>.</p></li>
-<li><p>If a <code class="docutils literal notranslate"><span class="pre">time</span></code> field is added, it <em>should</em> be in the format <code class="docutils literal notranslate"><span class="pre">HHMMSS</span></code></p></li>
-<li><p>If a <code class="docutils literal notranslate"><span class="pre">datetime</span></code> field is added, it <em>should</em> be in <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_8601">ISO8601</a> format <code class="docutils literal notranslate"><span class="pre">YYYYMMDDTHHMMSS</span></code> e.g. <code class="docutils literal notranslate"><span class="pre">20231225T133015</span></code>.</p></li>
+<li><p>If a date, time or datetime is added, it <em>must</em> be in <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format and <em>should</em> be paired with a <code class="docutils literal notranslate"><span class="pre">date-</span></code>, <code class="docutils literal notranslate"><span class="pre">time-</span></code> or <code class="docutils literal notranslate"><span class="pre">datetime-</span></code> key, respectively. For example:</p></li>
+</ul>
+<ul class="simple">
+<li><p>date: <code class="docutils literal notranslate"><span class="pre">ses-001_date-20250101</span></code> (date format YYYYMMDD)</p></li>
+<li><p>time: <code class="docutils literal notranslate"><span class="pre">ses-001_time-140101</span></code> (time format HHMMSS)</p></li>
+<li><p>datetime: <code class="docutils literal notranslate"><span class="pre">ses-001_datetime-20250101T140101</span></code> (datetime format YYYYMMDDTHHMMSS)</p></li>
+</ul>
+<ul class="simple">
 <li><p>Different sessions <em>may</em> contain different combinations of datatypes.</p></li>
 </ul>
 <div class="admonition hint">

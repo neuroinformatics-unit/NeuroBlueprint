@@ -1,2 +1,2 @@
 community.md:13: [redirected permanently] https://www.nwb.org to https://nwb.org/
-index.md:12: [redirected permanently] https://www.sainsburywellcome.org/ to https://www.sainsburywellcome.org/web/
+index.md:10: [redirected permanently] https://www.sainsburywellcome.org/ to https://www.sainsburywellcome.org/web/
