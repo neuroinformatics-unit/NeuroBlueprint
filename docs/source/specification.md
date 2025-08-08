@@ -39,8 +39,8 @@ Below we describe each level of the `rawdata` folder hierarchy in more detail. T
 ### Subject
 
 * Each subject *must* have exactly one subject-level folder.
-* Subject-level folders *must* be prefixed with a key-value pair that is unique for each subject. The key *must* be `sub` and the value *must* be numerical, e.g. `sub-001`.
-* Subjects *should* be assigned ascending numerical labels as they are added to the project. The labels *should* be prefixed with an arbitrary number of 0s for consistent indentation and sorting, e.g. `sub-001`, `sub-002`, `sub-003`.
+* Subject-level folders *must* be prefixed with a key-value pair that is unique for each subject. The key *must* be `sub` and the value *must* be alphanumerical, e.g. `sub-123`, `sub-ABC`, `sub-123A`.
+* Subjects *should* be assigned ascending numerical labels e.g. `sub-001`, `sub-002` increasing as they are added to the project. The labels *should* be prefixed with an arbitrary number of 0s to ensure labels are the same length for consistent indentation and sorting.
 * Additional key-value pairs with alphanumerical labels *may* be appended after the `sub` key-value pair. For example, animal IDs (e.g. from the animal facility) can be added as follows: `sub-001_id-5645332`. The keys *should* be consistent across subjects.
 
 :::{hint}
@@ -48,14 +48,13 @@ Below we describe each level of the `rawdata` folder hierarchy in more detail. T
 * invalid:
   * `mouse-01`: the first key should have been `sub`.
   * `sub-001_female`: `female` should have been written as a key-value pair (e.g. `sex-female`)
-  * `sub-B`: the `sub` key should have a numerical value
 :::
 
 ### Session
 
 * Each session *must* have exactly one session-level folder.
-* Session-level folders *must* be prefixed with a key-value pair that is unique for each session. The key *must* be `ses` and the value *must* be numerical, e.g. `ses-01`.
-* Sessions *should* be assigned ascending numerical labels as they are added to the project. The labels *should* be prefixed with an arbitrary number of 0s for consistent indentation and sorting, e.g. `ses-01`, `ses-02`, `ses-03`.
+* Session-level folders *must* be prefixed with a key-value pair that is unique for each session. The key *must* be `ses` and the value *must* be alphanumerical, e.g. `ses-123`, `ses-ABC`, `ses-123A`.
+* Sessions *should* be assigned ascending numerical labels e.g. `ses-01`, `ses-02` increasing as they are added to the project. The labels *should* be prefixed with an arbitrary number of 0s to ensure labels are the same length for consistent indentation and sorting.
 * Additional key-value pairs with alphanumerical labels *may* be appended after the `ses` key-value pair. For example, dates can be added as follows: `ses-001_date-20230310`. The keys *should* be consistent across subjects.
 * If a date, time or datetime is added, it *must* be in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format and *should* be paired with a `date-`, `time-` or `datetime-` key, respectively. For example:
  - date: `ses-001_date-20250101` (date format YYYYMMDD)
@@ -69,7 +68,6 @@ Below we describe each level of the `rawdata` folder hierarchy in more detail. T
 * invalid:
   * `date-20230204_ses-01`: `ses` should have been the first key
   * `session2`: should have been written as `ses-2`
-  * `ses-A`: the `ses` key should have a numerical value
 :::
 
 ### Datatype
