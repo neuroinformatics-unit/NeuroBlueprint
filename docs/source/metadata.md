@@ -109,7 +109,7 @@ https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/data
 
 ## Rawdata Metadata
 
-(I'm not sure we need this)
+This is mostly a place for inhereted keys? e.g. `ephys` etc
 
 ## Sub Metadata
 
