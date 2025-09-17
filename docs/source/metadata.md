@@ -1,8 +1,21 @@
+:orphan:
 # Metadata
 
-1) introduce
-2) explain other approaches
-3) explain why we went for this approach?
+Metadata is additional data that describes the project data itself. Metadata can
+be high-level (e.g. a general overview on the study and it's purpose) or 
+level low level (all acquisition parameters for extracellular electrophysiology
+set up, or microscope).
+
+A number of detailed metadata standards exist, including [BIDS](),
+[openMinds]() and [Allen](), each differing it its structure, level of detail
+and the datatypes they cover.
+
+Here, we provide a simple metadata organisation scheme that you can use to
+get started with adding metadata to your project. You are free to add
+metadata fields if you wish, but at the end of this guide we recommend fields
+that can go in each section. 
+
+Please get in touch if you would like additional keys added to the metadata fields.
 
 
 ## Metadata Organisation Description
@@ -30,7 +43,7 @@ At each level of the project, a metadata file can be included that describe that
 
 **``project_metadata.yml``**
 - This file contains high-level information about the project, for example it's overall purpose,
-who is involved in the project. See [].
+who is involved in the project. See [#project-metadata].
 
 **``rawdata_metadata.yml``**
 - This file contains information about the data collection, for example XXX. See [].
@@ -103,30 +116,39 @@ The folder structure may look like:
 
 # Recommended Metadata Keys
 
+(project-metadata)=
 ## Project Metadata
 
+Initially, fill in from:
 https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/dataset-description.html#dataset_descriptionjson
 
+(rawdata-metadata)=
 ## Rawdata Metadata
 
 This is mostly a place for inhereted keys? e.g. `ephys` etc
 
+(sub-metadata)=
 ## Sub Metadata
-
+Initially, fill in from:
 https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/data-summary-files.html
 
+(ses-metadata)=
 ## Ses Metadata
-
+Initially, fill in from:
 https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/data-summary-files.html#sessions-file
 
+(ephys-metadata)=
 ## `ephys`
-
+Initially, fill in from:
 https://bep032tools.readthedocs.io/en/latest/
 
+(behav-metadata)=
 ## `behav`
-
+Initially, fill in from:
 https://bids-specification.readthedocs.io/en/stable/modality-specific-files/behavioral-experiments.html
 
+(anat-metadata)=
 ## `anat_metadata`
-
+Initially, fill in from:
 https://bids-specification.readthedocs.io/en/stable/modality-specific-files/microscopy.html
+

@@ -27,6 +27,5 @@ We will collaborate with [ongoing efforts](https://github.com/INCF/neuroscience-
 :caption: Contents
 
 specification
-metadata
 community
 ```
