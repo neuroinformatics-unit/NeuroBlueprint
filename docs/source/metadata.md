@@ -2,7 +2,7 @@
 # Metadata
 
 Metadata is additional data that describes the project data itself. Metadata can
-be high-level (e.g. a general overview on the study and it's purpose) or 
+be high-level (e.g. a general overview on the study and it's purpose) or
 level low level (all acquisition parameters for extracellular electrophysiology
 set up, or microscope).
 
@@ -13,7 +13,7 @@ and the datatypes they cover.
 Here, we provide a simple metadata organisation scheme that you can use to
 get started with adding metadata to your project. You are free to add
 metadata fields if you wish, but at the end of this guide we recommend fields
-that can go in each section. 
+that can go in each section.
 
 Please get in touch if you would like additional keys added to the metadata fields.
 
@@ -34,7 +34,7 @@ At each level of the project, a metadata file can be included that describe that
         │       ├── behav/
         │       │   └── behav_metadata.yml
         │       └── ephys/
-        │           └── ephya_metadata.yml
+        │           └── ephys_metadata.yml
         ├── sub-002/
         │   ├── sub-002_metadata.yml
         │   └── ...
@@ -43,22 +43,22 @@ At each level of the project, a metadata file can be included that describe that
 
 **``project_metadata.yml``**
 - This file contains high-level information about the project, for example it's overall purpose,
-who is involved in the project. See [#project-metadata].
+who is involved in the project. see [project metadata](project-metadata).
 
 **``rawdata_metadata.yml``**
-- This file contains information about the data collection, for example XXX. See [].
+- This file contains information about the data collection, for example XXX. See [rawdata metadata](rawdata-metadata).
 
 **``sub-<value>_metadata.yml``**
 - This contains information about an individual subject, for example its date of birth,
-identifiers, genotype or other key information. See [].
+identifiers, genotype or other key information. See [subject metadata](sub-metadata).
 
 **``ses-<value>_metadata.yml``**
 - This file contains information related to the particular experimental session.For example,
-the date, notes on what happened in the session, etc. See [].
+the date, notes on what happened in the session, etc.  See [session metadata](ses-metadata).
 
 **``<datatype>_metadata.yml``**
-- This file can contain metadata specific to the datatype acquisition. See the [] section
-for details on keys to include for particular datatypes.
+- This file can contain metadata specific to the datatype acquisition. See the [datatype keys](datatype-keys)
+section for details on keys to include for particular datatypes.
 
 
 **Other files and folders**
@@ -137,6 +137,9 @@ https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/data
 Initially, fill in from:
 https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/data-summary-files.html#sessions-file
 
+(datatype-keys)=
+## Datatype keys
+
 (ephys-metadata)=
 ## `ephys`
 Initially, fill in from:
@@ -151,4 +154,3 @@ https://bids-specification.readthedocs.io/en/stable/modality-specific-files/beha
 ## `anat_metadata`
 Initially, fill in from:
 https://bids-specification.readthedocs.io/en/stable/modality-specific-files/microscopy.html
-
