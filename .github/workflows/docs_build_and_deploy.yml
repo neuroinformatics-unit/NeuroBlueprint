@@ -7,14 +7,14 @@ name: Build Sphinx docs and deploy to GitHub Pages
 #
 # The deploy job runs under the following conditions:
 # 1. When a tag is pushed (releases) the deploy job places the docs content on the
-#    gh-pages branch under a folder named after the release version (e.g. 0.3.0)
+#    gh-pages branch under a folder named after the release version (e.g. v0.3.0)
 #    and symlinks the "latest" version to it.
 # 2. When a pull request is merged to main, or a workflow is manually dispatched from the main branch,
 #    the deploy job places the docs content on the gh-pages branch under a folder named "dev".
 #
 # Therefore, the "dev" folder always corresponds to the main branch on GitHub,
 # whereas the "latest" folder corresponds to the most recent release.
-# A version switcher is included to switch between versions.
+# A version switcher dropdown enables switching between versions.
 
 on:
   push:
