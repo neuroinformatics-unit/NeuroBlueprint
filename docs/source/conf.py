@@ -25,7 +25,7 @@ author = 'Neuroinformatics Unit'
 # Retrieve the version number from the package
 try:
     release = setuptools_scm.get_version(root="../..", relative_to=__file__)
-    release = release.split(".dev")[0]  # remove dev tag and git hash
+    release = release.split("+")[0]  # remove git hash but retain .dev tag if present
 except LookupError:
     # if git is not initialised, still allow local build
     # with a dummy version
