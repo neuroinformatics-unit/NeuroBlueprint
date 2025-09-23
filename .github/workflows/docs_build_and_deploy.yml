@@ -6,9 +6,9 @@ name: Build Sphinx docs and deploy to GitHub Pages
 # The build job can be used as a CI check that the docs still build successfully.
 #
 # The deploy job runs under the following conditions:
-# 1. When a tag is pushed (releases) the deploy job places the docs content on the 
-#    gh-pages branch under a foler named after the release version (e.g. 0.3.0)
-#    and symlinks the "latest" version to it. 
+# 1. When a tag is pushed (releases) the deploy job places the docs content on the
+#    gh-pages branch under a folder named after the release version (e.g. 0.3.0)
+#    and symlinks the "latest" version to it.
 # 2. When a pull request is merged to main, or a workflow is manually dispatched from the main branch,
 #    the deploy job places the docs content on the gh-pages branch under a folder named "dev".
 #
@@ -60,4 +60,3 @@ jobs:
           secret_input: ${{ secrets.GITHUB_TOKEN }}
           use-make: false
           switcher-url: https://neuroblueprint.neuroinformatics.dev/latest/_static/switcher.json
-  
