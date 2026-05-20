@@ -53,52 +53,63 @@ in the project. For example, if `ephys` data was collected at a sampling rate of
 it may contain an `ephys` section with a `samplingRate` field. See [rawdata metadata](rawdata-metadata).
 
 **``sub-<value>_metadata.yml``**
-- This contains information about an individual subject, for example its date of birth,
+- This contains information about an individual subject, for example the date of birth,
 identifiers, genotype or other key information. See [subject metadata](sub-metadata).
 
 **``ses-<value>_metadata.yml``**
 - This file contains information related to the particular experimental session.For example,
-the date, notes on what happened in the session, etc.  See [session metadata](ses-metadata).
+the date, additional notes on what happened in the session.  See [session metadata](ses-metadata).
 
 **``<datatype>_metadata.yml``**
 - This file can contain metadata specific to the datatype acquisition. See the [datatype keys](datatype-keys)
 section for details on keys to include for particular datatypes.
 
-**Other files and folders**
-- In theory, any file or folder in the project can have an associated `_metadata.yml` file.
-For example, you may include `events.npy`, `events.bin`, `events.mat` or some other
-way of storing event timings in your project, that you would like to describe further (e.g. sampling rate).
-In such a case, you can include a side-car metadata file `events_metadata.yml` that includes this information.
-
-
 # YAML file format
 
+Metadata files should use the [YAML](https://yaml.org/) file format (`.yml` or `.yaml`).
+YAML is a human-readable text format designed to be easy to read and edit.
+
+YAML stores information as **key-value pairs** and uses indentation (spaces) to represent structure.
+
+For example, a simple metadata file may look like:
+
+```yaml
+projectName: "Visual Decision Making Study"
+species: "Mus musculus"
+
+ephys:
+  samplingRate: 30000
+  probeType: "Neuropixels 2.0"
+
+experimenters:
+  - "Jane Smith"
+  - "John Doe"
+```
 
 # Inheritance
 
-In many cases, metadata entries may be the same for all sub-folders in a project.
-For example, the sampling rate of `ephys` may be the same across the project, or the
-genotype or species of a mouse line used may be the same.
-
-Note there is no inheritance principle for single-files and folders. We recommend
-adding suffixes to filenames and adopting the BIDS inheritance for files in this case.
+It may be that a particular metadata entry is the same for all sub-folders in a project.
+For example, the sampling rate used for the `ephys` data may be the same for each session
+in the project.
 
 In this case, we can place the metadata entries for lower-levels as a key in a high level.
 For example, if your `ephys` sampling rate for all subjects was `30 kHz`, you could structure
 your `rawdata.yml` file as:
 
-```
+```yaml
 SomeKey: someValue
 ephys:
     samplingRate: 30000
 ```
 
-This would then apply to all subjects in the folder. `sub-value_metadata.yml` files can
-also be included to overwrite this information, or include additional inforatmion that does
-not apply to all files. For exampl,e if you have a mouse where for some reason the SamplingRate
-was XXX you can overwrite this, you may also want to include a note:
+This would then apply to all subjects in the `rawdata` folder. 
 
-https://bids-validator.readthedocs.io/en/stable/validation-model/inheritance-principle.html
+However, this can be overwritten for particlar cases e.g. if due to an error, a different
+sampling rate was used in the acquisition. To do this, a metadata file should be included
+for the case of interest in the relevant folder. For example, if `sub-005` used a different
+sampling rate for all sessions, a `sub-005_metadata.yml` file could be included to overwrite the 
+information for this particular subject. e.g.
+
 ```
 samplingRate: 30500
 notes: "A mistake was made during acquisition, leading to a sampling rate of 30500 Hz.
@@ -120,44 +131,167 @@ The folder structure may look like:
                 └── ...
 ```
 
+This was inspired by the similar inheritence principle in [BIDS](https://bids-validator.readthedocs.io/en/stable/validation-model/inheritance-principle.html)
 
 # Recommended Metadata Keys
+
+To ensure alignment across and within projects, we recommend using metadata keys from
+a predefined set. Here we use BIDS for an existing list of metadata keys for each section.
+
+Please get in touch if you would like us to add new metadata fields to this list.
 
 (project-metadata)=
 ## Project Metadata
 
-Initially, fill in from:
-https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/dataset-description.html#dataset_descriptionjson
+We use the BIDS `dataset_description.json` fields as a starting point for project-level metadata.
+
+See the full specification for detailed descriptions:
+[BIDS Dataset Description Specification](https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/dataset-description.html#dataset_descriptionjson)
+
+Recommended keys:
+
+```yaml
+Name:
+BIDSVersion:
+DatasetType:
+License:
+Authors:
+Acknowledgements:
+HowToAcknowledge:
+Funding:
+EthicsApprovals:
+ReferencesAndLinks:
+DatasetDOI:
+```
 
 (rawdata-metadata)=
 ## Rawdata Metadata
 
-This is mostly a place for inhereted keys? e.g. `ephys` etc
+This file is primarily intended for metadata that applies across the whole dataset,
+including inherited datatype-specific metadata (for example `ephys` acquisition settings).
+
+Example structure:
+
+```yaml
+species:
+strain:
+
+ephys:
+  samplingRate:
+  probeType:
+
+behav:
+  taskName:
+```
 
 (sub-metadata)=
 ## Sub Metadata
-Initially, fill in from:
-https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/data-summary-files.html
+
+We use the BIDS participant fields as a starting point for subject-level metadata.
+
+See the full specification for detailed descriptions:
+[BIDS Participants Specification](https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/data-summary-files.html)
+
+Recommended keys:
+
+```yaml
+subject_id:
+age:
+sex:
+handedness:
+species:
+strain:
+strain_rrid:
+genotype:
+dateOfBirth:
+```
 
 (ses-metadata)=
 ## Ses Metadata
-Initially, fill in from:
-https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/data-summary-files.html#sessions-file
+
+We use the BIDS session fields as a starting point for session-level metadata.
+
+See the full specification for detailed descriptions:
+[BIDS Sessions Specification](https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/data-summary-files.html#sessions-file)
+
+Recommended keys:
+
+```yaml
+session_id:
+sessionDate:
+age:
+weight:
+notes:
+experimenter:
+```
 
 (datatype-keys)=
 ## Datatype keys
 
+Datatype metadata files contain acquisition-specific metadata for each modality.
+
 (ephys-metadata)=
 ## `ephys`
-Initially, fill in from:
-https://bep032tools.readthedocs.io/en/latest/
+
+We use BIDS electrophysiology metadata fields as a starting point.
+
+See the full specification for detailed descriptions:
+[BEP032 Electrophysiology Metadata Specification](https://bep032tools.readthedocs.io/en/latest/)
+
+Recommended keys:
+
+```yaml
+samplingRate:
+probeType:
+manufacturer:
+hardwareFilters:
+softwareFilters:
+electrodeCount:
+referenceChannel:
+groundChannel:
+amplifier:
+```
 
 (behav-metadata)=
 ## `behav`
-Initially, fill in from:
-https://bids-specification.readthedocs.io/en/stable/modality-specific-files/behavioral-experiments.html
+
+We use the BIDS behavioural experiment metadata fields as a starting point.
+
+See the full specification for detailed descriptions:
+[BIDS Behavioural Experiments Specification](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/behavioral-experiments.html)
+
+Recommended keys:
+
+```yaml
+taskName:
+taskDescription:
+instructions:
+stimulusPresentation:
+responseDevice:
+samplingRate:
+softwareName:
+softwareVersion:
+```
 
 (anat-metadata)=
 ## `anat_metadata`
-Initially, fill in from:
-https://bids-specification.readthedocs.io/en/stable/modality-specific-files/microscopy.html
+
+We use the BIDS microscopy metadata fields as a starting point.
+
+See the full specification for detailed descriptions:
+[BIDS Microscopy Specification](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/microscopy.html)
+
+Recommended keys:
+
+```yaml
+sampleFixation:
+staining:
+microscopeManufacturer:
+microscopeModel:
+objectiveLens:
+magnification:
+numericalAperture:
+immersionMedium:
+voxelSize:
+imageFormat:
+```
