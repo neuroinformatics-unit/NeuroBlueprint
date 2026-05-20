@@ -2,15 +2,15 @@
 # Metadata
 
 Metadata is additional data that describes the project data itself. Metadata can
-be high-level (e.g. a general overview on the study and it's purpose) or
-level low level (all acquisition parameters for extracellular electrophysiology
-set up, or microscope).
+be high-level (e.g. a general overview of the study and its purpose) or
+low-level (acquisition parameters for extracellular electrophysiology
+setup, or microscope).
 
 A number of detailed metadata standards exist, including
 [BIDS](https://bids-specification.readthedocs.io/en/stable/introduction.html),
 [openMinds](https://github.com/openMetadataInitiative) and
 [Allen](https://github.com/AllenNeuralDynamics/aind-data-schema),
-each differing it its structure, level of detail and the datatypes they cover.
+each differing in its structure, level of detail and the datatypes they cover.
 
 Here, we provide a simple metadata organisation scheme that you can use to
 get started with adding metadata to your project. You are free to add
@@ -21,9 +21,9 @@ Please get in touch if you would like additional keys added to the metadata fiel
 
 ## Metadata Organisation Description
 
-At each level of the project, a metadata file can be included that describe that level:
+At each level of the project, a metadata file can be included that describes that level:
 
-```
+```yaml
 └── my_project/
     ├── my_project_metadata.yml
     └── rawdata/
@@ -43,8 +43,8 @@ At each level of the project, a metadata file can be included that describe that
 ```
 
 **``project_metadata.yml``**
-- This file contains high-level information about the project, for example it's overall purpose,
-who is involved in the project. see [project metadata](project-metadata).
+- This file contains high-level information about the project, for example its overall purpose,
+who is involved in the project. See [project metadata](project-metadata).
 
 **``rawdata_metadata.yml``**
 - This file contains information about the data collection, for example the species of animal used
@@ -57,7 +57,7 @@ it may contain an `ephys` section with a `samplingRate` field. See [rawdata meta
 identifiers, genotype or other key information. See [subject metadata](sub-metadata).
 
 **``ses-<value>_metadata.yml``**
-- This file contains information related to the particular experimental session.For example,
+- This file contains information related to the particular experimental session. For example,
 the date, additional notes on what happened in the session.  See [session metadata](ses-metadata).
 
 **``<datatype>_metadata.yml``**
@@ -89,12 +89,12 @@ experimenters:
 # Inheritance
 
 It may be that a particular metadata entry is the same for all sub-folders in a project.
-For example, the sampling rate used for the `ephys` data may be the same for each session
+For example, the sampling rate used for the `ephys` data may be the same across all sessions
 in the project.
 
-In this case, we can place the metadata entries for lower-levels as a key in a high level.
+In this case, we can place the metadata entries for lower levels as keys at a higher level.
 For example, if your `ephys` sampling rate for all subjects was `30 kHz`, you could structure
-your `rawdata.yml` file as:
+your `rawdata_metadata.yml` file as:
 
 ```yaml
 SomeKey: someValue
@@ -104,15 +104,15 @@ ephys:
 
 This would then apply to all subjects in the `rawdata` folder. 
 
-However, this can be overwritten for particlar cases e.g. if due to an error, a different
+However, this can be overwritten for particular cases e.g. if due to an error, a different
 sampling rate was used in the acquisition. To do this, a metadata file should be included
 for the case of interest in the relevant folder. For example, if `sub-005` used a different
 sampling rate for all sessions, a `sub-005_metadata.yml` file could be included to overwrite the 
 information for this particular subject. e.g.
 
-```
+```yaml
 samplingRate: 30500
-notes: "A mistake was made during acquisition, leading to a sampling rate of 30500 Hz.
+notes: "A mistake was made during acquisition, leading to a sampling rate of 30500 Hz."
 ```
 
 The folder structure may look like:
@@ -120,23 +120,23 @@ The folder structure may look like:
 ```
 .
 └── my_project/
-    └── rawdata  /
-        ├── rawdata.yml   # contains the `ephys` entry applying to all subjects
+    └── rawdata/
+        ├── rawdata_metadata.yml   # contains the `ephys` entry applying to all subjects
         └── sub-001/
             ├── ses-001/
             │   └── ephys/
-            │       ├── ephys.yml   # contains the overwriting entry
+            │       ├── ephys_metadata.yml   # contains the overwriting entry
             │       └── ...
             └── ses-002/
                 └── ...
 ```
 
-This was inspired by the similar inheritence principle in [BIDS](https://bids-validator.readthedocs.io/en/stable/validation-model/inheritance-principle.html)
+This was inspired by the similar inheritance principle in [BIDS](https://bids-validator.readthedocs.io/en/stable/validation-model/inheritance-principle.html)
 
 # Recommended Metadata Keys
 
 To ensure alignment across and within projects, we recommend using metadata keys from
-a predefined set. Here we use BIDS for an existing list of metadata keys for each section.
+a predefined set. Here we use BIDS as an existing source of metadata keys for each section.
 
 Please get in touch if you would like us to add new metadata fields to this list.
 
@@ -274,7 +274,7 @@ softwareVersion:
 ```
 
 (anat-metadata)=
-## `anat_metadata`
+## `anat`
 
 We use the BIDS microscopy metadata fields as a starting point.
 
