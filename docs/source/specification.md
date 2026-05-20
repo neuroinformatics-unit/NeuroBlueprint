@@ -259,4 +259,3 @@ Below we provide some example file names adhering to the **NeuroBlueprint** nami
 ## Metadata conventions
 
 See our [metadata](metadata.md) page for details on the metadata specification.
-

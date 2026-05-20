@@ -102,12 +102,12 @@ ephys:
     samplingRate: 30000
 ```
 
-This would then apply to all subjects in the `rawdata` folder. 
+This would then apply to all subjects in the `rawdata` folder.
 
 However, this can be overwritten for particular cases e.g. if due to an error, a different
 sampling rate was used in the acquisition. To do this, a metadata file should be included
 for the case of interest in the relevant folder. For example, if `sub-005` used a different
-sampling rate for all sessions, a `sub-005_metadata.yml` file could be included to overwrite the 
+sampling rate for all sessions, a `sub-005_metadata.yml` file could be included to overwrite the
 information for this particular subject. e.g.
 
 ```yaml
