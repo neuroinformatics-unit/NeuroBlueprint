@@ -6,9 +6,11 @@ be high-level (e.g. a general overview on the study and it's purpose) or
 level low level (all acquisition parameters for extracellular electrophysiology
 set up, or microscope).
 
-A number of detailed metadata standards exist, including [BIDS](),
-[openMinds]() and [Allen](), each differing it its structure, level of detail
-and the datatypes they cover.
+A number of detailed metadata standards exist, including
+[BIDS](https://bids-specification.readthedocs.io/en/stable/introduction.html),
+[openMinds](https://github.com/openMetadataInitiative) and
+[Allen](https://github.com/AllenNeuralDynamics/aind-data-schema),
+each differing it its structure, level of detail and the datatypes they cover.
 
 Here, we provide a simple metadata organisation scheme that you can use to
 get started with adding metadata to your project. You are free to add
@@ -16,7 +18,6 @@ metadata fields if you wish, but at the end of this guide we recommend fields
 that can go in each section.
 
 Please get in touch if you would like additional keys added to the metadata fields.
-
 
 ## Metadata Organisation Description
 
@@ -46,7 +47,10 @@ At each level of the project, a metadata file can be included that describe that
 who is involved in the project. see [project metadata](project-metadata).
 
 **``rawdata_metadata.yml``**
-- This file contains information about the data collection, for example XXX. See [rawdata metadata](rawdata-metadata).
+- This file contains information about the data collection, for example the species of animal used
+in the project. It may also contain specific sections for datatypes, that apply to all subjects
+in the project. For example, if `ephys` data was collected at a sampling rate of 30kHz for each subject,
+it may contain an `ephys` section with a `samplingRate` field. See [rawdata metadata](rawdata-metadata).
 
 **``sub-<value>_metadata.yml``**
 - This contains information about an individual subject, for example its date of birth,
@@ -60,12 +64,15 @@ the date, notes on what happened in the session, etc.  See [session metadata](se
 - This file can contain metadata specific to the datatype acquisition. See the [datatype keys](datatype-keys)
 section for details on keys to include for particular datatypes.
 
-
 **Other files and folders**
 - In theory, any file or folder in the project can have an associated `_metadata.yml` file.
 For example, you may include `events.npy`, `events.bin`, `events.mat` or some other
 way of storing event timings in your project, that you would like to describe further (e.g. sampling rate).
 In such a case, you can include a side-car metadata file `events_metadata.yml` that includes this information.
+
+
+# YAML file format
+
 
 # Inheritance
 
