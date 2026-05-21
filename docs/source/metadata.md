@@ -6,14 +6,14 @@ be high-level (e.g. a general overview of the study and its purpose) or
 low-level (acquisition parameters for extracellular electrophysiology
 setup, or microscope).
 
-A number of detailed metadata standards exist, including
+A number of detailed metadata standards exist, including those from
 [BIDS](https://bids-specification.readthedocs.io/en/stable/introduction.html),
-[openMinds](https://github.com/openMetadataInitiative) and
-[Allen](https://github.com/AllenNeuralDynamics/aind-data-schema),
+[openMINDS](https://github.com/openMetadataInitiative) and
+the [Allen Institute for Neural Dynamics](https://github.com/AllenNeuralDynamics/aind-data-schema),
 each differing in its structure, level of detail and the datatypes they cover.
 
-Here, we provide a simple metadata organisation scheme that you can use to
-get started with adding metadata to your project. You are free to add
+Here, we provide a simple schema that you can use to
+get started with adding metadata to your NeuroBlueprint project. You are free to add
 metadata fields if you wish, but at the 
 [end of this guide](project-metadata) we recommend fields
 that can go in each section.
@@ -52,7 +52,7 @@ who is involved in the project. See [project metadata](project-metadata).
 **``rawdata_metadata.yml``**
 - This file contains information about the data collection, for example the species of animal used
 in the project. It may also contain specific sections for datatypes, that apply to all subjects
-in the project. For example, if `ephys` data was collected at a sampling rate of 30kHz for each subject,
+in the project. For example, if `ephys` data was collected at a sampling rate of 30kHz for every subject,
 it may contain an `ephys` section with a `samplingRate` field. See [rawdata metadata](rawdata-metadata).
 
 **``sub-<value>_metadata.yml``**
