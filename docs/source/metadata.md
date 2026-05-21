@@ -1,7 +1,11 @@
 :orphan:
 # Metadata
 
-Metadata is additional data that describes the project data itself. Metadata can
+[Scientific metadata](https://www.dcc.ac.uk/resources/curation-reference-manual/chapters-production/scientific-metadata)
+is additional data that describes the project data itself. **TODO: BETTER MOTIVATION
+add a link to what metadata is / why you care and add it to your data etc.**
+
+Metadata can
 be high-level (e.g. a general overview of the study and its purpose) or
 low-level (acquisition parameters for extracellular electrophysiology
 setup, or microscope).
@@ -15,7 +19,7 @@ each differing in its structure, level of detail and the datatypes they cover.
 Here, we provide a simple schema that you can use to
 get started with adding metadata to your NeuroBlueprint project. You are free to add
 metadata fields if you wish, but at the
-[end of this guide](project-metadata) we recommend fields
+[end of this guide](metadata-keys) we recommend fields
 that can go in each section.
 
 Please get in touch by raising a
@@ -24,7 +28,7 @@ if you would like additional keys added to the metadata fields.
 
 # YAML file format
 
-Metadata files should use the [YAML](https://yaml.org/) file format (`.yml` or `.yaml`).
+Metadata files should use the [YAML](https://yaml.org/) file format (`.yaml` extension).
 YAML is a human-readable text format designed to be easy to read and edit.
 
 YAML stores information as **key-value pairs** and uses indentation (spaces) to represent structure.
@@ -32,122 +36,176 @@ YAML stores information as **key-value pairs** and uses indentation (spaces) to 
 For example, a simple metadata file might look like:
 
 ```yaml
-projectName: "Visual Decision Making Study"
-species: "Mus musculus"
+project:
+    projectName: "Visual Decision Making Study"
+    species: "Mus musculus"
+    experimenters:
+      - "Jane Smith"
+      - "John Doe"
+
+sub:
+  genoType: Something TOOOOOOOOOOOOOOOOODOOOOOOOOOOOOOOO
 
 ephys:
   samplingRate: 30000
   probeType: "Neuropixels 2.0"
-
-experimenters:
-  - "Jane Smith"
-  - "John Doe"
 ```
 
 ## Metadata Organisation Description
 
-At each level of the project, a metadata YAML file can be included that describes that level:
+Metadata should be stored in `metadata.yaml` files that can include any of 
+these pre-defined sections, which map to NeuroBlueprint folder levels:
+
+- `project`
+- `rawdata`
+- `sub`
+- `ses`
+- [Neuroblueprint datatype]() (e.g. `behav`, `ephys`)
+
+
+For example, a `metadata.yaml` file contents might look like:
 
 ```yaml
+project:
+
+rawdata:
+
+sub:
+
+ses:
+
+ephys:
+
+behav:
+```
+
+To see more information on what information should be
+put at each section, see the [metadata keys](metadata-keys) section.
+
+In this case, these entries apply to every dataset in the project. Therefore,
+we can place this metadata file at the top-level of the project:
+
+```
 └── my_project/
-    ├── my_project_metadata.yml
+    ├── metadata.yaml
     └── rawdata/
-        ├── rawdata_metadata.yml
         ├── sub-001/
-        │   ├── sub-001_metadata.yml
         │   └── ses-001/
-        │       ├── ses-001_metadata.yml
         │       ├── behav/
-        │       │   └── behav_metadata.yml
         │       └── ephys/
-        │           └── ephys_metadata.yml
         ├── sub-002/
-        │   ├── sub-002_metadata.yml
         │   └── ...
         └── ...
 ```
 
-**``project_metadata.yml``**
-- This file contains high-level information about the project, for example its overall purpose,
-who is involved in the project. See [project metadata](project-metadata).
+The location of the folder indicates to which data the metadata belongs to. A metadata
+file applies to all levels below it. 
 
-**``rawdata_metadata.yml``**
-- This file contains information about the data collection, for example the species of animal used
-in the project. It may also contain specific sections for datatypes, that apply to all subjects
-in the project. For example, if `ephys` data was collected at a sampling rate of 30kHz for every subject,
-it may contain an `ephys` section with a `samplingRate` field. See [rawdata metadata](rawdata-metadata).
+## Inheritance
 
-**``sub-<value>_metadata.yml``**
-This metadata file contains information about an individual subject, for example the date of birth,
-identifiers, genotype or other key information. Here `<value>` is the subject number, for example `sub-001_metadata.yml`.
-See [subject metadata](sub-metadata).
+In some cases, the same metadata might not apply to all datasets within the project.
+In this case, a `metadata.yaml` file can be placed at a lower level, overwriting
+the metadata fields at a higher level.
 
-**``ses-<value>_metadata.yml``**
-- This file contains information related to the particular experimental session. For example,
-the date, additional notes on what happened in the session.
-Here `<value>` is the session number, for example `ses-001_metadata.yml`.
-See [session metadata](ses-metadata).
-
-**``<datatype>_metadata.yml``**
-- This file can contain metadata specific to the datatype acquisition. See the [datatype keys](datatype-keys)
-section for details on keys to include for particular datatypes.
-
-# Inheritance
-
-It may be that a particular metadata entry is the same for all sub-folders in a project.
-For example, the sampling rate used for the `ephys` data may be the same across all sessions
-in the project.
-
-In this case, we can place the metadata entries for lower levels as keys at a higher level.
-For example, if your `ephys` sampling rate for all subjects was `30 kHz`, you could structure
-your `rawdata_metadata.yml` file as:
-
-```yaml
-SomeKey: someValue
-ephys:
-    samplingRate: 30000
-```
-
-This would then apply to all subjects in the `rawdata` folder.
-
-However, this can be overwritten for particular cases e.g. if due to an error, a different
-sampling rate was used in the acquisition. To do this, a metadata file should be included
-for the case of interest in the relevant folder. For example, if `sub-005` used a different
-sampling rate for all sessions, a `sub-005_metadata.yml` file could be included to overwrite the
-information for this particular subject. e.g.
-
-```yaml
-samplingRate: 30500
-notes: "A mistake was made during acquisition, leading to a sampling rate of 30500 Hz."
-```
-
-The folder structure may look like:
+For example, let's say that `sub-001`, `ses-002` used a different gain due to an
+experimental error. We can put a `metadata.yaml` file in the `sub-001` folder
+with the `ephys` entry and `...`. Now, gain at XXX applies to all sessions except for.
 
 ```
-.
 └── my_project/
+    ├── metadata.yaml
     └── rawdata/
-        ├── rawdata_metadata.yml   # contains the `ephys` entry applying to all subjects
-        └── sub-001/
-            ├── ses-001/
-            │   └── ephys/
-            │       ├── ephys_metadata.yml   # contains the overwriting entry
-            │       └── ...
-            └── ses-002/
-                └── ...
+        ├── sub-001/
+        │   └── ses-001/
+        │       ├── behav/
+        │       └── ephys/
+        ├── sub-002/
+        │   └── ...
+        └── ...
+```
+
+```yaml
+ephys:
+  xxx
 ```
 
 This was inspired by the similar inheritance principle in [BIDS](https://bids-validator.readthedocs.io/en/stable/validation-model/inheritance-principle.html)
 
+:::{tip}
+When it is possible to put `metadata.yaml` file in multiple places, we recommend placing
+the file at the highest possible level. For example, in the example above the ephys
+information for `sub-001/ses-001/metadata.yaml` is placed in the equally valid
+session folder, rather than in the ephys folder `sub-001/ses-001/ephys/metadata.yaml`.
+:::
+
+# Sidecar metadata files 
+
+In some cases it may be required to associate metadata with a specific
+data file. In this case, a metadata YAML file that copies the original
+filename with the suffix `_metadata` can be instantiated. It should
+contain one of the same sections as above (e.g. `sub`, `behav` etc.).
+  
+:::{warning}
+
+all metadata files must be called metadata.yaml or be
+the exact name as an existing file or folder
+
+:::
+  
+For example, in the `behav` folder you might have multiple
+acquisition runs, each with different metadata. 
+
+```
+└── my_project/
+    ├── metadata.yaml
+    └── rawdata/
+        └── sub-001/
+            └── ses-001/
+                └── behav/
+                    ├── run-001_camera-top.mp4
+                    ├── run-001_camera-top_metadata.yaml
+                    ├── run-002_camera-top.mp4
+                    └── run-002_camera-top_metadata.yaml
+```
+
+metadata.yaml
+```yaml
+behav:
+    cameraSamplingRate: 20Hz
+```
+
+run-001_camera-top_metadata.yaml
+
+```yaml
+behav:
+    cameraSamplingRate: 30Hz
+```
+
+run-002_camera-top_metadata.yaml
+
+```yaml
+behav:
+    cameraSamplingRate: 60Hz
+```
+
+Similar to the inheritance principal above, the lower-level metadata
+will overwrite any entries at the higher level.
+
+(metadata-keys)=
 # Recommended Metadata Keys
 
 To ensure alignment across and within projects, we recommend using metadata keys from
 a predefined set. Here we use BIDS as an existing source of metadata keys for each section.
 
 Please get in touch if you would like us to add new metadata fields to this list.
+**- examples / suggested keys. A few more sentences about this just to explain our approach. You can put anything in here you like, but good to keep consistent readable
+for everyone. if the thing exists already,
+then use the BIDS name.**
 
-(project-metadata)=
 ## Project Metadata
+
+- This file contains high-level information about the project, for example its overall purpose,
+who is involved in the project.
 
 We use the BIDS `dataset_description.json` fields as a starting point for project-level metadata.
 
@@ -156,22 +214,35 @@ See the full specification for detailed descriptions:
 
 Recommended keys:
 
+**TODO: check all keys, AI messed this up**
+**add actual entries here**.
+
 ```yaml
 Name:
-BIDSVersion:
+NeuroBlueprintVersion:
+HEDVersion:
+DatasetLinks:
 DatasetType:
 License:
 Authors:
+Keywords:
 Acknowledgements:
 HowToAcknowledge:
 Funding:
 EthicsApprovals:
 ReferencesAndLinks:
 DatasetDOI:
+SourceDatasets: 
 ```
 
 (rawdata-metadata)=
 ## Rawdata Metadata
+
+This file contains information about the data collection, for example the species of animal used
+in the project. It may also contain specific sections for datatypes, that apply to all subjects
+in the project. For example, if `ephys` data was collected at a sampling rate of 30kHz for every subject,
+it may contain an `ephys` section with a `samplingRate` field. See [rawdata metadata](rawdata-metadata).
+
 
 This file is primarily intended for metadata that applies across the whole dataset,
 including inherited datatype-specific metadata (for example `ephys` acquisition settings).
@@ -179,8 +250,9 @@ including inherited datatype-specific metadata (for example `ephys` acquisition 
 Example structure:
 
 ```yaml
-species:
-strain:
+sub:
+    species:
+    strain:
 
 ephys:
   samplingRate:
@@ -192,6 +264,10 @@ behav:
 
 (sub-metadata)=
 ## Sub Metadata
+
+This metadata file contains information about an individual subject, for example the date of birth,
+identifiers, genotype or other key information. Here `<value>` is the subject number, for example `sub-001_metadata.yml`.
+See [subject metadata](sub-metadata)
 
 We use the BIDS participant fields as a starting point for subject-level metadata.
 
@@ -215,6 +291,11 @@ dateOfBirth:
 (ses-metadata)=
 ## Ses Metadata
 
+- This file contains information related to the particular experimental session. For example,
+the date, additional notes on what happened in the session.
+Here `<value>` is the session number, for example `ses-001_metadata.yml`.
+See [session metadata](ses-metadata).
+- 
 We use the BIDS session fields as a starting point for session-level metadata.
 
 See the full specification for detailed descriptions:
@@ -234,6 +315,9 @@ experimenter:
 (datatype-keys)=
 ## Datatype keys
 
+- This file can contain metadata specific to the datatype acquisition. See the [datatype keys](datatype-keys)
+section for details on keys to include for particular datatypes.
+
 Datatype metadata files contain acquisition-specific metadata for each modality.
 
 (ephys-metadata)=
@@ -242,7 +326,7 @@ Datatype metadata files contain acquisition-specific metadata for each modality.
 We use BIDS electrophysiology metadata fields as a starting point.
 
 See the full specification for detailed descriptions:
-[BEP032 Electrophysiology Metadata Specification](https://bep032tools.readthedocs.io/en/latest/).
+[BEP032 Electrophysiology Metadata Specification](https://bids.neuroimaging.io/extensions/beps/bep_032.html).
 
 Recommended keys:
 
