@@ -12,7 +12,7 @@ A number of detailed metadata standards exist, including those from
 the [Allen Institute for Neural Dynamics](https://github.com/AllenNeuralDynamics/aind-data-schema),
 each differing in its structure, level of detail and the datatypes they cover.
 
-Here, we provide a simple metadata organisation scheme that you can use to
+Here, we provide a simple schema that you can use to
 get started with adding metadata to your project. You are free to add
 metadata fields if you wish, but at the end of this guide we recommend fields
 that can go in each section.
