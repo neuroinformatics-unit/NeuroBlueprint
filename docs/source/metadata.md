@@ -22,9 +22,31 @@ Please get in touch by raising a
 [GitHub Issue](https://github.com/neuroinformatics-unit/NeuroBlueprint/issues)
 if you would like additional keys added to the metadata fields.
 
+# YAML file format
+
+Metadata files should use the [YAML](https://yaml.org/) file format (`.yml` or `.yaml`).
+YAML is a human-readable text format designed to be easy to read and edit.
+
+YAML stores information as **key-value pairs** and uses indentation (spaces) to represent structure.
+
+For example, a simple metadata file might look like:
+
+```yaml
+projectName: "Visual Decision Making Study"
+species: "Mus musculus"
+
+ephys:
+  samplingRate: 30000
+  probeType: "Neuropixels 2.0"
+
+experimenters:
+  - "Jane Smith"
+  - "John Doe"
+```
+
 ## Metadata Organisation Description
 
-At each level of the project, a metadata file can be included that describes that level:
+At each level of the project, a metadata YAML file can be included that describes that level:
 
 ```yaml
 └── my_project/
@@ -69,28 +91,6 @@ See [session metadata](ses-metadata).
 **``<datatype>_metadata.yml``**
 - This file can contain metadata specific to the datatype acquisition. See the [datatype keys](datatype-keys)
 section for details on keys to include for particular datatypes.
-
-# YAML file format
-
-Metadata files should use the [YAML](https://yaml.org/) file format (`.yml` or `.yaml`).
-YAML is a human-readable text format designed to be easy to read and edit.
-
-YAML stores information as **key-value pairs** and uses indentation (spaces) to represent structure.
-
-For example, a simple metadata file may look like:
-
-```yaml
-projectName: "Visual Decision Making Study"
-species: "Mus musculus"
-
-ephys:
-  samplingRate: 30000
-  probeType: "Neuropixels 2.0"
-
-experimenters:
-  - "Jane Smith"
-  - "John Doe"
-```
 
 # Inheritance
 
