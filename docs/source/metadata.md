@@ -9,7 +9,7 @@ setup, or microscope).
 A number of detailed metadata standards exist, including those from
 [BIDS](https://bids-specification.readthedocs.io/en/stable/introduction.html),
 [openMINDS](https://github.com/openMetadataInitiative) and
-[Allen](https://github.com/AllenNeuralDynamics/aind-data-schema),
+the [Allen Institute for Neural Dynamics](https://github.com/AllenNeuralDynamics/aind-data-schema),
 each differing in its structure, level of detail and the datatypes they cover.
 
 Here, we provide a simple metadata organisation scheme that you can use to
