@@ -6,7 +6,7 @@ be high-level (e.g. a general overview of the study and its purpose) or
 low-level (acquisition parameters for extracellular electrophysiology
 setup, or microscope).
 
-A number of detailed metadata standards exist, including
+A number of detailed metadata standards exist, including those from
 [BIDS](https://bids-specification.readthedocs.io/en/stable/introduction.html),
 [openMINDS](https://github.com/openMetadataInitiative) and
 [Allen](https://github.com/AllenNeuralDynamics/aind-data-schema),
