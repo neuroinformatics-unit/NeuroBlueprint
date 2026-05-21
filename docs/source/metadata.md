@@ -14,10 +14,13 @@ each differing in its structure, level of detail and the datatypes they cover.
 
 Here, we provide a simple metadata organisation scheme that you can use to
 get started with adding metadata to your project. You are free to add
-metadata fields if you wish, but at the end of this guide we recommend fields
+metadata fields if you wish, but at the 
+[end of this guide](project-metadata) we recommend fields
 that can go in each section.
 
-Please get in touch if you would like additional keys added to the metadata fields.
+Please get in touch by raising a 
+[GitHub Issue](https://github.com/neuroinformatics-unit/NeuroBlueprint/issues) 
+if you would like additional keys added to the metadata fields.
 
 ## Metadata Organisation Description
 
@@ -53,12 +56,15 @@ in the project. For example, if `ephys` data was collected at a sampling rate of
 it may contain an `ephys` section with a `samplingRate` field. See [rawdata metadata](rawdata-metadata).
 
 **``sub-<value>_metadata.yml``**
-- This contains information about an individual subject, for example the date of birth,
-identifiers, genotype or other key information. See [subject metadata](sub-metadata).
+This metadata file contains information about an individual subject, for example the date of birth,
+identifiers, genotype or other key information. Here `<value>` is the subject number, for example `sub-001_metadata.yml`.
+See [subject metadata](sub-metadata).
 
 **``ses-<value>_metadata.yml``**
 - This file contains information related to the particular experimental session. For example,
-the date, additional notes on what happened in the session.  See [session metadata](ses-metadata).
+the date, additional notes on what happened in the session.  
+Here `<value>` is the session number, for example `ses-001_metadata.yml`.
+See [session metadata](ses-metadata).
 
 **``<datatype>_metadata.yml``**
 - This file can contain metadata specific to the datatype acquisition. See the [datatype keys](datatype-keys)
@@ -146,7 +152,7 @@ Please get in touch if you would like us to add new metadata fields to this list
 We use the BIDS `dataset_description.json` fields as a starting point for project-level metadata.
 
 See the full specification for detailed descriptions:
-[BIDS Dataset Description Specification](https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/dataset-description.html#dataset_descriptionjson)
+[BIDS Dataset Description Specification](https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/dataset-description.html#dataset_descriptionjson).
 
 Recommended keys:
 
@@ -190,7 +196,7 @@ behav:
 We use the BIDS participant fields as a starting point for subject-level metadata.
 
 See the full specification for detailed descriptions:
-[BIDS Participants Specification](https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/data-summary-files.html)
+[BIDS Participants Specification](https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/data-summary-files.html).
 
 Recommended keys:
 
@@ -212,7 +218,7 @@ dateOfBirth:
 We use the BIDS session fields as a starting point for session-level metadata.
 
 See the full specification for detailed descriptions:
-[BIDS Sessions Specification](https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/data-summary-files.html#sessions-file)
+[BIDS Sessions Specification](https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/data-summary-files.html#sessions-file).
 
 Recommended keys:
 
@@ -236,7 +242,7 @@ Datatype metadata files contain acquisition-specific metadata for each modality.
 We use BIDS electrophysiology metadata fields as a starting point.
 
 See the full specification for detailed descriptions:
-[BEP032 Electrophysiology Metadata Specification](https://bep032tools.readthedocs.io/en/latest/)
+[BEP032 Electrophysiology Metadata Specification](https://bep032tools.readthedocs.io/en/latest/).
 
 Recommended keys:
 
@@ -258,7 +264,7 @@ amplifier:
 We use the BIDS behavioural experiment metadata fields as a starting point.
 
 See the full specification for detailed descriptions:
-[BIDS Behavioural Experiments Specification](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/behavioral-experiments.html)
+[BIDS Behavioural Experiments Specification](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/behavioral-experiments.html).
 
 Recommended keys:
 
@@ -279,7 +285,7 @@ softwareVersion:
 We use the BIDS microscopy metadata fields as a starting point.
 
 See the full specification for detailed descriptions:
-[BIDS Microscopy Specification](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/microscopy.html)
+[BIDS Microscopy Specification](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/microscopy.html).
 
 Recommended keys:
 
