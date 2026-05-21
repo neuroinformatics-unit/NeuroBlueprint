@@ -49,7 +49,7 @@ who is involved in the project. See [project metadata](project-metadata).
 **``rawdata_metadata.yml``**
 - This file contains information about the data collection, for example the species of animal used
 in the project. It may also contain specific sections for datatypes, that apply to all subjects
-in the project. For example, if `ephys` data was collected at a sampling rate of 30kHz for each subject,
+in the project. For example, if `ephys` data was collected at a sampling rate of 30kHz for every subject,
 it may contain an `ephys` section with a `samplingRate` field. See [rawdata metadata](rawdata-metadata).
 
 **``sub-<value>_metadata.yml``**
