@@ -14,12 +14,12 @@ each differing in its structure, level of detail and the datatypes they cover.
 
 Here, we provide a simple schema that you can use to
 get started with adding metadata to your NeuroBlueprint project. You are free to add
-metadata fields if you wish, but at the 
+metadata fields if you wish, but at the
 [end of this guide](project-metadata) we recommend fields
 that can go in each section.
 
-Please get in touch by raising a 
-[GitHub Issue](https://github.com/neuroinformatics-unit/NeuroBlueprint/issues) 
+Please get in touch by raising a
+[GitHub Issue](https://github.com/neuroinformatics-unit/NeuroBlueprint/issues)
 if you would like additional keys added to the metadata fields.
 
 ## Metadata Organisation Description
@@ -62,7 +62,7 @@ See [subject metadata](sub-metadata).
 
 **``ses-<value>_metadata.yml``**
 - This file contains information related to the particular experimental session. For example,
-the date, additional notes on what happened in the session.  
+the date, additional notes on what happened in the session.
 Here `<value>` is the session number, for example `ses-001_metadata.yml`.
 See [session metadata](ses-metadata).
 
