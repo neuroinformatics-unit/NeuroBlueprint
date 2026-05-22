@@ -2,11 +2,10 @@
 # Metadata
 
 [Scientific metadata](https://www.dcc.ac.uk/resources/curation-reference-manual/chapters-production/scientific-metadata)
-is additional data that describes the project data itself. **TODO: BETTER MOTIVATION
-add a link to what metadata is / why you care and add it to your data etc.**
+is additional information included with a project that describes the data itself. Adding metadata to your project
+makes it easier to understand, reproduce and share the data.
 
-Metadata can
-be high-level (e.g. a general overview of the study and its purpose) or
+Metadata can be high-level (e.g. a general overview of the study and its purpose) or
 low-level (acquisition parameters for extracellular electrophysiology
 setup, or microscope).
 
@@ -37,52 +36,69 @@ For example, a simple metadata file might look like:
 
 ```yaml
 project:
-    projectName: "Visual Decision Making Study"
-    species: "Mus musculus"
-    experimenters:
+    Name: "Visual Decision Making Study"
+    Authors:
       - "Jane Smith"
       - "John Doe"
 
 sub:
-  genoType: Something TOOOOOOOOOOOOOOOOODOOOOOOOOOOOOOOO
+    Species: "Mus musculus"
+    Genotype: "Thy1-GCaMP6s/wt"
 
 ephys:
-  samplingRate: 30000
-  probeType: "Neuropixels 2.0"
+    SamplingFrequency: 30000
+    ManufacturersModelName: "Neuropixels 2.0"
 ```
 
-## Metadata Organisation Description
+# Metadata organisation schema
 
 Metadata should be stored in `metadata.yaml` files that can include any of 
 these pre-defined sections, which map to NeuroBlueprint folder levels:
 
 - `project`
-- `rawdata`
 - `sub`
 - `ses`
-- [Neuroblueprint datatype]() (e.g. `behav`, `ephys`)
+- [Neuroblueprint datatype](https://neuroblueprint.neuroinformatics.dev/latest/specification.html#datatype) (e.g. `behav`, `ephys`)
 
 
 For example, a `metadata.yaml` file contents might look like:
 
 ```yaml
 project:
-
-rawdata:
+    Name: "Visual Decision Making Study"
+    Authors:
+      - "Jane Smith"
+      - "John Doe"
 
 sub:
+    Species: "Mus musculus"
+    Strain: "C57BL/6J"
+    StrainRrid: "RRID:IMSR_JAX:000664"
 
 ses:
+    Experimenter: "Jane Smith"
+    Notes: "First recording session"
 
 ephys:
+    SamplingFrequency: 30000
+    ManufacturersModelName: "Neuropixels 2.0"
+    PowerLineFrequency: 50
+    RecordingType: "continuous"
 
 behav:
+    TaskName: "Visual Decision Making"
+    TaskDescription: "Mouse makes decisions based on visual stimuli"
 ```
 
-To see more information on what information should be
-put at each section, see the [metadata keys](metadata-keys) section.
+For more details on what information should be put in each section,
+see the [metadata keys](metadata-keys) section.
 
-In this case, these entries apply to every dataset in the project. Therefore,
+The location of the `metadata.yaml` file indicates what data the metadata refers to. 
+
+**A metadata file applies to data in all folder levels at or below it.** 
+
+
+In the above example, the entries apply to all data in the project. Therefore,
 we can place this metadata file at the top-level of the project:
 
 ```
@@ -98,18 +114,17 @@ we can place this metadata file at the top-level of the project:
         └── ...
 ```
 
-The location of the folder indicates to which data the metadata belongs to. A metadata
-file applies to all levels below it. 
-
 ## Inheritance
 
-In some cases, the same metadata might not apply to all datasets within the project.
+In some cases, the same metadata might not apply to all data within the project.
 In this case, a `metadata.yaml` file can be placed at a lower level, overwriting
 the metadata fields at a higher level.
 
-For example, let's say that `sub-001`, `ses-002` used a different gain due to an
-experimental error. We can put a `metadata.yaml` file in the `sub-001` folder
-with the `ephys` entry and `...`. Now, gain at XXX applies to all sessions except for.
+For example, let's say that `sub-001/ses-001` used a different sampling frequency,
+due to an experimental error. Instead of 30000 Hz, 27000 Hz was used.
+
+We can put a new `metadata.yaml` file in the `sub-001/ses-001` folder
+with the `ephys` entry and updated sampling frequency:
 
 ```
 └── my_project/
@@ -117,6 +132,7 @@ with the `ephys` entry and `...`. Now, gain at XXX applies to all sessions excep
     └── rawdata/
         ├── sub-001/
         │   └── ses-001/
+        │       ├── metadata.yaml
         │       ├── behav/
         │       └── ephys/
         ├── sub-002/
@@ -124,36 +140,44 @@ with the `ephys` entry and `...`. Now, gain at XXX applies to all sessions excep
         └── ...
 ```
 
+with `sub-001/ses-001/metadata.yaml` containing:
+
 ```yaml
 ephys:
-  xxx
+  SamplingFrequency: 27000
 ```
+
+Now, `SamplingFrequency` at 30000 applies to all sessions except for
+`sub-001/ses-001`, which is 27000:
 
 This was inspired by the similar inheritance principle in [BIDS](https://bids-validator.readthedocs.io/en/stable/validation-model/inheritance-principle.html)
 
 :::{tip}
-When it is possible to put `metadata.yaml` file in multiple places, we recommend placing
-the file at the highest possible level. For example, in the example above the ephys
-information for `sub-001/ses-001/metadata.yaml` is placed in the equally valid
-session folder, rather than in the ephys folder `sub-001/ses-001/ephys/metadata.yaml`.
+When it is equivalent to put the `metadata.yaml` file at one of multiple folder levels, 
+we recommend placing the file at the highest possible level. 
+
+For example, above the ephys information for `sub-001/ses-001/metadata.yaml` is placed in the
+session folder, rather than the equally valid ephys folder `sub-001/ses-001/ephys/metadata.yaml`.
 :::
 
 # Sidecar metadata files 
 
-In some cases it may be required to associate metadata with a specific
-data file. In this case, a metadata YAML file that copies the original
-filename with the suffix `_metadata` can be instantiated. It should
-contain one of the same sections as above (e.g. `sub`, `behav` etc.).
-  
-:::{warning}
+It may be required to associate metadata with a specific data file or folder. 
+In this case, a metadata YAML file that copies the original
+file or folder name with the suffix `_metadata` can be used. These are called 'sidecar' metadata files.
 
-all metadata files must be called metadata.yaml or be
-the exact name as an existing file or folder
+Sidecar metadata files should contain use the same sections as above (e.g. `sub`, `behav` etc.).
 
-:::
-  
-For example, in the `behav` folder you might have multiple
-acquisition runs, each with different metadata. 
+For example, in the `behav` folder there may be multiple
+acquisition runs, with different associated metadata. In this case, a metadata
+YAML file that applies specifically to a particular file can be created.
+
+For example, in the project below all videos are assumed to be of the task
+`"Visual Decision Making"`. However, imagine for the run `run-002_camera-top.mp4`
+a video was taken of a different task.
+
+In this case, we can use inheritance to overwrite the `TaskName` for this particular run
+by placing a sidecar metadata file next to the video file of interest:
 
 ```
 └── my_project/
@@ -163,59 +187,61 @@ acquisition runs, each with different metadata.
             └── ses-001/
                 └── behav/
                     ├── run-001_camera-top.mp4
-                    ├── run-001_camera-top_metadata.yaml
                     ├── run-002_camera-top.mp4
                     └── run-002_camera-top_metadata.yaml
 ```
 
-metadata.yaml
-```yaml
-behav:
-    cameraSamplingRate: 20Hz
-```
-
-run-001_camera-top_metadata.yaml
+`/my_project/metadata.yaml`
 
 ```yaml
 behav:
-    cameraSamplingRate: 30Hz
+    TaskName: "Visual Decision Making"
 ```
 
-run-002_camera-top_metadata.yaml
+`run-002_camera-top_metadata.yaml`
 
 ```yaml
 behav:
-    cameraSamplingRate: 60Hz
+    TaskName: "Visual Decision Making Modified Long"
 ```
 
-Similar to the inheritance principal above, the lower-level metadata
-will overwrite any entries at the higher level.
+:::{warning}
+
+All metadata files must be called `metadata.yaml` or be
+the exact name of an existing file or folder with a `_metadata` suffix.
+
+For example, `my_recording_metadata.yaml` is only valid if there is a file or folder
+called `my_recording` (e.g. `my_recording.bin`).
+
+:::
 
 (metadata-keys)=
-# Recommended Metadata Keys
+# Suggested metadata keys
 
-To ensure alignment across and within projects, we recommend using metadata keys from
-a predefined set. Here we use BIDS as an existing source of metadata keys for each section.
+NeuroBlueprint does not mandate the use of any specific metadata key-value
+pairs. In theory, the structural rules above can be used to document the project
+as you wish. 
 
-Please get in touch if you would like us to add new metadata fields to this list.
-**- examples / suggested keys. A few more sentences about this just to explain our approach. You can put anything in here you like, but good to keep consistent readable
-for everyone. if the thing exists already,
-then use the BIDS name.**
+However, we highly recommend using one of the suggested metadata 
+keys detailed below if it covers the concept you want to document. This helps
+ensure that metadata entries are interoperable with your immediate colleagues, and across labs.
 
-## Project Metadata
+For example, if you want to include the species of mice in your project, it
+makes sense to use the suggested key `Species` rather than come up with your own key.
 
-- This file contains high-level information about the project, for example its overall purpose,
+If you find that your use case is not covered by a suggested key, please
+[get in touch](https://github.com/neuroinformatics-unit/NeuroBlueprint) 
+and we will be happy to add it to this page.
+
+## `project` metadata
+
+This file contains high-level information about the project, for example its overall purpose,
 who is involved in the project.
 
-We use the BIDS `dataset_description.json` fields as a starting point for project-level metadata.
-
-See the full specification for detailed descriptions:
+For detailed descriptions of the suggested keys, see the
 [BIDS Dataset Description Specification](https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/dataset-description.html#dataset_descriptionjson).
 
-Recommended keys:
-
-**TODO: check all keys, AI messed this up**
-**add actual entries here**.
+Suggested keys:
 
 ```yaml
 Name:
@@ -235,153 +261,191 @@ DatasetDOI:
 SourceDatasets: 
 ```
 
-(rawdata-metadata)=
-## Rawdata Metadata
-
-This file contains information about the data collection, for example the species of animal used
-in the project. It may also contain specific sections for datatypes, that apply to all subjects
-in the project. For example, if `ephys` data was collected at a sampling rate of 30kHz for every subject,
-it may contain an `ephys` section with a `samplingRate` field. See [rawdata metadata](rawdata-metadata).
-
-
-This file is primarily intended for metadata that applies across the whole dataset,
-including inherited datatype-specific metadata (for example `ephys` acquisition settings).
-
-Example structure:
-
-```yaml
-sub:
-    species:
-    strain:
-
-ephys:
-  samplingRate:
-  probeType:
-
-behav:
-  taskName:
-```
-
 (sub-metadata)=
-## Sub Metadata
+## `sub` metadata
 
-This metadata file contains information about an individual subject, for example the date of birth,
-identifiers, genotype or other key information. Here `<value>` is the subject number, for example `sub-001_metadata.yml`.
-See [subject metadata](sub-metadata)
+This metadata file contains information about experimental subjects, 
+for example the date of birth, identifiers, strain or genotype.
 
-We use the BIDS participant fields as a starting point for subject-level metadata.
-
-See the full specification for detailed descriptions:
+Suggested key are taken from the 
 [BIDS Participants Specification](https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/data-summary-files.html).
+Note they are presented as snake_case in the specification, but we recommend PascalCase for consistency with other metadata files.
 
-Recommended keys:
+Suggested keys:
 
 ```yaml
-subject_id:
-age:
-sex:
-handedness:
-species:
-strain:
-strain_rrid:
-genotype:
-dateOfBirth:
+SubjectId:
+Age:
+Sex:
+Handedness:
+Species:
+Strain:
+StrainRrid:
+Genotype:
+DateOfBirth:
 ```
 
 (ses-metadata)=
-## Ses Metadata
+## `ses` metadata
 
-- This file contains information related to the particular experimental session. For example,
+This file contains information related to the particular experimental session. For example,
 the date, additional notes on what happened in the session.
-Here `<value>` is the session number, for example `ses-001_metadata.yml`.
-See [session metadata](ses-metadata).
-- 
+
 We use the BIDS session fields as a starting point for session-level metadata.
 
-See the full specification for detailed descriptions:
+Suggested key are taken from the 
 [BIDS Sessions Specification](https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/data-summary-files.html#sessions-file).
+Note they are presented as snake_case in the specification, but we recommend PascalCase for consistency with other metadata files.
 
-Recommended keys:
+Suggested keys:
 
 ```yaml
-session_id:
-sessionDate:
-age:
-weight:
-notes:
-experimenter:
+SessionId:
+SessionDate:
+Age:
+Weight:
+Notes:
+Experimenter:
 ```
 
 (datatype-keys)=
 ## Datatype keys
 
-- This file can contain metadata specific to the datatype acquisition. See the [datatype keys](datatype-keys)
-section for details on keys to include for particular datatypes.
-
 Datatype metadata files contain acquisition-specific metadata for each modality.
+NeuroBlueprint contains many possible [datatypes](https://neuroblueprint.neuroinformatics.dev/latest/specification.html#datatype)
+e.g. `ephys`, `behav`, `funcimg`, `anat`.
+
+Where possible, we recommend using the BIDS keys from relevant Bids Extension Protocols (BEPs). 
+These are detailed below for `ephys`, `behav` and `anat`.
 
 (ephys-metadata)=
-## `ephys`
+### `ephys`
 
-We use BIDS electrophysiology metadata fields as a starting point.
-
-See the full specification for detailed descriptions:
+See the 
 [BEP032 Electrophysiology Metadata Specification](https://bids.neuroimaging.io/extensions/beps/bep_032.html).
+for detailed descriptions.
 
-Recommended keys:
+Suggested keys:
 
-```yaml
-samplingRate:
-probeType:
-manufacturer:
-hardwareFilters:
-softwareFilters:
-electrodeCount:
-referenceChannel:
-groundChannel:
-amplifier:
-```
+- **Institution Information**
+  - `InstitutionName`
+  - `InstitutionAddress`
+  - `InstitutionalDepartmentName`
+
+- **Setup Information**
+  - `PowerLineFrequency`
+  - `Manufacturer`
+  - `ManufacturersModelName`
+  - `ManufacturersModelVersion`
+  - `RecordingSetupName`
+  - `SamplingFrequency`
+  - `DeviceSerialNumber`
+  - `SoftwareName`
+  - `SoftwareVersions`
+  - `RecordingDuration`
+  - `RecordingType`
+  - `EpochLength`
+
+- **Processing Information**
+  - `SoftwareFilters`
+  - `HardwareFilters`
+
+- **Pharmaceuticals**
+  - `PharmaceuticalName`
+  - `PharmaceuticalDoseAmount`
+  - `PharmaceuticalDoseUnits`
+  - `PharmaceuticalDoseRegimen`
+  - `PharmaceuticalDoseTime`
+
+- **Sample**
+  - `BodyPart`
+  - `BodyPartDetails`
+  - `BodyPartDetailsOntology`
+  - `SampleEnvironment`
+  - `SampleEmbedding`
+  - `SliceThickness`
+  - `SampleExtractionProtocol`
+
+- **Supplementary**
+  - `SupplementarySignals`
+
+- **Task Information**
+  - `TaskName`
+  - `TaskDescription`
+  - `Instructions`
+  - `CogAtlasID`
+  - `CogPOID`
+
+- **Coordinate System**
+  - `MicroephysCoordinateUnits`
 
 (behav-metadata)=
-## `behav`
+### `behav`
 
-We use the BIDS behavioural experiment metadata fields as a starting point.
-
-See the full specification for detailed descriptions:
+See the
 [BIDS Behavioural Experiments Specification](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/behavioral-experiments.html).
+for detailed descriptions.
 
-Recommended keys:
+Suggested keys:
 
-```yaml
-taskName:
-taskDescription:
-instructions:
-stimulusPresentation:
-responseDevice:
-samplingRate:
-softwareName:
-softwareVersion:
-```
+**Institution Information**
+- `InstitutionName`
+- `InstitutionAddress`
+- `InstitutionalDepartmentName`
+- 
+**Task Information**
+- `TaskName`
+- `Instructions`
+- `TaskDescription`
+- `CogAtlasID`
+- `CogPOID`
 
 (anat-metadata)=
-## `anat`
+### `anat`
 
 We use the BIDS microscopy metadata fields as a starting point.
 
 See the full specification for detailed descriptions:
 [BIDS Microscopy Specification](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/microscopy.html).
 
-Recommended keys:
+Suggested keys:
 
-```yaml
-sampleFixation:
-staining:
-microscopeManufacturer:
-microscopeModel:
-objectiveLens:
-magnification:
-numericalAperture:
-immersionMedium:
-voxelSize:
-imageFormat:
-```
+- **Image Acquisition**
+  - `PixelSize`
+  - `PixelSizeUnits`
+  - `Immersion`
+  - `NumericalAperture`
+  - `Magnification`
+  - `ImageAcquisitionProtocol`
+  - `OtherAcquisitionParameters`
+
+- **Sample**
+  - `BodyPart`
+  - `BodyPartDetails`
+  - `BodyPartDetailsOntology`
+  - `SampleEnvironment`
+  - `SampleEmbedding`
+  - `SampleFixation`
+  - `SampleStaining`
+  - `SamplePrimaryAntibody`
+  - `SampleSecondaryAntibody`
+  - `SliceThickness`
+  - `TissueDeformationScaling`
+  - `SampleExtractionProtocol`
+  - `SampleExtractionInstitution`
+
+- **Chunk Transformations**
+  - `ChunkTransformationMatrix`
+  - `ChunkTransformationMatrixAxis`
+
+- **Hardware Information**
+  - `Manufacturer`
+  - `ManufacturersModelName`
+  - `DeviceSerialNumber`
+  - `StationName`
+  - `SoftwareVersions`
+
+- **Institution Information**
+  - `InstitutionName`
+  - `InstitutionAddress`
+  - `InstitutionalDepartmentName`
