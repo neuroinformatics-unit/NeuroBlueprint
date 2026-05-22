@@ -52,7 +52,7 @@ ephys:
 
 # Metadata organisation schema
 
-Metadata should be stored in `metadata.yaml` files that can include any of 
+Metadata should be stored in `metadata.yaml` files that can include any of
 these pre-defined sections, which map to NeuroBlueprint folder levels:
 
 - `project`
@@ -93,9 +93,9 @@ behav:
 For more details on what information should be put in each section,
 see the [metadata keys](metadata-keys) section.
 
-The location of the `metadata.yaml` file indicates what data the metadata refers to. 
+The location of the `metadata.yaml` file indicates what data the metadata refers to.
 
-**A metadata file applies to data in all folder levels at or below it.** 
+**A metadata file applies to data in all folder levels at or below it.**
 
 
 In the above example, the entries apply to all data in the project. Therefore,
@@ -153,16 +153,16 @@ Now, `SamplingFrequency` at 30000 applies to all sessions except for
 This was inspired by the similar inheritance principle in [BIDS](https://bids-validator.readthedocs.io/en/stable/validation-model/inheritance-principle.html)
 
 :::{tip}
-When it is equivalent to put the `metadata.yaml` file at one of multiple folder levels, 
-we recommend placing the file at the highest possible level. 
+When it is equivalent to put the `metadata.yaml` file at one of multiple folder levels,
+we recommend placing the file at the highest possible level.
 
 For example, above the ephys information for `sub-001/ses-001/metadata.yaml` is placed in the
 session folder, rather than the equally valid ephys folder `sub-001/ses-001/ephys/metadata.yaml`.
 :::
 
-# Sidecar metadata files 
+# Sidecar metadata files
 
-It may be required to associate metadata with a specific data file or folder. 
+It may be required to associate metadata with a specific data file or folder.
 In this case, a metadata YAML file that copies the original
 file or folder name with the suffix `_metadata` can be used. These are called 'sidecar' metadata files.
 
@@ -220,9 +220,9 @@ called `my_recording` (e.g. `my_recording.bin`).
 
 NeuroBlueprint does not mandate the use of any specific metadata key-value
 pairs. In theory, the structural rules above can be used to document the project
-as you wish. 
+as you wish.
 
-However, we highly recommend using one of the suggested metadata 
+However, we highly recommend using one of the suggested metadata
 keys detailed below if it covers the concept you want to document. This helps
 ensure that metadata entries are interoperable with your immediate colleagues, and across labs.
 
@@ -230,7 +230,7 @@ For example, if you want to include the species of mice in your project, it
 makes sense to use the suggested key `Species` rather than come up with your own key.
 
 If you find that your use case is not covered by a suggested key, please
-[get in touch](https://github.com/neuroinformatics-unit/NeuroBlueprint) 
+[get in touch](https://github.com/neuroinformatics-unit/NeuroBlueprint)
 and we will be happy to add it to this page.
 
 ## `project` metadata
@@ -258,16 +258,16 @@ Funding:
 EthicsApprovals:
 ReferencesAndLinks:
 DatasetDOI:
-SourceDatasets: 
+SourceDatasets:
 ```
 
 (sub-metadata)=
 ## `sub` metadata
 
-This metadata file contains information about experimental subjects, 
+This metadata file contains information about experimental subjects,
 for example the date of birth, identifiers, strain or genotype.
 
-Suggested key are taken from the 
+Suggested key are taken from the
 [BIDS Participants Specification](https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/data-summary-files.html).
 Note they are presented as snake_case in the specification, but we recommend PascalCase for consistency with other metadata files.
 
@@ -293,7 +293,7 @@ the date, additional notes on what happened in the session.
 
 We use the BIDS session fields as a starting point for session-level metadata.
 
-Suggested key are taken from the 
+Suggested key are taken from the
 [BIDS Sessions Specification](https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/data-summary-files.html#sessions-file).
 Note they are presented as snake_case in the specification, but we recommend PascalCase for consistency with other metadata files.
 
@@ -315,13 +315,13 @@ Datatype metadata files contain acquisition-specific metadata for each modality.
 NeuroBlueprint contains many possible [datatypes](https://neuroblueprint.neuroinformatics.dev/latest/specification.html#datatype)
 e.g. `ephys`, `behav`, `funcimg`, `anat`.
 
-Where possible, we recommend using the BIDS keys from relevant Bids Extension Protocols (BEPs). 
+Where possible, we recommend using the BIDS keys from relevant Bids Extension Protocols (BEPs).
 These are detailed below for `ephys`, `behav` and `anat`.
 
 (ephys-metadata)=
 ### `ephys`
 
-See the 
+See the
 [BEP032 Electrophysiology Metadata Specification](https://bids.neuroimaging.io/extensions/beps/bep_032.html).
 for detailed descriptions.
 
@@ -392,7 +392,7 @@ Suggested keys:
 - `InstitutionName`
 - `InstitutionAddress`
 - `InstitutionalDepartmentName`
-- 
+-
 **Task Information**
 - `TaskName`
 - `Instructions`
