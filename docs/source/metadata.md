@@ -235,8 +235,7 @@ and we will be happy to add it to this page.
 
 ## `project` metadata
 
-This file contains high-level information about the project, for example its overall purpose,
-who is involved in the project.
+This section contains high-level information about the project, for example the people involved and the project's overall purpose.
 
 For detailed descriptions of the suggested keys, see the
 [BIDS Dataset Description Specification](https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/dataset-description.html#dataset_descriptionjson).
