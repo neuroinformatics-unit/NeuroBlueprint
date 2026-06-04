@@ -16,7 +16,7 @@ the [Allen Institute for Neural Dynamics](https://github.com/AllenNeuralDynamics
 each differing in its structure, level of detail and the datatypes they cover.
 
 Here, we provide a simple schema that you can use to
-get started with adding metadata to your NeuroBlueprint project. You are free to add
+get started with adding metadata to your **NeuroBlueprint** project. You are free to add
 metadata fields if you wish, but at the
 [end of this guide](metadata-keys) we recommend fields
 that can go in each section.
@@ -53,12 +53,12 @@ ephys:
 # Metadata organisation schema
 
 Metadata should be stored in `metadata.yaml` files that can include any of
-these pre-defined sections, which map to NeuroBlueprint folder levels:
+these pre-defined sections, which map to **NeuroBlueprint** folder levels:
 
 - `project`
 - `sub`
 - `ses`
-- [Neuroblueprint datatype](https://neuroblueprint.neuroinformatics.dev/latest/specification.html#datatype) (e.g. `behav`, `ephys`)
+- [**NeuroBlueprint** datatype](https://neuroblueprint.neuroinformatics.dev/latest/specification.html#datatype) (e.g. `behav`, `ephys`)
 
 
 For example, a `metadata.yaml` file contents might look like:
@@ -218,7 +218,7 @@ called `my_recording` (e.g. `my_recording.bin`).
 (metadata-keys)=
 # Suggested metadata keys
 
-NeuroBlueprint does not mandate the use of any specific metadata key-value
+**NeuroBlueprint** does not mandate the use of any specific metadata key-value
 pairs. In theory, the structural rules above can be used to document the project
 as you wish.
 
@@ -312,7 +312,7 @@ Experimenter:
 ## Datatype keys
 
 Datatype metadata files contain acquisition-specific metadata for each modality.
-NeuroBlueprint contains many possible [datatypes](https://neuroblueprint.neuroinformatics.dev/latest/specification.html#datatype)
+**NeuroBlueprint** contains many possible [datatypes](https://neuroblueprint.neuroinformatics.dev/latest/specification.html#datatype)
 e.g. `ephys`, `behav`, `funcimg`, `anat`.
 
 Where possible, we recommend using the BIDS keys from relevant Bids Extension Protocols (BEPs).
