@@ -315,7 +315,7 @@ Datatype metadata files contain acquisition-specific metadata for each modality.
 **NeuroBlueprint** contains many possible [datatypes](https://neuroblueprint.neuroinformatics.dev/latest/specification.html#datatype)
 e.g. `ephys`, `behav`, `funcimg`, `anat`.
 
-Where possible, we recommend using the BIDS keys from relevant Bids Extension Protocols (BEPs).
+Where possible, we recommend using the BIDS keys from relevant Bids Extension Proposals (BEPs).
 These are detailed below for `ephys`, `behav` and `anat`.
 
 (ephys-metadata)=
