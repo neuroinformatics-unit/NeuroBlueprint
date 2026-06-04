@@ -166,7 +166,7 @@ It may be required to associate metadata with a specific data file or folder.
 In this case, a metadata YAML file that copies the original
 file or folder name with the suffix `_metadata` can be used. These are called 'sidecar' metadata files.
 
-Sidecar metadata files should contain use the same sections as above (e.g. `sub`, `behav` etc.).
+Sidecar metadata files should contain the same sections as above (e.g. `sub`, `behav` etc.).
 
 For example, in the `behav` folder there may be multiple
 acquisition runs, with different associated metadata. In this case, a metadata
