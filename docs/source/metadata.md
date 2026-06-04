@@ -172,7 +172,7 @@ For example, in the `behav` folder there may be multiple
 acquisition runs, with different associated metadata. In this case, a metadata
 YAML file that applies specifically to a particular file can be created.
 
-For example, in the project below all videos are assumed to be of the task
+In the project below all videos are assumed to be of the task
 `"Visual Decision Making"`. However, imagine for the run `run-002_camera-top.mp4`
 a video was taken of a different task.
 
