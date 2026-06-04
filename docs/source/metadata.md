@@ -116,9 +116,9 @@ we can place this metadata file at the top-level of the project:
 
 ## Inheritance
 
-In some cases, the same metadata might not apply to all data within the project.
-In this case, a `metadata.yaml` file can be placed at a lower level, overwriting
-the metadata fields at a higher level.
+Sometimes, the same metadata might not apply to all data within the project.
+In such cases, a `metadata.yaml` file can be placed at a lower level, overwriting
+the metadata fields inherited from higher levels.
 
 For example, let's say that `sub-001/ses-001` used a different sampling frequency,
 due to an experimental error. Instead of 30000 Hz, 27000 Hz was used.
