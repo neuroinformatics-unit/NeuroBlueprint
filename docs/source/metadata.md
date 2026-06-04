@@ -392,7 +392,6 @@ Suggested keys:
 - `InstitutionName`
 - `InstitutionAddress`
 - `InstitutionalDepartmentName`
--
 **Task Information**
 - `TaskName`
 - `Instructions`
