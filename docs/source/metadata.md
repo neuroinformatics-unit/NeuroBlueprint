@@ -156,7 +156,7 @@ This was inspired by the similar inheritance principle in [BIDS](https://bids-va
 When it is equivalent to put the `metadata.yaml` file at one of multiple folder levels,
 we recommend placing the file at the highest possible level.
 
-For example, above the ephys information for `sub-001/ses-001/metadata.yaml` is placed in the
+In the above example, the ephys information for `sub-001/ses-001/metadata.yaml` is placed in the
 session folder, rather than the equally valid ephys folder `sub-001/ses-001/ephys/metadata.yaml`.
 :::
 
