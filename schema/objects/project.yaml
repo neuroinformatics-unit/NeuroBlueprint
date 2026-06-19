@@ -1,0 +1,174 @@
+# Project-level metadata fields.
+#
+# These fields appear under the "project" section of metadata.yaml and
+# describe the dataset or project as a whole.
+#
+# Based on the BIDS Dataset Description specification:
+# https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/dataset-description.html
+
+Name:
+  name: Name
+  display_name: Project Name
+  description: |
+    Name of the project or dataset.
+  type: string
+  requirement_level: recommended
+
+Authors:
+  name: Authors
+  display_name: Authors
+  description: |
+    List of individuals who contributed to the creation or curation
+    of the dataset, in order of importance (e.g. first author first).
+  type: array
+  items:
+    type: string
+  requirement_level: recommended
+
+Keywords:
+  name: Keywords
+  display_name: Keywords
+  description: |
+    List of key terms describing the project, enabling indexing and
+    search across projects.
+  type: array
+  items:
+    type: string
+  requirement_level: recommended
+
+Abstract:
+  name: Abstract
+  display_name: Abstract
+  description: |
+    A brief summary of the project's purpose, methods, and scope.
+  type: string
+  requirement_level: recommended
+
+NeuroBlueprintVersion:
+  name: NeuroBlueprintVersion
+  display_name: NeuroBlueprint Version
+  description: |
+    The version of the NeuroBlueprint specification that the project
+    conforms to.
+  type: string
+  requirement_level: recommended
+
+License:
+  name: License
+  display_name: License
+  description: |
+    The license under which the dataset is distributed.
+    Use an SPDX identifier where possible (e.g. "CC-BY-4.0").
+  type: string
+  requirement_level: recommended
+
+Acknowledgements:
+  name: Acknowledgements
+  display_name: Acknowledgements
+  description: |
+    Text acknowledging contributions of individuals or institutions
+    beyond those listed as Authors.
+  type: string
+  requirement_level: optional
+
+HowToAcknowledge:
+  name: HowToAcknowledge
+  display_name: How to Acknowledge
+  description: |
+    Instructions on how researchers using this dataset should
+    acknowledge the original authors. This field can also be used
+    to define a publication that should be cited.
+  type: string
+  requirement_level: optional
+
+Funding:
+  name: Funding
+  display_name: Funding
+  description: |
+    List of sources of funding (grant numbers, institutions).
+  type: array
+  items:
+    type: string
+  requirement_level: optional
+
+EthicsApprovals:
+  name: EthicsApprovals
+  display_name: Ethics Approvals
+  description: |
+    List of ethics committee approvals of the research protocol and
+    target population (e.g. Home Office project licence numbers,
+    IACUC or AWERB references).
+  type: array
+  items:
+    type: string
+  requirement_level: optional
+
+ReferencesAndLinks:
+  name: ReferencesAndLinks
+  display_name: References and Links
+  description: |
+    List of references to publications and URLs relevant to
+    the project.
+  type: array
+  items:
+    type: string
+  requirement_level: optional
+
+DatasetDOI:
+  name: DatasetDOI
+  display_name: Dataset DOI
+  description: |
+    The Digital Object Identifier of the dataset (not the
+    corresponding paper). Must be a full DOI URL.
+  type: string
+  format: uri
+  requirement_level: optional
+
+HEDVersion:
+  name: HEDVersion
+  display_name: HED Version
+  description: |
+    The version of the HED (Hierarchical Event Descriptors)
+    schema used in the dataset.
+  type: string
+  requirement_level: optional
+
+DatasetType:
+  name: DatasetType
+  display_name: Dataset Type
+  description: |
+    The interpretation of the dataset.
+  type: string
+  enum:
+    - "raw"
+    - "derivative"
+  requirement_level: recommended
+
+SourceDatasets:
+  name: SourceDatasets
+  display_name: Source Datasets
+  description: |
+    Used to specify the locations and relevant attributes of all
+    source datasets from which the current dataset is derived.
+  type: array
+  items:
+    type: object
+    properties:
+      URL:
+        type: string
+        format: uri
+      Version:
+        type: string
+  requirement_level: optional
+
+DatasetLinks:
+  name: DatasetLinks
+  display_name: Dataset Links
+  description: |
+    Used to map a given key to a URI that points to a related
+    dataset or resource, for example stimuli files or derived outputs.
+  type: object
+  additionalProperties:
+    type: string
+    format: uri
+  requirement_level: optional

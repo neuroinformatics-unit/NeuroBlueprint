@@ -1,0 +1,65 @@
+# NeuroBlueprint metadata schema — meta definitions
+# Describes the schema structure and conventions.
+
+schema:
+  name: NeuroBlueprint Metadata Schema
+  version: "0.1.0"
+  description: |
+    A machine-readable representation of the NeuroBlueprint metadata
+    specification in YAML, modelled after the BIDS schema.
+
+    Object definitions live in objects/.
+    Rules for file placement and inheritance live in rules/.
+
+conventions:
+  key_case: PascalCase
+  file_format: YAML
+  file_extension: ".yaml"
+  string_quoting: |
+    Values SHOULD be quoted when they contain special YAML characters.
+    Species names, identifiers, and free-text fields SHOULD be quoted.
+
+requirement_levels:
+  required:
+    description: |
+      The field MUST be present. A validator SHOULD raise an error
+      if a required field is missing.
+  recommended:
+    description: |
+      The field SHOULD be present. A validator MAY raise a warning
+      if a recommended field is missing.
+  optional:
+    description: |
+      The field MAY be present.
+
+sections:
+  project:
+    display_name: Project
+    description: |
+      High-level information about the project or dataset.
+    folder_level: project root
+    objects_file: objects/project.yaml
+
+  sub:
+    display_name: Subject
+    description: |
+      Information about experimental subjects.
+    folder_level: "sub-<label>"
+    objects_file: objects/sub.yaml
+
+  ses:
+    display_name: Session
+    description: |
+      Information about an experimental session.
+    folder_level: "ses-<label>"
+    objects_file: objects/ses.yaml
+
+  datatypes:
+    description: |
+      Acquisition-specific metadata for each modality (datatype).
+      Each datatype corresponds to a NeuroBlueprint datatype folder
+      (e.g. ephys, behav, funcimg, anat).
+    objects_files:
+      ephys: objects/datatypes/ephys.yaml
+      behav: objects/datatypes/behav.yaml
+      anat: objects/datatypes/anat.yaml
