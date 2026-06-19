@@ -16,6 +16,9 @@ To facilitate **NeuroBlueprint**'s pain-free adoption we are also developing
 into data acquisition workflows and automates the creation and transfer
 of **NeuroBlueprint**-compliant folders.
 
+For a curated set of community tools and example workflows, see the
+[Get Started](tools.md) page.
+
 We (the NIU) welcome feedback and contributions from the wider community and commit to maintaining the specification as a living and evolving document.
 Check out the NeuroBlueprint [Zulip chat](https://neuroinformatics.zulipchat.com/#narrow/stream/406000-NeuroBlueprint) or raise a [GitHub Issue](https://github.com/neuroinformatics-unit/NeuroBlueprint/issues) to get in touch.
 
@@ -28,5 +31,6 @@ We will collaborate with [ongoing efforts](https://github.com/INCF/neuroscience-
 
 specification
 metadata
+get-started
 community
 ```
