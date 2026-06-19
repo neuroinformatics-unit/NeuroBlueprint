@@ -12,7 +12,7 @@ setup, or microscope).
 
 A number of detailed metadata standards exist, including those from
 [BIDS](https://bids-specification.readthedocs.io/en/stable/introduction.html),
-[openMINDS](https://github.com/openMetadataInitiative) and
+[openMINDS](https://openminds.om-i.org/) and
 the [Allen Institute for Neural Dynamics](https://github.com/AllenNeuralDynamics/aind-data-schema),
 each differing in its structure, level of detail and the datatypes they cover.
 
@@ -43,7 +43,7 @@ project:
       - "John Doe"
 
 sub:
-    Species: "Mus musculus"
+    Species: "mus musculus"
     Genotype: "Thy1-GCaMP6s/wt"
 
 ephys:
@@ -64,7 +64,7 @@ these pre-defined sections, which map to [**NeuroBlueprint** folder levels](neur
 
 `metadata.yaml` files may be placed at any of the corresponding folder levels and
 can contain information for that folder level and below. To include metadata on
-a particular file, a [sidecar metadata files](sidecar-files) can be placed next to the file.
+a particular file, a [sidecar metadata file](sidecar-files) can be placed next to the file.
 
 For example, the contents of a `metadata.yaml` placed in the project folder root might look like:
 
@@ -76,7 +76,7 @@ project:
       - "John Doe"
 
 sub:
-    Species: "Mus musculus"
+    Species: "mus musculus"
     Strain: "C57BL/6J"
     StrainRrid: "RRID:IMSR_JAX:000664"
 
@@ -154,7 +154,7 @@ ephys:
 Now, `SamplingFrequency` at 30000 applies to all sessions except for
 `sub-001/ses-001`, which is 27000:
 
-This was inspired by the similar inheritance principle in [BIDS](https://bids-validator.readthedocs.io/en/stable/validation-model/inheritance-principle.html)
+This was inspired by the similar inheritance principle in [BIDS](https://bids-specification.readthedocs.io/en/stable/common-principles.html#the-inheritance-principle)
 
 :::{tip}
 When it is equivalent to put the `metadata.yaml` file at one of multiple folder levels,
@@ -242,7 +242,7 @@ and we will be happy to add it to this page.
 
 This section contains high-level information about the project, for example the people involved and the project's overall purpose.
 
-Including high-level information on the projects, such as the
+Including high-level information on the project, such as the
 `Keywords` and `Abstract` entries, is very valuable, allowing simple indexing and searching
 of projects for key information. For example, when starting a new project you could search
 all experiments ever run by your lab for keywords relevant to your work.
@@ -250,25 +250,53 @@ all experiments ever run by your lab for keywords relevant to your work.
 For detailed descriptions of the suggested keys, see the
 [BIDS Dataset Description Specification](https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/dataset-description.html#dataset_descriptionjson).
 
-Suggested keys:
+Suggested keys with example entries:
 
 ```yaml
-Name:
-Authors:
-Keywords:
-Abstract:
-NeuroBlueprintVersion:
-License:
-Acknowledgements:
-HowToAcknowledge:
-Funding:
-EthicsApprovals:
-ReferencesAndLinks:
-DatasetDOI:
-SourceDatasets:
-HEDVersion:
-DatasetLinks:
-DatasetType:
+project:
+    Name: "Cortical Dynamics of Visual Decision Making in Mice"
+    Authors:
+      - "Jane Smith"
+      - "John Doe"
+    Keywords:
+      - "mouse"
+      - "mus musculus"
+      - "visual cortex"
+      - "decision making"
+      - "Neuropixels"
+      - "extracellular electrophysiology"
+      - "two-photon imaging"
+    Abstract: >
+      Head-fixed mice performed a two-alternative forced-choice visual
+      discrimination task while neural activity was recorded from visual
+      and parietal cortex using Neuropixels 2.0 probes. The dataset
+      accompanies a study of how choice-related signals emerge across
+      cortical areas during perceptual decision making.
+    NeuroBlueprintVersion: "0.5.0"
+    License: "CC-BY-4.0"
+    Acknowledgements: >
+      We thank the institute's animal facility staff for husbandry support.
+    HowToAcknowledge: >
+      Please cite Smith et al. (2026), Journal of Neuroscience,
+      https://doi.org/10.1234/jneurosci.2026.0001
+    Funding:
+      - "Wellcome Trust Grant 219627/Z/19/Z"
+      - "BBSRC Grant BB/X001234/1"
+    EthicsApprovals:
+      - "UK Home Office Project Licence PP1234567"
+      - "Institutional AWERB approval 2025-014"
+    ReferencesAndLinks:
+      - "https://doi.org/10.1234/jneurosci.2026.0001"
+      - "Smith J., Doe J. (2026). Cortical dynamics of visual decision making in mice. Journal of Neuroscience."
+    DatasetDOI: "https://doi.org/10.18112/openneuro.ds000123.v1.0.0"
+    HEDVersion: "8.4.0"
+    DatasetType: "raw"
+    SourceDatasets:
+      - URL: "https://gin.g-node.org/janesmith/visual-decision-raw"
+        Version: "1.0.0"
+    DatasetLinks:
+      stimuli: "https://gin.g-node.org/janesmith/visual-decision-stimuli"
+      deriv: "derivatives/spike-sorting"
 ```
 
 (sub-metadata)=
@@ -277,23 +305,27 @@ DatasetType:
 This metadata file contains information about experimental subjects,
 for example the date of birth, identifiers, strain or genotype.
 
-Suggested key are taken from the
+Suggested keys are based on the
 [BIDS Participants Specification](https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/data-summary-files.html).
 Note they are presented as snake_case in the specification, but we recommend PascalCase for consistency with other metadata files.
 
-Suggested keys:
+Suggested keys with example entries:
 
 ```yaml
-SubjectId:
-Age:
-Sex:
-Handedness:
-Species:
-Strain:
-StrainRrid:
-Genotype:
-DateOfBirth:
+sub:
+    SubjectId: "sub-001"
+    Age: 12
+    AgeUnits: "week"
+    Sex: "M"
+    Handedness: "n/a"
+    Species: "mus musculus"
+    Strain: "C57BL/6J"
+    StrainRrid: "RRID:IMSR_JAX:000664"
+    Genotype: "Thy1-GCaMP6s/wt"
+    DateOfBirth: "2025-09-14"
 ```
+
+Valid entries for `AgeUnits` are "year", "week", "day" or "hour".
 
 (ses-metadata)=
 ## `ses` metadata
@@ -301,20 +333,25 @@ DateOfBirth:
 This file contains information related to the particular experimental session. For example,
 the date, additional notes on what happened in the session.
 
-Suggested key are taken from the
+Suggested keys are based on the
 [BIDS Sessions Specification](https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/data-summary-files.html#sessions-file).
 Note they are presented as snake_case in the specification, but we recommend PascalCase for consistency with other metadata files.
 
 Suggested keys:
 
 ```yaml
-SessionId:
-SessionDate:
-Age:
-Weight:
-Notes:
-Experimenter:
+ses:
+    SessionId: "ses-001"
+    SessionDate: "2025-12-07"
+    Age: 12
+    AgeUnits: "week"
+    Weight: 26.4
+    WeightUnits: "g"
+    Notes: "First Neuropixels recording. Mouse calm, good task engagement (~450 trials)."
+    Experimenter: "Jane Smith"
 ```
+
+Valid entries for `AgeUnits` are "year", "week", "day" or "hour".
 
 (datatype-keys)=
 ## Datatype keys
@@ -333,60 +370,62 @@ See the
 [BEP032 Electrophysiology Metadata Specification](https://bids.neuroimaging.io/extensions/beps/bep_032.html).
 for detailed descriptions.
 
-Suggested keys:
+Suggested keys with example entries:
 
-- **Institution Information**
-  - `InstitutionName`
-  - `InstitutionAddress`
-  - `InstitutionalDepartmentName`
+```yaml
+ephys:
+    # --- Institution Information ---
+    InstitutionName: "University College London"
+    InstitutionAddress: "Gower Street, London, WC1E 6BT, United Kingdom"
+    InstitutionalDepartmentName: "Sainsbury Wellcome Centre"
 
-- **Setup Information**
-  - `PowerLineFrequency`
-  - `Manufacturer`
-  - `ManufacturersModelName`
-  - `ManufacturersModelVersion`
-  - `RecordingSetupName`
-  - `SamplingFrequency`
-  - `DeviceSerialNumber`
-  - `SoftwareName`
-  - `SoftwareVersions`
-  - `RecordingDuration`
-  - `RecordingType`
-  - `EpochLength`
+    # --- Setup Information ---
+    PowerLineFrequency: 50
+    Manufacturer: "imec"
+    ManufacturersModelName: "Neuropixels 2.0"
+    ManufacturersModelVersion: "2.0 (4-shank)"
+    RecordingSetupName: "Acute rig 3 — head-fixed Neuropixels"
+    SamplingFrequency: 30000
+    DeviceSerialNumber: "21010012345"
+    SoftwareName: "SpikeGLX"
+    SoftwareVersions: "20240129-phase30"
+    RecordingDuration: 2730.5
+    RecordingType: "continuous"
 
-- **Processing Information**
-  - `SoftwareFilters`
-  - `HardwareFilters`
+    # --- Processing Information ---
+    SoftwareFilters: "n/a"
+    HardwareFilters: "n/a"
 
-- **Pharmaceuticals**
-  - `PharmaceuticalName`
-  - `PharmaceuticalDoseAmount`
-  - `PharmaceuticalDoseUnits`
-  - `PharmaceuticalDoseRegimen`
-  - `PharmaceuticalDoseTime`
+    # --- Pharmaceuticals ---
+    PharmaceuticalName: "Muscimol"
+    PharmaceuticalDoseAmount: 0.1
+    PharmaceuticalDoseUnits: "µg"
+    PharmaceuticalDoseRegimen: >-
+        100 nL of 1 µg/µL muscimol in sterile saline, pressure-injected
+        unilaterally into right PPC via glass pipette at 20 nL/min;
+        30 min equilibration before recording onset.
+    PharmaceuticalDoseTime: -1800
 
-- **Sample**
-  - `BodyPart`
-  - `BodyPartDetails`
-  - `BodyPartDetailsOntology`
-  - `SampleEnvironment`
-  - `SampleEmbedding`
-  - `SliceThickness`
-  - `SampleExtractionProtocol`
+    # --- Sample ---
+    BodyPart: "BRAIN"
+    BodyPartDetails: "Primary visual cortex (V1) and posterior parietal cortex (PPC)"
+    BodyPartDetailsOntology: "http://purl.obolibrary.org/obo/UBERON_0002436"
+    SampleEnvironment: "in vivo"
+    SampleEmbedding: "n/a"        # these would be omitted for extracellular electrophysiology, included for intracellular
+    SliceThickness: "n/a"
+    SampleExtractionProtocol: "n/a"
 
-- **Supplementary**
-  - `SupplementarySignals`
+    # --- Supplementary ---
+    SupplementarySignals: "Photodiode (stimulus onset), running-wheel velocity, lick sensor, wheel position"
 
-- **Task Information**
-  - `TaskName`
-  - `TaskDescription`
-  - `Instructions`
-  - `CogAtlasID`
-  - `CogPOID`
+    # --- Task Information ---
+    TaskName: "Visual Decision Making"
+    TaskDescription: "Head-fixed two-alternative forced-choice contrast discrimination."
+    Instructions: "n/a"
+    CogAtlasID: "n/a"
+    CogPOID: "n/a"
 
-- **Coordinate System**
-  - `MicroephysCoordinateUnits`
-
+```
 (behav-metadata)=
 ### `behav`
 
@@ -394,18 +433,25 @@ See the
 [BIDS Behavioural Experiments Specification](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/behavioral-experiments.html).
 for detailed descriptions.
 
-Suggested keys:
+Suggested keys with example entries:
 
-**Institution Information**
-- `InstitutionName`
-- `InstitutionAddress`
-- `InstitutionalDepartmentName`
-**Task Information**
-- `TaskName`
-- `Instructions`
-- `TaskDescription`
-- `CogAtlasID`
-- `CogPOID`
+```yaml
+behav:
+    # --- Institution Information ---
+    InstitutionName: "University College London"
+    InstitutionAddress: "Gower Street, London, WC1E 6BT, United Kingdom"
+    InstitutionalDepartmentName: "Sainsbury Wellcome Centre"
+
+    # --- Task Information ---
+    TaskName: "Visual Decision Making"
+    TaskDescription: >-
+        Head-fixed two-alternative forced-choice contrast discrimination;
+        the mouse reports the higher-contrast side by turning a steering
+        wheel, and correct choices are rewarded with water.
+    Instructions: "n/a"
+    CogAtlasID: "n/a"
+    CogPOID: "n/a"
+```
 
 (anat-metadata)=
 ### `anat`
@@ -415,44 +461,49 @@ We use the BIDS microscopy metadata fields as a starting point.
 See the full specification for detailed descriptions:
 [BIDS Microscopy Specification](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/microscopy.html).
 
-Suggested keys:
+Suggested keys with example entries:
 
-- **Image Acquisition**
-  - `PixelSize`
-  - `PixelSizeUnits`
-  - `Immersion`
-  - `NumericalAperture`
-  - `Magnification`
-  - `ImageAcquisitionProtocol`
-  - `OtherAcquisitionParameters`
+```yaml
+anat:
+    # --- Image Acquisition ---
+    PixelSize: [0.5, 0.5, 2.0]
+    PixelSizeUnits: "um"
+    Immersion: "Air"
+    NumericalAperture: 0.45
+    Magnification: 10
+    ImageAcquisitionProtocol: "https://doi.org/10.17504/protocols.io.xxxxxxx"
+    OtherAcquisitionParameters: >-
+        Tile scan with 10% overlap, stitched in ZEN; 3 channels
+        (DAPI 405 nm, GFP 488 nm, DiI 561 nm); z-step 2 µm.
 
-- **Sample**
-  - `BodyPart`
-  - `BodyPartDetails`
-  - `BodyPartDetailsOntology`
-  - `SampleEnvironment`
-  - `SampleEmbedding`
-  - `SampleFixation`
-  - `SampleStaining`
-  - `SamplePrimaryAntibody`
-  - `SampleSecondaryAntibody`
-  - `SliceThickness`
-  - `TissueDeformationScaling`
-  - `SampleExtractionProtocol`
-  - `SampleExtractionInstitution`
+    # --- Sample ---
+    BodyPart: "BRAIN"
+    BodyPartDetails: "Coronal section (~-2.0 mm from bregma) containing V1 and PPC"
+    BodyPartDetailsOntology: "http://purl.obolibrary.org/obo/UBERON_0002436"
+    SampleEnvironment: "ex vivo"
+    SampleEmbedding: "Agarose (4%) for vibratome sectioning"
+    SampleFixation: "4% paraformaldehyde in 0.1 M PBS, transcardial perfusion, 24 h post-fix at 4 °C"
+    SampleStaining: "DAPI nuclear counterstain; immunostaining for GFP"
+    SamplePrimaryAntibody: "Chicken polyclonal anti-GFP (RRID:AB_300798)"
+    SampleSecondaryAntibody: "Goat anti-chicken IgY Alexa Fluor 488 (RRID:AB_2534096)"
+    SliceThickness: 50
+    TissueDeformationScaling: 100
+    SampleExtractionProtocol: "https://doi.org/10.17504/protocols.io.yyyyyyy"
+    SampleExtractionInstitution: "Sainsbury Wellcome Centre, University College London"
 
-- **Chunk Transformations**
-  - `ChunkTransformationMatrix`
-  - `ChunkTransformationMatrixAxis`
+    # --- Chunk Transformations ---   (omitted unless chunk-<index> is used)
+    ChunkTransformationMatrix: "n/a"
+    ChunkTransformationMatrixAxis: "n/a"
 
-- **Hardware Information**
-  - `Manufacturer`
-  - `ManufacturersModelName`
-  - `DeviceSerialNumber`
-  - `StationName`
-  - `SoftwareVersions`
+    # --- Hardware Information ---
+    Manufacturer: "Zeiss"
+    ManufacturersModelName: "LSM 980"
+    DeviceSerialNumber: "3825001234"
+    StationName: "Confocal rig 2"
+    SoftwareVersions: "ZEN 3.4 (blue edition)"
 
-- **Institution Information**
-  - `InstitutionName`
-  - `InstitutionAddress`
-  - `InstitutionalDepartmentName`
+    # --- Institution Information ---
+    InstitutionName: "University College London"
+    InstitutionAddress: "Gower Street, London, WC1E 6BT, United Kingdom"
+    InstitutionalDepartmentName: "Sainsbury Wellcome Centre"
+```
