@@ -412,9 +412,13 @@ ephys:
     BodyPartDetails: "Primary visual cortex (V1) and posterior parietal cortex (PPC)"
     BodyPartDetailsOntology: "http://purl.obolibrary.org/obo/UBERON_0002436"
     SampleEnvironment: "in vivo"
-    SampleEmbedding: "n/a"        # these would be omitted for extracellular electrophysiology, included for intracellular
-    SliceThickness: "n/a"
-    SampleExtractionProtocol: "n/a"
+    # these would be omitted for extracellular electrophysiology, included for intracellular
+    SampleEmbedding: "agarose"
+    SliceThickness: 300
+    SampleExtractionProtocol: >-
+        Acute coronal brain slices were prepared in ice-cold oxygenated
+        artificial cerebrospinal fluid and maintained in oxygenated artificial
+        cerebrospinal fluid before recording.
 
     # --- Supplementary ---
     SupplementarySignals: "Photodiode (stimulus onset), running-wheel velocity, lick sensor, wheel position"
@@ -422,11 +426,8 @@ ephys:
     # --- Task Information ---
     TaskName: "Visual Decision Making"
     TaskDescription: "Head-fixed two-alternative forced-choice contrast discrimination."
-    Instructions: "n/a"
-    CogAtlasID: "n/a"
-    CogPOID: "n/a"
-
 ```
+
 (behav-metadata)=
 ### `behav`
 
@@ -492,9 +493,13 @@ anat:
     SampleExtractionProtocol: "https://doi.org/10.17504/protocols.io.yyyyyyy"
     SampleExtractionInstitution: "Sainsbury Wellcome Centre, University College London"
 
-    # --- Chunk Transformations ---   (omitted unless chunk-<index> is used)
-    ChunkTransformationMatrix: "n/a"
-    ChunkTransformationMatrixAxis: "n/a"
+    # --- Chunk Transformations ---   (usually omitted unless chunk-<index> is used)
+    ChunkTransformationMatrix:
+      - [1, 0, 0, 0]
+      - [0, 1, 0, 0]
+      - [0, 0, 1, 0]
+      - [0, 0, 0, 1]
+    ChunkTransformationMatrixAxis: "XYZ"
 
     # --- Hardware Information ---
     Manufacturer: "Zeiss"
