@@ -27,7 +27,7 @@ Please get in touch by raising a
 [GitHub Issue](https://github.com/neuroinformatics-unit/NeuroBlueprint/issues)
 if you would like additional keys added to the metadata fields.
 
-# YAML file format
+## YAML file format
 
 Metadata files should use the [YAML](https://yaml.org/) file format (`.yaml` extension).
 YAML is a human-readable text format designed to be easy to read and edit.
