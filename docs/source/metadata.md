@@ -239,7 +239,7 @@ If you find that your use case is not covered by a suggested key, please
 [get in touch](https://github.com/neuroinformatics-unit/NeuroBlueprint)
 and we will be happy to add it to this page.
 
-## `project` metadata
+### `project` metadata
 
 This section contains high-level information about the project, for example the people involved and the project's overall purpose.
 
@@ -301,7 +301,7 @@ project:
 ```
 
 (sub-metadata)=
-## `sub` metadata
+### `sub` metadata
 
 This metadata file contains information about experimental subjects,
 for example the date of birth, identifiers, strain or genotype.
@@ -329,7 +329,7 @@ sub:
 Valid entries for `AgeUnits` are `"year"`, `"week"`, `"day"` or `"hour"`.
 
 (ses-metadata)=
-## `ses` metadata
+### `ses` metadata
 
 This file contains information related to the particular experimental session. For example,
 the date, additional notes on what happened in the session.
@@ -355,7 +355,7 @@ ses:
 Valid entries for `AgeUnits` are `"year"`, `"week"`, `"day"` or `"hour"`.
 
 (datatype-keys)=
-## Datatype keys
+### Datatype keys
 
 Datatype metadata files contain acquisition-specific metadata for each modality.
 **NeuroBlueprint** contains many possible [datatypes](https://neuroblueprint.neuroinformatics.dev/latest/specification.html#datatype)
@@ -365,7 +365,7 @@ Where possible, we recommend using the BIDS keys from relevant Bids Extension Pr
 These are detailed below for `ephys`, `behav` and `anat`.
 
 (ephys-metadata)=
-### `ephys`
+#### `ephys`
 
 See the
 [BEP032 Electrophysiology Metadata Specification](https://bids.neuroimaging.io/extensions/beps/bep_032.html)
@@ -429,7 +429,7 @@ ephys:
 ```
 
 (behav-metadata)=
-### `behav`
+#### `behav`
 
 See the
 [BIDS Behavioural Experiments Specification](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/behavioral-experiments.html)
@@ -456,7 +456,7 @@ behav:
 ```
 
 (anat-metadata)=
-### `anat`
+#### `anat`
 
 We use the BIDS microscopy metadata fields as a starting point.
 
