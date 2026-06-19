@@ -14,9 +14,10 @@ A number of detailed metadata standards exist, including those from
 [BIDS](https://bids-specification.readthedocs.io/en/stable/introduction.html),
 [openMINDS](https://openminds.om-i.org/) and
 the [Allen Institute for Neural Dynamics](https://github.com/AllenNeuralDynamics/aind-data-schema),
-each differing in its structure, level of detail and the datatypes they cover.
+each differing in its structure and the datatypes they cover.
 
-Here, we provide a simple schema that you can use to
+However, a complete metadata schema can be overwhelming and difficult to
+implement. Here, we provide a simple schema that you can use to
 get started with adding metadata to your **NeuroBlueprint** project. You are free to add
 metadata fields if you wish, but at the
 [end of this guide](metadata-keys) we recommend fields
@@ -325,7 +326,7 @@ sub:
     DateOfBirth: "2025-09-14"
 ```
 
-Valid entries for `AgeUnits` are "year", "week", "day" or "hour".
+Valid entries for `AgeUnits` are `"year"`, `"week"`, `"day"` or `"hour"`.
 
 (ses-metadata)=
 ## `ses` metadata
@@ -351,7 +352,7 @@ ses:
     Experimenter: "Jane Smith"
 ```
 
-Valid entries for `AgeUnits` are "year", "week", "day" or "hour".
+Valid entries for `AgeUnits` are `"year"`, `"week"`, `"day"` or `"hour"`.
 
 (datatype-keys)=
 ## Datatype keys
@@ -367,8 +368,8 @@ These are detailed below for `ephys`, `behav` and `anat`.
 ### `ephys`
 
 See the
-[BEP032 Electrophysiology Metadata Specification](https://bids.neuroimaging.io/extensions/beps/bep_032.html).
-for detailed descriptions.
+[BEP032 Electrophysiology Metadata Specification](https://bids.neuroimaging.io/extensions/beps/bep_032.html)
+for detailed descriptions of the suggested keys.
 
 Suggested keys with example entries:
 
@@ -430,8 +431,8 @@ ephys:
 ### `behav`
 
 See the
-[BIDS Behavioural Experiments Specification](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/behavioral-experiments.html).
-for detailed descriptions.
+[BIDS Behavioural Experiments Specification](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/behavioral-experiments.html)
+for detailed descriptions of the suggested keys.
 
 Suggested keys with example entries:
 
@@ -458,7 +459,7 @@ behav:
 
 We use the BIDS microscopy metadata fields as a starting point.
 
-See the full specification for detailed descriptions:
+See the full specification for detailed descriptions of the suggested keys,
 [BIDS Microscopy Specification](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/microscopy.html).
 
 Suggested keys with example entries:
