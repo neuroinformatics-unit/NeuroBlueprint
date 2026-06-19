@@ -2,8 +2,10 @@
 # Metadata
 
 [Scientific metadata](https://www.dcc.ac.uk/resources/curation-reference-manual/chapters-production/scientific-metadata)
-is additional data that describes the project data itself. **TODO: BETTER MOTIVATION
-add a link to what metadata is / why you care and add it to your data etc.**
+is additional data that describes the project data itself. Good metadata is one of
+the most valuable additions to a project: it enables full
+reproducibility, supports automated re-analysis, and makes your data easy to find
+and search across projects.
 
 Metadata can
 be high-level (e.g. a general overview of the study and its purpose) or
@@ -53,8 +55,8 @@ ephys:
 
 ## Metadata Organisation Description
 
-Metadata should be stored in `metadata.yaml` files that can include any of 
-these pre-defined sections, which map to NeuroBlueprint folder levels:
+Metadata should be stored in `metadata.yaml` files that can include any of
+these pre-defined sections, which map to [NeuroBlueprint folder levels](neuroblueprint-folders):
 
 - `project`
 - `rawdata`
@@ -63,7 +65,11 @@ these pre-defined sections, which map to NeuroBlueprint folder levels:
 - [Neuroblueprint datatype]() (e.g. `behav`, `ephys`)
 
 
-For example, a `metadata.yaml` file contents might look like:
+`metadata.yaml` files may be placed at any of the corresponding folder levels and
+can contain information for that folder level and below. To include metadata on
+a particular file, a [sidecar metadata files](sidecar-files) can be placed next to the file.
+
+For example, the contents of a `metadata.yaml` placed in the project folder root might look like:
 
 ```yaml
 project:
@@ -79,11 +85,8 @@ ephys:
 behav:
 ```
 
-To see more information on what information should be
-put at each section, see the [metadata keys](metadata-keys) section.
-
 In this case, these entries apply to every dataset in the project. Therefore,
-we can place this metadata file at the top-level of the project:
+this metadata file is placed at the top-level of the project:
 
 ```
 └── my_project/
@@ -99,7 +102,10 @@ we can place this metadata file at the top-level of the project:
 ```
 
 The location of the folder indicates to which data the metadata belongs to. A metadata
-file applies to all levels below it. 
+file applies to all levels below it.
+
+To see more information on what information should be
+put at each section, see the [metadata keys](metadata-keys) section.
 
 ## Inheritance
 
@@ -138,22 +144,23 @@ information for `sub-001/ses-001/metadata.yaml` is placed in the equally valid
 session folder, rather than in the ephys folder `sub-001/ses-001/ephys/metadata.yaml`.
 :::
 
-# Sidecar metadata files 
+(sidecar-files)=
+# Sidecar metadata files
 
 In some cases it may be required to associate metadata with a specific
 data file. In this case, a metadata YAML file that copies the original
 filename with the suffix `_metadata` can be instantiated. It should
 contain one of the same sections as above (e.g. `sub`, `behav` etc.).
-  
+
 :::{warning}
 
 all metadata files must be called metadata.yaml or be
 the exact name as an existing file or folder
 
 :::
-  
+
 For example, in the `behav` folder you might have multiple
-acquisition runs, each with different metadata. 
+acquisition runs, each with different metadata.
 
 ```
 └── my_project/
@@ -207,6 +214,11 @@ then use the BIDS name.**
 - This file contains high-level information about the project, for example its overall purpose,
 who is involved in the project.
 
+Including high-level information on the projects, such as the
+`Keywords` and `Abstract` entries, is very valuable, allowing simple indexing and searching
+of projects for key information. For example, when starting a new project you could search
+all experiments ever run by your lab for keywords relevant to your work.
+
 We use the BIDS `dataset_description.json` fields as a starting point for project-level metadata.
 
 See the full specification for detailed descriptions:
@@ -214,25 +226,23 @@ See the full specification for detailed descriptions:
 
 Recommended keys:
 
-**TODO: check all keys, AI messed this up**
-**add actual entries here**.
-
 ```yaml
 Name:
-NeuroBlueprintVersion:
-HEDVersion:
-DatasetLinks:
-DatasetType:
-License:
 Authors:
 Keywords:
+Abstract:
+NeuroBlueprintVersion:
+License:
 Acknowledgements:
 HowToAcknowledge:
 Funding:
 EthicsApprovals:
 ReferencesAndLinks:
 DatasetDOI:
-SourceDatasets: 
+SourceDatasets:
+HEDVersion:
+DatasetLinks:
+DatasetType:
 ```
 
 (rawdata-metadata)=
@@ -295,7 +305,7 @@ dateOfBirth:
 the date, additional notes on what happened in the session.
 Here `<value>` is the session number, for example `ses-001_metadata.yml`.
 See [session metadata](ses-metadata).
-- 
+-
 We use the BIDS session fields as a starting point for session-level metadata.
 
 See the full specification for detailed descriptions:

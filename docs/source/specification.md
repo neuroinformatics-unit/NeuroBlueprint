@@ -12,7 +12,7 @@ We mark requirements with italicised *keywords* that should be interpreted as de
 Standardised project folders contain data that are hierarchically structured according to the [BIDS standard](https://bids-specification.readthedocs.io/en/stable/02-common-principles.html).
 
 For example:
-
+(neuroblueprint-folders)=
 <img src="_static/NeuroBlueprint_project_tree_light.png" alt="NeuroBlueprint logo" class="only-light img-responsive"/>
 <img src="_static/NeuroBlueprint_project_tree_dark.png" alt="NeuroBlueprint logo" class="only-dark img-responsive"/>
 
