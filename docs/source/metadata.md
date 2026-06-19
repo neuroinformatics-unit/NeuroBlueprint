@@ -52,7 +52,7 @@ ephys:
     ManufacturersModelName: "Neuropixels 2.0"
 ```
 
-# Metadata organisation schema
+## Metadata organisation schema
 
 Metadata should be stored in `metadata.yaml` files that can include any of
 these pre-defined sections, which map to [**NeuroBlueprint** folder levels](neuroblueprint-folders):
@@ -119,7 +119,7 @@ this metadata file is placed at the top-level of the project:
 To see more information on what information should be
 put at each section, see the [metadata keys](metadata-keys) section.
 
-## Inheritance
+### Inheritance
 
 Sometimes, the same metadata might not apply to all data within the project.
 In such cases, a `metadata.yaml` file can be placed at a lower level, overwriting
@@ -166,7 +166,7 @@ session folder, rather than the equally valid ephys folder `sub-001/ses-001/ephy
 :::
 
 (sidecar-files)=
-# Sidecar metadata files
+### Sidecar metadata files
 
 It may be required to associate metadata with a specific data file or folder.
 In this case, a metadata YAML file that copies the original
@@ -222,7 +222,7 @@ called `my_recording` (e.g. `my_recording.bin`).
 :::
 
 (metadata-keys)=
-# Suggested metadata keys
+## Suggested metadata keys
 
 **NeuroBlueprint** does not mandate the use of any specific metadata key-value
 pairs. In theory, the structural rules above can be used to document the project
