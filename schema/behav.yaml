@@ -1,0 +1,24 @@
+# behav — behavioural experiment acquisition metadata.
+# Reference: BIDS Behavioural Experiments
+# https://bids-specification.readthedocs.io/en/stable/modality-specific-files/behavioral-experiments.html
+
+# ---- Institution Information ----
+
+InstitutionName:
+  type: string
+InstitutionAddress:
+  type: string
+InstitutionalDepartmentName:
+  type: string
+TaskName:
+  type: string
+TaskDescription:
+  type: string
+Instructions:
+  type: string
+CogAtlasID:
+  type: string
+  format: uri
+CogPOID:
+  type: string
+  format: uri

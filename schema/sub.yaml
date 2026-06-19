@@ -1,0 +1,39 @@
+# sub — information about experimental subjects.
+# Reference: BIDS Participants
+# https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/data-summary-files.html
+
+SubjectId:
+  type: string
+Age:
+  type: number
+AgeUnits:
+  type: string
+  enum:
+    - year
+    - week
+    - day
+    - hour
+Sex:
+  type: string
+  enum:
+    - M
+    - F
+    - O
+Handedness:
+  type: string
+  enum:
+    - R
+    - L
+    - A
+    - n/a
+Species:
+  type: string
+Strain:
+  type: string
+StrainRrid:
+  type: string
+Genotype:
+  type: string
+DateOfBirth:
+  type: string
+  format: date

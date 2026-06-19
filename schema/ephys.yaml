@@ -1,0 +1,92 @@
+# ephys — extracellular electrophysiology acquisition metadata.
+# Reference: BEP032
+# https://bids.neuroimaging.io/extensions/beps/bep_032.html
+
+# ---- Institution Information ----
+
+InstitutionName:
+  type: string
+InstitutionAddress:
+  type: string
+InstitutionalDepartmentName:
+  type: string
+PowerLineFrequency:
+  type: number
+  unit: Hz
+  enum:
+    - 50
+    - 60
+Manufacturer:
+  type: string
+ManufacturersModelName:
+  type: string
+ManufacturersModelVersion:
+  type: string
+RecordingSetupName:
+  type: string
+SamplingFrequency:
+  type: number
+  unit: Hz
+DeviceSerialNumber:
+  type: string
+SoftwareName:
+  type: string
+SoftwareVersions:
+  type: string
+RecordingDuration:
+  type: number
+  unit: s
+RecordingType:
+  type: string
+  enum:
+    - continuous
+    - epoched
+SoftwareFilters:
+  type: string
+HardwareFilters:
+  type: string
+PharmaceuticalName:
+  type: string
+PharmaceuticalDoseAmount:
+  type: number
+PharmaceuticalDoseUnits:
+  type: string
+PharmaceuticalDoseRegimen:
+  type: string
+PharmaceuticalDoseTime:
+  type: number
+  unit: s
+BodyPart:
+  type: string
+BodyPartDetails:
+  type: string
+BodyPartDetailsOntology:
+  type: string
+  format: uri
+SampleEnvironment:
+  type: string
+  enum:
+    - in vivo
+    - ex vivo
+    - in vitro
+SampleEmbedding:
+  type: string
+SliceThickness:
+  type: number
+  unit: um
+SampleExtractionProtocol:
+  type: string
+SupplementarySignals:
+  type: string
+TaskName:
+  type: string
+TaskDescription:
+  type: string
+Instructions:
+  type: string
+CogAtlasID:
+  type: string
+  format: uri
+CogPOID:
+  type: string
+  format: uri
