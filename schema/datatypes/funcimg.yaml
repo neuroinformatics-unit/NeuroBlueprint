@@ -1,0 +1,30 @@
+# funcimg — functional imaging acquisition metadata.
+
+InstitutionName:
+  type: string
+InstitutionAddress:
+  type: string
+InstitutionalDepartmentName:
+  type: string
+Manufacturer:
+  type: string
+ManufacturersModelName:
+  type: string
+DeviceSerialNumber:
+  type: string
+SoftwareName:
+  type: string
+SoftwareVersions:
+  type: string
+TaskName:
+  type: string
+TaskDescription:
+  type: string
+Instructions:
+  type: string
+CogAtlasID:
+  type: string
+  format: uri
+CogPOID:
+  type: string
+  format: uri
