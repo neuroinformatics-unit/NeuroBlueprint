@@ -1,7 +1,7 @@
 # NeuroBlueprint metadata schema
 # https://github.com/neuroinformatics-unit/NeuroBlueprint
 
-version: "0.1.0"
+version: "0.5.0"
 
 # Valid top-level sections in a metadata.yaml file.
 # Each entry maps to a schema definition file in this directory.
