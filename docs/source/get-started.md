@@ -1,18 +1,23 @@
 # Get Started
 
-(some introduction)
+Getting started with data standardisation can feel overwhelming at first.
+Although the benefits of standardising data are significant, learning a new
+folder structure takes time and can initially introduce friction.
+
+This section introduces tools that automate data standardisation
+with **NeuroBlueprint**, helping make it easier to create, manage, and work with standardised projects.
 
 ## Tools
 
 (datashuttle-section)=
 ### datashuttle
 
-Getting started with NeuroBlueprint, we have introduced a very nice tool called datashuttle. Datashuttle provides a
-graphical user interface or Python API to create, validate and transfer NeuroBlueprint-organised folders.
+datashuttle is a tool for automating the creation of **NeuroBlueprint** folder structures.
+It also provides convenient features for transferring data between machines and validating **NeuroBlueprint** datasets.
 
-datashuttle makes getting started with NB folder structure very easy - check out the installation and get
-started and you can quickly create a new project through the GUI:
-
+datashuttle can be used through either a graphical user interface or a Python API.
+The GUI makes it easy to get started with the **NeuroBlueprint** folder structure and quickly create a new project.
+I
 ```{image} /_static/datashuttle-demo-dark.gif
 :class: only-dark
 :alt: Datashuttle usage GIF
@@ -26,13 +31,21 @@ started and you can quickly create a new project through the GUI:
 :width: 700px
 ```
 
-(some more stuff on transfer)
-
 ### Community tools
 
-Other community members have developed tools, for example checkout
-[NeuroBlueprint-metadata](https://github.com/barnabasberes/NeuroBlueprint-metadata) that helps set up
-metadata files to implement the NeuroBlueprint specification.
+Community members have also developed tools to support the **NeuroBlueprint** ecosystem,
+aimed at simplifying managing standardised projected.
+
+
+#### metadata manager
+
+[**NeuroBlueprint**-metadata](https://github.com/barnabasberes/NeuroBlueprint-metadata)
+is a command-line tool that helps create and manage metadata.yaml files for NeuroBlueprint projects.
+It can generate template metadata files throughout a project hierarchy, providing placeholders for
+project, subject, session, and datatype-level information. Metadata can then be added to these files
+and conveniently inspected from the command line, including resolved metadata for a given session.
+
+### Bonsai extension
 
 Bonsai -> NB converter? Just following up
 
@@ -40,19 +53,22 @@ Bonsai -> NB converter? Just following up
 
 ## Validating projects are in NeuroBLueprint style for a labs repository
 
-datashuttle helps validate NeuroBlueprint folder structures automatically through a
-Python API. Users are using regular scripts to run weekly validation of all
-projects in the lab, to ensure they are maintained in NeuroBlueprint format.
+datashuttle can validate **NeuroBlueprint** folder structures automatically through its Python API.
+For example, labs can run scheduled scripts to validate all projects on a weekly basis, helping ensure
+that datasets remain organised according to the **NeuroBlueprint** specification.
+
 Check out the code [here](https://datashuttle.neuroinformatics.dev/latest/pages/examples/lab-project-checker.html).
 
 ## Searching a repository of NB-formatted projects
 
-When all your projects a neuroblueprint-formatted, it becomes easy to search
-across projects for keywords or abstract.
+When projects follow the **NeuroBlueprint** structure, it becomes easier to search across
+datasets using project metadata, such as keywords or abstracts.
 
-This script searches a list of folders, lodas the metadata and matches
-keywords to user-defined search. It uses the [rapidfuzz](https://rapidfuzz.github.io/RapidFuzz/Installation.html)
-library that matches words that are close:
+The example Python script below searches a collection of project folders, loads each project’s
+metadata, and compares its keywords against a user-defined search term.
+It uses the [RapidFuzz](https://rapidfuzz.github.io/RapidFuzz/Installation.html) library to
+identify close matches between search terms and project keywords.
+
 
 ```python
 from pathlib import Path
