@@ -82,7 +82,7 @@ sub:
 
 ses:
     Experimenter: "Jane Smith"
-    Notes: "First recording session"
+    Notes: "Visual decision-making recording sessions using protocol 3A"
 
 ephys:
     SamplingFrequency: 30000
