@@ -2,6 +2,7 @@
 # Reference: BEP032
 # https://bids.neuroimaging.io/extensions/beps/bep_032.html
 
+
 # ---- Institution Information ----
 
 InstitutionName:
@@ -13,9 +14,6 @@ InstitutionalDepartmentName:
 PowerLineFrequency:
   type: number
   unit: Hz
-  enum:
-    - 50
-    - 60
 Manufacturer:
   type: string
 ManufacturersModelName:
@@ -41,20 +39,29 @@ RecordingType:
   enum:
     - continuous
     - epoched
+    - discontinuous
 SoftwareFilters:
-  type: string
+  type: object
 HardwareFilters:
-  type: string
+  type: object
 PharmaceuticalName:
   type: string
 PharmaceuticalDoseAmount:
-  type: number
+  anyOf:
+    - type: number
+    - type: array
+      items:
+        type: number
 PharmaceuticalDoseUnits:
   type: string
 PharmaceuticalDoseRegimen:
   type: string
 PharmaceuticalDoseTime:
-  type: number
+  anyOf:
+    - type: number
+    - type: array
+      items:
+        type: number
   unit: s
 BodyPart:
   type: string

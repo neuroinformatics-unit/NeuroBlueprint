@@ -24,3 +24,5 @@ Notes:
   type: string
 Experimenter:
   type: string
+HED:
+  type: string

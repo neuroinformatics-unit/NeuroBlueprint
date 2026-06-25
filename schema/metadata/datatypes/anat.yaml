@@ -44,11 +44,23 @@ SampleEmbedding:
 SampleFixation:
   type: string
 SampleStaining:
-  type: string
+  anyOf:
+    - type: string
+    - type: array
+      items:
+        type: string
 SamplePrimaryAntibody:
-  type: string
+  anyOf:
+    - type: string
+    - type: array
+      items:
+        type: string
 SampleSecondaryAntibody:
-  type: string
+  anyOf:
+    - type: string
+    - type: array
+      items:
+        type: string
 SliceThickness:
   type: number
   unit: um
@@ -80,7 +92,9 @@ ChunkTransformationMatrix:
         items:
           type: number
 ChunkTransformationMatrixAxis:
-  type: string
+  type: array
+  items:
+    type: string
 Manufacturer:
   type: string
 ManufacturersModelName:

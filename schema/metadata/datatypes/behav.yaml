@@ -1,20 +1,12 @@
-# funcimg — functional imaging acquisition metadata.
+# behav — behavioural experiment acquisition metadata.
+# Reference: BIDS Behavioural Experiments
+# https://bids-specification.readthedocs.io/en/stable/modality-specific-files/behavioral-experiments.html
 
 InstitutionName:
   type: string
 InstitutionAddress:
   type: string
 InstitutionalDepartmentName:
-  type: string
-Manufacturer:
-  type: string
-ManufacturersModelName:
-  type: string
-DeviceSerialNumber:
-  type: string
-SoftwareName:
-  type: string
-SoftwareVersions:
   type: string
 TaskName:
   type: string
