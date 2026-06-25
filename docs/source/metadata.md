@@ -349,6 +349,7 @@ ses:
     WeightUnits: "g"
     Notes: "First Neuropixels recording. Mouse calm, good task engagement (~450 trials)."
     Experimenter: "Jane Smith"
+    HED: "(Delay/# ms, Agent-action, (Experiment-participant, (Press, Mouse-button))),"
 ```
 
 Valid entries for `AgeUnits` are `"year"`, `"week"`, `"day"` or `"hour"`.
