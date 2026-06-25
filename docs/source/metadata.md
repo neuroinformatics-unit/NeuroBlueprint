@@ -7,8 +7,7 @@ reproducibility, supports automated re-analysis, and makes your data easy to fin
 and search across projects.
 
 Metadata can be high-level (e.g. a general overview of the study and its purpose) or
-low-level (acquisition parameters for extracellular electrophysiology
-setup, or microscope).
+low-level (e.g. acquisition parameters an extracellular electrophysiology).
 
 A number of detailed metadata standards exist, including those from
 [BIDS](https://bids-specification.readthedocs.io/en/stable/introduction.html),
@@ -16,12 +15,12 @@ A number of detailed metadata standards exist, including those from
 the [Allen Institute for Neural Dynamics](https://github.com/AllenNeuralDynamics/aind-data-schema),
 each differing in its structure and the datatypes they cover.
 
-However, a complete metadata schema can be overwhelming and difficult to
+A complete metadata schema can be overwhelming and difficult to
 implement. Here, we provide a simple schema that you can use to
 get started with adding metadata to your **NeuroBlueprint** project. You are free to add
-metadata fields if you wish, but at the
+metadata fields as you wish, but at the
 [end of this guide](metadata-keys) we recommend fields
-that can go in each section.
+to go into metadata files.
 
 Please get in touch by raising a
 [GitHub Issue](https://github.com/neuroinformatics-unit/NeuroBlueprint/issues)
@@ -125,7 +124,7 @@ Sometimes, the same metadata might not apply to all data within the project.
 In such cases, a `metadata.yaml` file can be placed at a lower level, overwriting
 the metadata fields inherited from higher levels.
 
-For example, let's say that `sub-001/ses-001` used a different sampling frequency,
+For example, let's say that `sub-001/ses-001` used a different sampling frequency
 due to an experimental error. Instead of 30000 Hz, 27000 Hz was used.
 
 We can put a new `metadata.yaml` file in the `sub-001/ses-001` folder
@@ -152,8 +151,8 @@ ephys:
   SamplingFrequency: 27000
 ```
 
-Now, `SamplingFrequency` at 30000 applies to all sessions except for
-`sub-001/ses-001`, which is 27000:
+Now, `SamplingFrequency` at 30000 Hz applies to all sessions except for
+`sub-001/ses-001`, which is 27000 Hz:
 
 This was inspired by the similar inheritance principle in [BIDS](https://bids-specification.readthedocs.io/en/stable/common-principles.html#the-inheritance-principle)
 
@@ -162,7 +161,7 @@ When it is equivalent to put the `metadata.yaml` file at one of multiple folder 
 we recommend placing the file at the highest possible level.
 
 In the above example, the ephys information for `sub-001/ses-001/metadata.yaml` is placed in the
-session folder, rather than the equally valid ephys folder `sub-001/ses-001/ephys/metadata.yaml`.
+session folder, rather than the equally valid `ephys` folder `sub-001/ses-001/ephys/metadata.yaml`.
 :::
 
 (sidecar-files)=
