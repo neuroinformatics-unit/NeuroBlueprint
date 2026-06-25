@@ -153,4 +153,5 @@ linkcheck_ignore = [
     'https://bids-specification.readthedocs.io',
     'https://neuroinformatics.zulipchat.com',
     'https://www.incf.org/',  # due to SSLCertVerificationError
+    'https://www.dcc.ac.uk/resources/curation-reference-manual/chapters-production/scientific-metadata'
 ]
