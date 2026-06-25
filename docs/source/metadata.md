@@ -281,7 +281,6 @@ project:
       https://doi.org/10.1234/jneurosci.2026.0001
     Funding:
       - "Wellcome Trust Grant 219627/Z/19/Z"
-      - "BBSRC Grant BB/X001234/1"
     EthicsApprovals:
       - "UK Home Office Project Licence PP1234567"
       - "Institutional AWERB approval 2025-014"
