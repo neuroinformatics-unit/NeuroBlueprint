@@ -235,8 +235,10 @@ For example, if you want to include the species of mice in your project, it
 makes sense to use the suggested key `Species` rather than come up with your own key.
 
 If you find that your use case is not covered by a suggested key, please
-[get in touch](https://github.com/neuroinformatics-unit/NeuroBlueprint)
-and we will be happy to add it to this page.
+get in touch by raising a [GitHub issue](https://github.com/neuroinformatics-unit/NeuroBlueprint/issues)
+or through our
+[Zulip Chat](https://neuroinformatics.zulipchat.com/#narrow/stream/406000-NeuroBlueprint)
+and we will be happy to add a new key to this page.
 
 ### `project` metadata
 
