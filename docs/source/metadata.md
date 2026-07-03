@@ -219,19 +219,22 @@ called `my_recording` (e.g. `my_recording.bin`).
 # Suggested metadata keys
 
 **NeuroBlueprint** does not mandate the use of any specific metadata key-value
-pairs. In theory, the structural rules above can be used to document the project
-as you wish.
+pairs, other than the highest-level 'section' keys (`project`, `sub`, `ses`,
+or one of the datatypes) mentioned above. In theory, the structural rules above
+can be used to document the project as you wish.
 
-However, we highly recommend using one of the suggested metadata
-keys detailed below if it covers the concept you want to document. This helps
-ensure that metadata entries are interoperable with your immediate colleagues, and across labs.
+However, we recommend using the suggested metadata
+keys detailed below if they cover the concept you want to document.
+This helps ensure that metadata entries are
+interoperable with your immediate colleagues, and across labs.
+There is no requirement to use all keys, selecting a subset that work best for
+your requirements is encouraged.
 
 For example, if you want to include the species of mice in your project, it
 makes sense to use the suggested key `Species` rather than come up with your own key.
 
-If you find that your use case is not covered by a suggested key, please
-[get in touch](https://github.com/neuroinformatics-unit/NeuroBlueprint)
-and we will be happy to add it to this page.
+If you think a useful key is missing from this list of suggested keys, please
+get in touch through our [Zulip chat](https://neuroinformatics.zulipchat.com/#narrow/channel/406000-NeuroBlueprint).
 
 ## `project` metadata
 
