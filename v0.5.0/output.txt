@@ -1,0 +1,2 @@
+community.md:13: [redirected permanently] https://www.nwb.org to https://nwb.org/
+metadata.md:12: [redirected with Found] https://openminds.om-i.org/ to https://openminds.docs.om-i.org/en/latest/
