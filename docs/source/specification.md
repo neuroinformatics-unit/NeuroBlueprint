@@ -257,7 +257,7 @@ Below we provide some example file names adhering to the **NeuroBlueprint** nami
 ## Metadata conventions
 
 **NeuroBlueprint** projects *may* include metadata, additional text information that
-that describes the contents of the project. Metadata is included in `metadata.yaml` files placed
+describes the contents of the project. Metadata is included in `metadata.yaml` files placed
 within project folders.
 
 See the [metadata](metadata.md) page for more details on our recommended approach.
