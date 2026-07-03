@@ -25,11 +25,17 @@ author = 'Neuroinformatics Unit'
 # Retrieve the version number from the package
 try:
     release = setuptools_scm.get_version(root="../..", relative_to=__file__)
-    release = release.split(".dev")[0]  # remove dev tag and git hash
+    release = release.split("+")[0]  # remove git hash
 except LookupError:
     # if git is not initialised, still allow local build
     # with a dummy version
     release = "0.0.0"
+
+# Release labels for the version switcher dropdown
+if "dev" in release:
+    doc_version = "dev"
+else:
+    doc_version = f"v{release}"
 
 
 # -- General configuration ---------------------------------------------------
@@ -130,7 +136,7 @@ html_theme_options = {
     ],
     "switcher": {
         "json_url": "https://neuroblueprint.neuroinformatics.dev/latest/_static/switcher.json",
-        "version_match": release,
+        "version_match": doc_version,
     },
     "logo": {
         "text": f"NeuroBlueprint v{release}",
@@ -147,4 +153,5 @@ linkcheck_ignore = [
     'https://bids-specification.readthedocs.io',
     'https://neuroinformatics.zulipchat.com',
     'https://www.incf.org/',  # due to SSLCertVerificationError
+    'https://www.dcc.ac.uk/resources/curation-reference-manual/chapters-production/scientific-metadata'
 ]

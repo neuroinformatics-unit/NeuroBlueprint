@@ -23,9 +23,10 @@ Check out the NeuroBlueprint [Zulip chat](https://neuroinformatics.zulipchat.com
 We will collaborate with [ongoing efforts](https://github.com/INCF/neuroscience-data-structure) by the [INCF](https://www.incf.org/) and [BIDS community](https://bids.neuroimaging.io/) to extend the BIDS specification to non-human animal research.
 
 ```{toctree}
-:maxdepth: 3
+:maxdepth: 1
 :caption: Contents
 
 specification
+metadata
 community
 ```
