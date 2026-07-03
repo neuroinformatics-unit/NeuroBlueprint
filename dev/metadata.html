@@ -1,0 +1,1057 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Metadata &#8212; NeuroBlueprint</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=1015aea7" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=a95f357e85573c9b56d5"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5" />
+
+    <script src="_static/documentation_options.js?v=835c01ae"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'metadata';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.19.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://neuroblueprint.neuroinformatics.dev/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://neuroblueprint.neuroinformatics.dev/metadata.html" />
+    <link rel="icon" href="_static/logo_light.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Community" href="community.html" />
+    <link rel="prev" title="The specification" href="specification.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo_light.png" class="logo__image only-light" alt=""/>
+    <img src="_static/logo_dark.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">NeuroBlueprint v0.4.2.dev1</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="specification.html">
+    The specification
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Metadata
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="community.html">
+    Community
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/neuroinformatics-unit/NeuroBlueprint" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://neuroinformatics.zulipchat.com/#narrow/stream/406000-NeuroBlueprint" title="Zulip (chat)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-comments fa-lg" aria-hidden="true"></i><span class="visually-hidden">Zulip (chat)</span></a>
+        </li>
+</ul></div>
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="specification.html">
+    The specification
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Metadata
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="community.html">
+    Community
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/neuroinformatics-unit/NeuroBlueprint" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://neuroinformatics.zulipchat.com/#narrow/stream/406000-NeuroBlueprint" title="Zulip (chat)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-comments fa-lg" aria-hidden="true"></i><span class="visually-hidden">Zulip (chat)</span></a>
+        </li>
+</ul></div>
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar"><svg class="pst-icon svg-inline--fa" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Metadata</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="metadata">
+<h1>Metadata<a class="headerlink" href="#metadata" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://www.dcc.ac.uk/resources/curation-reference-manual/chapters-production/scientific-metadata">Scientific metadata</a> is additional information included with a project that describes the data itself.
+Good metadata is one of the most valuable additions to a project: it enables full
+reproducibility, supports automated re-analysis, and makes your data easy to find
+and search across projects.</p>
+<p>Metadata can be high-level (e.g. a general overview of the study and its purpose) or
+low-level (e.g. acquisition parameters an extracellular electrophysiology).</p>
+<p>A number of detailed metadata standards exist, including those from
+<a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/introduction.html">BIDS</a>,
+<a class="reference external" href="https://openminds.om-i.org/">openMINDS</a> and
+the <a class="reference external" href="https://github.com/AllenNeuralDynamics/aind-data-schema">Allen Institute for Neural Dynamics</a>,
+each differing in its structure and the datatypes they cover.</p>
+<p>A complete metadata schema can be overwhelming and difficult to
+implement. Here, we provide a simple schema that you can use to
+get started with adding metadata to your <strong>NeuroBlueprint</strong> project. You are free to add
+metadata fields as you wish, but at the
+<a class="reference internal" href="#metadata-keys"><span class="std std-ref">end of this guide</span></a> we recommend fields
+to go into metadata files.</p>
+<a class="only-dark reference internal image-reference" href="_images/NeuroBlueprint_project_tree_with_metadata_dark.png"><img alt="NeuroBlueprint folder tree with metadata file" class="align-center only-dark" src="_images/NeuroBlueprint_project_tree_with_metadata_dark.png" style="width: 650px;" />
+</a>
+<a class="only-light reference internal image-reference" href="_images/NeuroBlueprint_project_tree_with_metadata_light.png"><img alt="NeuroBlueprint folder tree with metadata file" class="align-center only-light" src="_images/NeuroBlueprint_project_tree_with_metadata_light.png" style="width: 650px;" />
+</a>
+<p><br />
+<em>An example NeuroBlueprint project with a metadata file</em>.</p>
+<section id="yaml-file-format">
+<h2>YAML file format<a class="headerlink" href="#yaml-file-format" title="Link to this heading">#</a></h2>
+<p>Metadata files should use the <a class="reference external" href="https://yaml.org/">YAML</a> file format (<code class="docutils literal notranslate"><span class="pre">.yaml</span></code> extension).
+YAML is a human-readable text format designed to be easy to read and edit.</p>
+<p>YAML stores information as <strong>key-value pairs</strong> and uses indentation (spaces) to represent structure.</p>
+<p>For example, a simple metadata file might look like:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">project</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Visual</span><span class="nv"> </span><span class="s">Decision</span><span class="nv"> </span><span class="s">Making</span><span class="nv"> </span><span class="s">Study&quot;</span>
+<span class="w">    </span><span class="nt">Authors</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Jane</span><span class="nv"> </span><span class="s">Smith&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;John</span><span class="nv"> </span><span class="s">Doe&quot;</span>
+
+<span class="nt">sub</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Species</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;mus</span><span class="nv"> </span><span class="s">musculus&quot;</span>
+<span class="w">    </span><span class="nt">Genotype</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Thy1-GCaMP6s/wt&quot;</span>
+
+<span class="nt">ephys</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">SamplingFrequency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30000</span>
+<span class="w">    </span><span class="nt">ManufacturersModelName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Neuropixels</span><span class="nv"> </span><span class="s">2.0&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="metadata-organisation-schema">
+<h2>Metadata organisation schema<a class="headerlink" href="#metadata-organisation-schema" title="Link to this heading">#</a></h2>
+<p>Metadata should be stored in <code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code> files that can include any of
+these pre-defined sections, which map to <a class="reference internal" href="specification.html#neuroblueprint-folders"><span class="std std-ref"><strong>NeuroBlueprint</strong> folder levels</span></a>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">project</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sub</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ses</span></code></p></li>
+<li><p><a class="reference external" href="https://neuroblueprint.neuroinformatics.dev/latest/specification.html#datatype"><strong>NeuroBlueprint</strong> datatype</a> (e.g. <code class="docutils literal notranslate"><span class="pre">behav</span></code>, <code class="docutils literal notranslate"><span class="pre">ephys</span></code>)</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code> files may be placed at any of the corresponding folder levels and
+can contain information for that folder level and below. To include metadata on
+a particular file, a <a class="reference internal" href="#sidecar-files"><span class="std std-ref">sidecar metadata file</span></a> can be placed next to the file.</p>
+<p>For example, the contents of a <code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code> placed in the project folder root might look like:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">project</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Visual</span><span class="nv"> </span><span class="s">Decision</span><span class="nv"> </span><span class="s">Making</span><span class="nv"> </span><span class="s">Study&quot;</span>
+<span class="w">    </span><span class="nt">Authors</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Jane</span><span class="nv"> </span><span class="s">Smith&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;John</span><span class="nv"> </span><span class="s">Doe&quot;</span>
+
+<span class="nt">sub</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Species</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;mus</span><span class="nv"> </span><span class="s">musculus&quot;</span>
+<span class="w">    </span><span class="nt">Strain</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;C57BL/6J&quot;</span>
+<span class="w">    </span><span class="nt">StrainRrid</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;RRID:IMSR_JAX:000664&quot;</span>
+
+<span class="nt">ses</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Experimenter</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Jane</span><span class="nv"> </span><span class="s">Smith&quot;</span>
+<span class="w">    </span><span class="nt">Notes</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Visual</span><span class="nv"> </span><span class="s">decision-making</span><span class="nv"> </span><span class="s">recording</span><span class="nv"> </span><span class="s">sessions</span><span class="nv"> </span><span class="s">using</span><span class="nv"> </span><span class="s">protocol</span><span class="nv"> </span><span class="s">3A&quot;</span>
+
+<span class="nt">ephys</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">SamplingFrequency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30000</span>
+<span class="w">    </span><span class="nt">ManufacturersModelName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Neuropixels</span><span class="nv"> </span><span class="s">2.0&quot;</span>
+<span class="w">    </span><span class="nt">PowerLineFrequency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50</span>
+<span class="w">    </span><span class="nt">RecordingType</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;continuous&quot;</span>
+
+<span class="nt">behav</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">TaskName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Visual</span><span class="nv"> </span><span class="s">Decision</span><span class="nv"> </span><span class="s">Making&quot;</span>
+<span class="w">    </span><span class="nt">TaskDescription</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Mouse</span><span class="nv"> </span><span class="s">makes</span><span class="nv"> </span><span class="s">decisions</span><span class="nv"> </span><span class="s">based</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">visual</span><span class="nv"> </span><span class="s">stimuli&quot;</span>
+</pre></div>
+</div>
+<p>The location of the <code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code> file indicates what data the metadata refers to.</p>
+<p><strong>A metadata file applies to data in all folder levels at or below it.</strong></p>
+<p>In the above example, the entries apply to all data in the project. Therefore,
+this metadata file is placed at the top-level of the project:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── my_project/
+    ├── metadata.yaml
+    └── rawdata/
+        ├── sub-001/
+        │   └── ses-001/
+        │       ├── behav/
+        │       └── ephys/
+        ├── sub-002/
+        │   └── ...
+        └── ...
+</pre></div>
+</div>
+<p>To see more information on what information should be
+put at each section, see the <a class="reference internal" href="#metadata-keys"><span class="std std-ref">metadata keys</span></a> section.</p>
+<section id="inheritance">
+<h3>Inheritance<a class="headerlink" href="#inheritance" title="Link to this heading">#</a></h3>
+<p>Sometimes, the same metadata might not apply to all data within the project.
+In such cases, a <code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code> file can be placed at a lower level, overwriting
+the metadata fields inherited from higher levels.</p>
+<p>For example, let’s say that <code class="docutils literal notranslate"><span class="pre">sub-001/ses-001</span></code> used a different sampling frequency
+due to an experimental error. Instead of 30000 Hz, 27000 Hz was used.</p>
+<p>We can put a new <code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code> file in the <code class="docutils literal notranslate"><span class="pre">sub-001/ses-001</span></code> folder
+with the <code class="docutils literal notranslate"><span class="pre">ephys</span></code> entry and updated sampling frequency:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── my_project/
+    ├── metadata.yaml
+    └── rawdata/
+        ├── sub-001/
+        │   └── ses-001/
+        │       ├── metadata.yaml
+        │       ├── behav/
+        │       └── ephys/
+        ├── sub-002/
+        │   └── ...
+        └── ...
+</pre></div>
+</div>
+<p>with <code class="docutils literal notranslate"><span class="pre">sub-001/ses-001/metadata.yaml</span></code> containing:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ephys</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">SamplingFrequency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">27000</span>
+</pre></div>
+</div>
+<p>Now, <code class="docutils literal notranslate"><span class="pre">SamplingFrequency</span></code> at 30000 Hz applies to all sessions except for
+<code class="docutils literal notranslate"><span class="pre">sub-001/ses-001</span></code>, which is 27000 Hz:</p>
+<p>This was inspired by the similar inheritance principle in <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/common-principles.html#the-inheritance-principle">BIDS</a></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>When it is equivalent to put the <code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code> file at one of multiple folder levels,
+we recommend placing the file at the highest possible level.</p>
+<p>In the above example, the ephys information for <code class="docutils literal notranslate"><span class="pre">sub-001/ses-001/metadata.yaml</span></code> is placed in the
+session folder, rather than the equally valid <code class="docutils literal notranslate"><span class="pre">ephys</span></code> folder <code class="docutils literal notranslate"><span class="pre">sub-001/ses-001/ephys/metadata.yaml</span></code>.</p>
+</div>
+</section>
+<section id="sidecar-metadata-files">
+<span id="sidecar-files"></span><h3>Sidecar metadata files<a class="headerlink" href="#sidecar-metadata-files" title="Link to this heading">#</a></h3>
+<p>It may be required to associate metadata with a specific data file or folder.
+In this case, a metadata YAML file that copies the original
+file or folder name with the suffix <code class="docutils literal notranslate"><span class="pre">_metadata</span></code> can be used. These are called ‘sidecar’ metadata files.</p>
+<p>Sidecar metadata files should contain the same sections as above (e.g. <code class="docutils literal notranslate"><span class="pre">sub</span></code>, <code class="docutils literal notranslate"><span class="pre">behav</span></code> etc.).</p>
+<p>For example, in the <code class="docutils literal notranslate"><span class="pre">behav</span></code> folder there may be multiple
+acquisition runs, with different associated metadata. In this case, a metadata
+YAML file that applies specifically to a particular file can be created.</p>
+<p>In the project below all videos are assumed to be of the task
+<code class="docutils literal notranslate"><span class="pre">&quot;Visual</span> <span class="pre">Decision</span> <span class="pre">Making&quot;</span></code>. However, imagine for the run <code class="docutils literal notranslate"><span class="pre">run-002_camera-top.mp4</span></code>
+a video was taken of a different task.</p>
+<p>In this case, we can use inheritance to overwrite the <code class="docutils literal notranslate"><span class="pre">TaskName</span></code> for this particular run
+by placing a sidecar metadata file next to the video file of interest:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── my_project/
+    ├── metadata.yaml
+    └── rawdata/
+        └── sub-001/
+            └── ses-001/
+                └── behav/
+                    ├── run-001_camera-top.mp4
+                    ├── run-002_camera-top.mp4
+                    └── run-002_camera-top_metadata.yaml
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">/my_project/metadata.yaml</span></code></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">behav</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">TaskName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Visual</span><span class="nv"> </span><span class="s">Decision</span><span class="nv"> </span><span class="s">Making&quot;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">run-002_camera-top_metadata.yaml</span></code></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">behav</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">TaskName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Visual</span><span class="nv"> </span><span class="s">Decision</span><span class="nv"> </span><span class="s">Making</span><span class="nv"> </span><span class="s">Modified</span><span class="nv"> </span><span class="s">Long&quot;</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>All metadata files must be called <code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code> or be
+the exact name of an existing file or folder with a <code class="docutils literal notranslate"><span class="pre">_metadata</span></code> suffix.</p>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">my_recording_metadata.yaml</span></code> is only valid if there is a file or folder
+called <code class="docutils literal notranslate"><span class="pre">my_recording</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">my_recording.bin</span></code>).</p>
+</div>
+</section>
+</section>
+<section id="suggested-metadata-keys">
+<span id="metadata-keys"></span><h2>Suggested metadata keys<a class="headerlink" href="#suggested-metadata-keys" title="Link to this heading">#</a></h2>
+<p><strong>NeuroBlueprint</strong> does not mandate the use of any specific metadata key-value
+pairs, other than the highest-level ‘section’ keys (<code class="docutils literal notranslate"><span class="pre">project</span></code>, <code class="docutils literal notranslate"><span class="pre">sub</span></code>, <code class="docutils literal notranslate"><span class="pre">ses</span></code>,
+or one of the datatypes) mentioned above. In theory, the structural rules above
+can be used to document the project as you wish.</p>
+<p>However, we recommend using the suggested metadata
+keys detailed below if they cover the concept you want to document.
+This helps ensure that metadata entries are
+interoperable with your immediate colleagues, and across labs.
+There is no requirement to use all keys, selecting a subset that work best for
+your requirements is encouraged.</p>
+<p>For example, if you want to include the species of mice in your project, it
+makes sense to use the suggested key <code class="docutils literal notranslate"><span class="pre">Species</span></code> rather than come up with your own key.</p>
+<p>If you find that your use case is not covered by a suggested key, please
+get in touch by raising a <a class="reference external" href="https://github.com/neuroinformatics-unit/NeuroBlueprint/issues">GitHub issue</a>
+or through our
+<a class="reference external" href="https://neuroinformatics.zulipchat.com/#narrow/stream/406000-NeuroBlueprint">Zulip Chat</a>
+and we will be happy to add a new key to this page.</p>
+<section id="project-metadata">
+<h3><code class="docutils literal notranslate"><span class="pre">project</span></code> metadata<a class="headerlink" href="#project-metadata" title="Link to this heading">#</a></h3>
+<p>This section contains high-level information about the project, for example the people involved and the project’s overall purpose.</p>
+<p>Including high-level information on the project, such as the
+<code class="docutils literal notranslate"><span class="pre">Keywords</span></code> and <code class="docutils literal notranslate"><span class="pre">Abstract</span></code> entries, is very valuable, allowing simple indexing and searching
+of projects for key information. For example, when starting a new project you could search
+all experiments ever run by your lab for keywords relevant to your work.</p>
+<p>For detailed descriptions of the suggested keys, see the
+<a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/dataset-description.html#dataset_descriptionjson">BIDS Dataset Description Specification</a>.</p>
+<p>Suggested keys with example entries:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">project</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Cortical</span><span class="nv"> </span><span class="s">Dynamics</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">Visual</span><span class="nv"> </span><span class="s">Decision</span><span class="nv"> </span><span class="s">Making</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">Mice&quot;</span>
+<span class="w">    </span><span class="nt">Authors</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Jane</span><span class="nv"> </span><span class="s">Smith&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;John</span><span class="nv"> </span><span class="s">Doe&quot;</span>
+<span class="w">    </span><span class="nt">Keywords</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;mouse&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;mus</span><span class="nv"> </span><span class="s">musculus&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;visual</span><span class="nv"> </span><span class="s">cortex&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;decision</span><span class="nv"> </span><span class="s">making&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Neuropixels&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;extracellular</span><span class="nv"> </span><span class="s">electrophysiology&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;two-photon</span><span class="nv"> </span><span class="s">imaging&quot;</span>
+<span class="w">    </span><span class="nt">Abstract</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
+<span class="w">      </span><span class="no">Head-fixed mice performed a two-alternative forced-choice visual</span>
+<span class="w">      </span><span class="no">discrimination task while neural activity was recorded from visual</span>
+<span class="w">      </span><span class="no">and parietal cortex using Neuropixels 2.0 probes. The dataset</span>
+<span class="w">      </span><span class="no">accompanies a study of how choice-related signals emerge across</span>
+<span class="w">      </span><span class="no">cortical areas during perceptual decision making.</span>
+<span class="w">    </span><span class="nt">NeuroBlueprintVersion</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.5.0&quot;</span>
+<span class="w">    </span><span class="nt">License</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;CC-BY-4.0&quot;</span>
+<span class="w">    </span><span class="nt">Acknowledgements</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
+<span class="w">      </span><span class="no">We thank the institute&#39;s animal facility staff for husbandry support.</span>
+<span class="w">    </span><span class="nt">HowToAcknowledge</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
+<span class="w">      </span><span class="no">Please cite Smith et al. (2026), Journal of Neuroscience,</span>
+<span class="w">      </span><span class="no">https://doi.org/10.1234/jneurosci.2026.0001</span>
+<span class="w">    </span><span class="nt">Funding</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Wellcome</span><span class="nv"> </span><span class="s">Trust</span><span class="nv"> </span><span class="s">Grant</span><span class="nv"> </span><span class="s">219627/Z/19/Z&quot;</span>
+<span class="w">    </span><span class="nt">EthicsApprovals</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;UK</span><span class="nv"> </span><span class="s">Home</span><span class="nv"> </span><span class="s">Office</span><span class="nv"> </span><span class="s">Project</span><span class="nv"> </span><span class="s">Licence</span><span class="nv"> </span><span class="s">PP1234567&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Institutional</span><span class="nv"> </span><span class="s">AWERB</span><span class="nv"> </span><span class="s">approval</span><span class="nv"> </span><span class="s">2025-014&quot;</span>
+<span class="w">    </span><span class="nt">ReferencesAndLinks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;https://doi.org/10.1234/jneurosci.2026.0001&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Smith</span><span class="nv"> </span><span class="s">J.,</span><span class="nv"> </span><span class="s">Doe</span><span class="nv"> </span><span class="s">J.</span><span class="nv"> </span><span class="s">(2026).</span><span class="nv"> </span><span class="s">Cortical</span><span class="nv"> </span><span class="s">dynamics</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">visual</span><span class="nv"> </span><span class="s">decision</span><span class="nv"> </span><span class="s">making</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">mice.</span><span class="nv"> </span><span class="s">Journal</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">Neuroscience.&quot;</span>
+<span class="w">    </span><span class="nt">DatasetDOI</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://doi.org/10.18112/openneuro.ds000123.v1.0.0&quot;</span>
+<span class="w">    </span><span class="nt">HEDVersion</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;8.4.0&quot;</span>
+<span class="w">    </span><span class="nt">DatasetType</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;raw&quot;</span>
+<span class="w">    </span><span class="nt">SourceDatasets</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">URL</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://gin.g-node.org/janesmith/visual-decision-raw&quot;</span>
+<span class="w">        </span><span class="nt">Version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.0.0&quot;</span>
+<span class="w">    </span><span class="nt">DatasetLinks</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">stimuli</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://gin.g-node.org/janesmith/visual-decision-stimuli&quot;</span>
+<span class="w">      </span><span class="nt">deriv</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;derivatives/spike-sorting&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="sub-metadata">
+<span id="id1"></span><h3><code class="docutils literal notranslate"><span class="pre">sub</span></code> metadata<a class="headerlink" href="#sub-metadata" title="Link to this heading">#</a></h3>
+<p>This metadata file contains information about experimental subjects,
+for example the date of birth, identifiers, strain or genotype.</p>
+<p>Suggested keys are based on the
+<a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/data-summary-files.html">BIDS Participants Specification</a>.
+Note they are presented as snake_case in the specification, but we recommend PascalCase for consistency with other metadata files.</p>
+<p>Suggested keys with example entries:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sub</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">SubjectId</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;sub-001&quot;</span>
+<span class="w">    </span><span class="nt">Age</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">12</span>
+<span class="w">    </span><span class="nt">AgeUnits</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;week&quot;</span>
+<span class="w">    </span><span class="nt">Sex</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;M&quot;</span>
+<span class="w">    </span><span class="nt">Handedness</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;n/a&quot;</span>
+<span class="w">    </span><span class="nt">Species</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;mus</span><span class="nv"> </span><span class="s">musculus&quot;</span>
+<span class="w">    </span><span class="nt">Strain</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;C57BL/6J&quot;</span>
+<span class="w">    </span><span class="nt">StrainRrid</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;RRID:IMSR_JAX:000664&quot;</span>
+<span class="w">    </span><span class="nt">Genotype</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Thy1-GCaMP6s/wt&quot;</span>
+<span class="w">    </span><span class="nt">DateOfBirth</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2025-09-14&quot;</span>
+</pre></div>
+</div>
+<p>Valid entries for <code class="docutils literal notranslate"><span class="pre">AgeUnits</span></code> are <code class="docutils literal notranslate"><span class="pre">&quot;year&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;week&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;day&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;hour&quot;</span></code>.</p>
+</section>
+<section id="ses-metadata">
+<span id="id2"></span><h3><code class="docutils literal notranslate"><span class="pre">ses</span></code> metadata<a class="headerlink" href="#ses-metadata" title="Link to this heading">#</a></h3>
+<p>This file contains information related to the particular experimental session. For example,
+the date, additional notes on what happened in the session.</p>
+<p>Suggested keys are based on the
+<a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/data-summary-files.html#sessions-file">BIDS Sessions Specification</a>.
+Note they are presented as snake_case in the specification, but we recommend PascalCase for consistency with other metadata files.</p>
+<p>Suggested keys:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ses</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">SessionId</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ses-001&quot;</span>
+<span class="w">    </span><span class="nt">SessionDate</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2025-12-07&quot;</span>
+<span class="w">    </span><span class="nt">Age</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">12</span>
+<span class="w">    </span><span class="nt">AgeUnits</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;week&quot;</span>
+<span class="w">    </span><span class="nt">Weight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">26.4</span>
+<span class="w">    </span><span class="nt">WeightUnits</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;g&quot;</span>
+<span class="w">    </span><span class="nt">Notes</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;First</span><span class="nv"> </span><span class="s">Neuropixels</span><span class="nv"> </span><span class="s">recording.</span><span class="nv"> </span><span class="s">Mouse</span><span class="nv"> </span><span class="s">calm,</span><span class="nv"> </span><span class="s">good</span><span class="nv"> </span><span class="s">task</span><span class="nv"> </span><span class="s">engagement</span><span class="nv"> </span><span class="s">(~450</span><span class="nv"> </span><span class="s">trials).&quot;</span>
+<span class="w">    </span><span class="nt">Experimenter</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Jane</span><span class="nv"> </span><span class="s">Smith&quot;</span>
+<span class="w">    </span><span class="nt">HED</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;(Delay/#</span><span class="nv"> </span><span class="s">ms,</span><span class="nv"> </span><span class="s">Agent-action,</span><span class="nv"> </span><span class="s">(Experiment-participant,</span><span class="nv"> </span><span class="s">(Press,</span><span class="nv"> </span><span class="s">Mouse-button))),&quot;</span>
+</pre></div>
+</div>
+<p>Valid entries for <code class="docutils literal notranslate"><span class="pre">AgeUnits</span></code> are <code class="docutils literal notranslate"><span class="pre">&quot;year&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;week&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;day&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;hour&quot;</span></code>.</p>
+</section>
+<section id="datatype-keys">
+<span id="id3"></span><h3>Datatype keys<a class="headerlink" href="#datatype-keys" title="Link to this heading">#</a></h3>
+<p>Datatype metadata files contain acquisition-specific metadata for each modality.
+<strong>NeuroBlueprint</strong> contains many possible <a class="reference external" href="https://neuroblueprint.neuroinformatics.dev/latest/specification.html#datatype">datatypes</a>
+e.g. <code class="docutils literal notranslate"><span class="pre">ephys</span></code>, <code class="docutils literal notranslate"><span class="pre">behav</span></code>, <code class="docutils literal notranslate"><span class="pre">funcimg</span></code>, <code class="docutils literal notranslate"><span class="pre">anat</span></code>.</p>
+<p>Where possible, we recommend using the BIDS keys from relevant Bids Extension Proposals (BEPs).
+These are detailed below for <code class="docutils literal notranslate"><span class="pre">ephys</span></code>, <code class="docutils literal notranslate"><span class="pre">behav</span></code> and <code class="docutils literal notranslate"><span class="pre">anat</span></code>.</p>
+<section id="ephys">
+<span id="ephys-metadata"></span><h4><code class="docutils literal notranslate"><span class="pre">ephys</span></code><a class="headerlink" href="#ephys" title="Link to this heading">#</a></h4>
+<p>See the
+<a class="reference external" href="https://bids.neuroimaging.io/extensions/beps/bep_032.html">BEP032 Electrophysiology Metadata Specification</a>
+for detailed descriptions of the suggested keys.</p>
+<p>Suggested keys with example entries:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ephys</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># --- Institution Information ---</span>
+<span class="w">    </span><span class="nt">InstitutionName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;University</span><span class="nv"> </span><span class="s">College</span><span class="nv"> </span><span class="s">London&quot;</span>
+<span class="w">    </span><span class="nt">InstitutionAddress</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Gower</span><span class="nv"> </span><span class="s">Street,</span><span class="nv"> </span><span class="s">London,</span><span class="nv"> </span><span class="s">WC1E</span><span class="nv"> </span><span class="s">6BT,</span><span class="nv"> </span><span class="s">United</span><span class="nv"> </span><span class="s">Kingdom&quot;</span>
+<span class="w">    </span><span class="nt">InstitutionalDepartmentName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Sainsbury</span><span class="nv"> </span><span class="s">Wellcome</span><span class="nv"> </span><span class="s">Centre&quot;</span>
+
+<span class="w">    </span><span class="c1"># --- Setup Information ---</span>
+<span class="w">    </span><span class="nt">PowerLineFrequency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50</span>
+<span class="w">    </span><span class="nt">Manufacturer</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;imec&quot;</span>
+<span class="w">    </span><span class="nt">ManufacturersModelName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Neuropixels</span><span class="nv"> </span><span class="s">2.0&quot;</span>
+<span class="w">    </span><span class="nt">ManufacturersModelVersion</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2.0</span><span class="nv"> </span><span class="s">(4-shank)&quot;</span>
+<span class="w">    </span><span class="nt">RecordingSetupName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Acute</span><span class="nv"> </span><span class="s">rig</span><span class="nv"> </span><span class="s">3</span><span class="nv"> </span><span class="s">—</span><span class="nv"> </span><span class="s">head-fixed</span><span class="nv"> </span><span class="s">Neuropixels&quot;</span>
+<span class="w">    </span><span class="nt">SamplingFrequency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30000</span>
+<span class="w">    </span><span class="nt">DeviceSerialNumber</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;21010012345&quot;</span>
+<span class="w">    </span><span class="nt">SoftwareName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;SpikeGLX&quot;</span>
+<span class="w">    </span><span class="nt">SoftwareVersions</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;20240129-phase30&quot;</span>
+<span class="w">    </span><span class="nt">RecordingDuration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2730.5</span>
+<span class="w">    </span><span class="nt">RecordingType</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;continuous&quot;</span>
+
+<span class="w">    </span><span class="c1"># --- Processing Information ---</span>
+<span class="w">    </span><span class="nt">SoftwareFilters</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;n/a&quot;</span>
+<span class="w">    </span><span class="nt">HardwareFilters</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;n/a&quot;</span>
+
+<span class="w">    </span><span class="c1"># --- Pharmaceuticals ---</span>
+<span class="w">    </span><span class="nt">PharmaceuticalName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Muscimol&quot;</span>
+<span class="w">    </span><span class="nt">PharmaceuticalDoseAmount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
+<span class="w">    </span><span class="nt">PharmaceuticalDoseUnits</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;µg&quot;</span>
+<span class="w">    </span><span class="nt">PharmaceuticalDoseRegimen</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;-</span>
+<span class="w">        </span><span class="no">100 nL of 1 µg/µL muscimol in sterile saline, pressure-injected</span>
+<span class="w">        </span><span class="no">unilaterally into right PPC via glass pipette at 20 nL/min;</span>
+<span class="w">        </span><span class="no">30 min equilibration before recording onset.</span>
+<span class="w">    </span><span class="nt">PharmaceuticalDoseTime</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1800</span>
+
+<span class="w">    </span><span class="c1"># --- Sample ---</span>
+<span class="w">    </span><span class="nt">BodyPart</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;BRAIN&quot;</span>
+<span class="w">    </span><span class="nt">BodyPartDetails</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Primary</span><span class="nv"> </span><span class="s">visual</span><span class="nv"> </span><span class="s">cortex</span><span class="nv"> </span><span class="s">(V1)</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">posterior</span><span class="nv"> </span><span class="s">parietal</span><span class="nv"> </span><span class="s">cortex</span><span class="nv"> </span><span class="s">(PPC)&quot;</span>
+<span class="w">    </span><span class="nt">BodyPartDetailsOntology</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://purl.obolibrary.org/obo/UBERON_0002436&quot;</span>
+<span class="w">    </span><span class="nt">SampleEnvironment</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;in</span><span class="nv"> </span><span class="s">vivo&quot;</span>
+<span class="w">    </span><span class="c1"># these would be omitted for extracellular electrophysiology, included for intracellular</span>
+<span class="w">    </span><span class="nt">SampleEmbedding</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;agarose&quot;</span>
+<span class="w">    </span><span class="nt">SliceThickness</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">300</span>
+<span class="w">    </span><span class="nt">SampleExtractionProtocol</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;-</span>
+<span class="w">        </span><span class="no">Acute coronal brain slices were prepared in ice-cold oxygenated</span>
+<span class="w">        </span><span class="no">artificial cerebrospinal fluid and maintained in oxygenated artificial</span>
+<span class="w">        </span><span class="no">cerebrospinal fluid before recording.</span>
+
+<span class="w">    </span><span class="c1"># --- Supplementary ---</span>
+<span class="w">    </span><span class="nt">SupplementarySignals</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Photodiode</span><span class="nv"> </span><span class="s">(stimulus</span><span class="nv"> </span><span class="s">onset),</span><span class="nv"> </span><span class="s">running-wheel</span><span class="nv"> </span><span class="s">velocity,</span><span class="nv"> </span><span class="s">lick</span><span class="nv"> </span><span class="s">sensor,</span><span class="nv"> </span><span class="s">wheel</span><span class="nv"> </span><span class="s">position&quot;</span>
+
+<span class="w">    </span><span class="c1"># --- Task Information ---</span>
+<span class="w">    </span><span class="nt">TaskName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Visual</span><span class="nv"> </span><span class="s">Decision</span><span class="nv"> </span><span class="s">Making&quot;</span>
+<span class="w">    </span><span class="nt">TaskDescription</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Head-fixed</span><span class="nv"> </span><span class="s">two-alternative</span><span class="nv"> </span><span class="s">forced-choice</span><span class="nv"> </span><span class="s">contrast</span><span class="nv"> </span><span class="s">discrimination.&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="behav">
+<span id="behav-metadata"></span><h4><code class="docutils literal notranslate"><span class="pre">behav</span></code><a class="headerlink" href="#behav" title="Link to this heading">#</a></h4>
+<p>See the
+<a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/modality-specific-files/behavioral-experiments.html">BIDS Behavioural Experiments Specification</a>
+for detailed descriptions of the suggested keys.</p>
+<p>Suggested keys with example entries:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">behav</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># --- Institution Information ---</span>
+<span class="w">    </span><span class="nt">InstitutionName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;University</span><span class="nv"> </span><span class="s">College</span><span class="nv"> </span><span class="s">London&quot;</span>
+<span class="w">    </span><span class="nt">InstitutionAddress</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Gower</span><span class="nv"> </span><span class="s">Street,</span><span class="nv"> </span><span class="s">London,</span><span class="nv"> </span><span class="s">WC1E</span><span class="nv"> </span><span class="s">6BT,</span><span class="nv"> </span><span class="s">United</span><span class="nv"> </span><span class="s">Kingdom&quot;</span>
+<span class="w">    </span><span class="nt">InstitutionalDepartmentName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Sainsbury</span><span class="nv"> </span><span class="s">Wellcome</span><span class="nv"> </span><span class="s">Centre&quot;</span>
+
+<span class="w">    </span><span class="c1"># --- Task Information ---</span>
+<span class="w">    </span><span class="nt">TaskName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Visual</span><span class="nv"> </span><span class="s">Decision</span><span class="nv"> </span><span class="s">Making&quot;</span>
+<span class="w">    </span><span class="nt">TaskDescription</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;-</span>
+<span class="w">        </span><span class="no">Head-fixed two-alternative forced-choice contrast discrimination;</span>
+<span class="w">        </span><span class="no">the mouse reports the higher-contrast side by turning a steering</span>
+<span class="w">        </span><span class="no">wheel, and correct choices are rewarded with water.</span>
+<span class="w">    </span><span class="nt">Instructions</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;n/a&quot;</span>
+<span class="w">    </span><span class="nt">CogAtlasID</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;n/a&quot;</span>
+<span class="w">    </span><span class="nt">CogPOID</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;n/a&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="anat">
+<span id="anat-metadata"></span><h4><code class="docutils literal notranslate"><span class="pre">anat</span></code><a class="headerlink" href="#anat" title="Link to this heading">#</a></h4>
+<p>We use the BIDS microscopy metadata fields as a starting point.</p>
+<p>See the full specification for detailed descriptions of the suggested keys,
+<a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/modality-specific-files/microscopy.html">BIDS Microscopy Specification</a>.</p>
+<p>Suggested keys with example entries:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">anat</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># --- Image Acquisition ---</span>
+<span class="w">    </span><span class="nt">PixelSize</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2.0</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">PixelSizeUnits</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;um&quot;</span>
+<span class="w">    </span><span class="nt">Immersion</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Air&quot;</span>
+<span class="w">    </span><span class="nt">NumericalAperture</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.45</span>
+<span class="w">    </span><span class="nt">Magnification</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+<span class="w">    </span><span class="nt">ImageAcquisitionProtocol</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://doi.org/10.17504/protocols.io.xxxxxxx&quot;</span>
+<span class="w">    </span><span class="nt">OtherAcquisitionParameters</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;-</span>
+<span class="w">        </span><span class="no">Tile scan with 10% overlap, stitched in ZEN; 3 channels</span>
+<span class="w">        </span><span class="no">(DAPI 405 nm, GFP 488 nm, DiI 561 nm); z-step 2 µm.</span>
+
+<span class="w">    </span><span class="c1"># --- Sample ---</span>
+<span class="w">    </span><span class="nt">BodyPart</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;BRAIN&quot;</span>
+<span class="w">    </span><span class="nt">BodyPartDetails</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Coronal</span><span class="nv"> </span><span class="s">section</span><span class="nv"> </span><span class="s">(~-2.0</span><span class="nv"> </span><span class="s">mm</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">bregma)</span><span class="nv"> </span><span class="s">containing</span><span class="nv"> </span><span class="s">V1</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">PPC&quot;</span>
+<span class="w">    </span><span class="nt">BodyPartDetailsOntology</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://purl.obolibrary.org/obo/UBERON_0002436&quot;</span>
+<span class="w">    </span><span class="nt">SampleEnvironment</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ex</span><span class="nv"> </span><span class="s">vivo&quot;</span>
+<span class="w">    </span><span class="nt">SampleEmbedding</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Agarose</span><span class="nv"> </span><span class="s">(4%)</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">vibratome</span><span class="nv"> </span><span class="s">sectioning&quot;</span>
+<span class="w">    </span><span class="nt">SampleFixation</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;4%</span><span class="nv"> </span><span class="s">paraformaldehyde</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">0.1</span><span class="nv"> </span><span class="s">M</span><span class="nv"> </span><span class="s">PBS,</span><span class="nv"> </span><span class="s">transcardial</span><span class="nv"> </span><span class="s">perfusion,</span><span class="nv"> </span><span class="s">24</span><span class="nv"> </span><span class="s">h</span><span class="nv"> </span><span class="s">post-fix</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">4</span><span class="nv"> </span><span class="s">°C&quot;</span>
+<span class="w">    </span><span class="nt">SampleStaining</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;DAPI</span><span class="nv"> </span><span class="s">nuclear</span><span class="nv"> </span><span class="s">counterstain;</span><span class="nv"> </span><span class="s">immunostaining</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">GFP&quot;</span>
+<span class="w">    </span><span class="nt">SamplePrimaryAntibody</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Chicken</span><span class="nv"> </span><span class="s">polyclonal</span><span class="nv"> </span><span class="s">anti-GFP</span><span class="nv"> </span><span class="s">(RRID:AB_300798)&quot;</span>
+<span class="w">    </span><span class="nt">SampleSecondaryAntibody</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Goat</span><span class="nv"> </span><span class="s">anti-chicken</span><span class="nv"> </span><span class="s">IgY</span><span class="nv"> </span><span class="s">Alexa</span><span class="nv"> </span><span class="s">Fluor</span><span class="nv"> </span><span class="s">488</span><span class="nv"> </span><span class="s">(RRID:AB_2534096)&quot;</span>
+<span class="w">    </span><span class="nt">SliceThickness</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50</span>
+<span class="w">    </span><span class="nt">TissueDeformationScaling</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+<span class="w">    </span><span class="nt">SampleExtractionProtocol</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://doi.org/10.17504/protocols.io.yyyyyyy&quot;</span>
+<span class="w">    </span><span class="nt">SampleExtractionInstitution</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Sainsbury</span><span class="nv"> </span><span class="s">Wellcome</span><span class="nv"> </span><span class="s">Centre,</span><span class="nv"> </span><span class="s">University</span><span class="nv"> </span><span class="s">College</span><span class="nv"> </span><span class="s">London&quot;</span>
+
+<span class="w">    </span><span class="c1"># --- Chunk Transformations ---   (usually omitted unless chunk-&lt;index&gt; is used)</span>
+<span class="w">    </span><span class="nt">ChunkTransformationMatrix</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">ChunkTransformationMatrixAxis</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;XYZ&quot;</span>
+
+<span class="w">    </span><span class="c1"># --- Hardware Information ---</span>
+<span class="w">    </span><span class="nt">Manufacturer</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Zeiss&quot;</span>
+<span class="w">    </span><span class="nt">ManufacturersModelName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;LSM</span><span class="nv"> </span><span class="s">980&quot;</span>
+<span class="w">    </span><span class="nt">DeviceSerialNumber</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3825001234&quot;</span>
+<span class="w">    </span><span class="nt">StationName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Confocal</span><span class="nv"> </span><span class="s">rig</span><span class="nv"> </span><span class="s">2&quot;</span>
+<span class="w">    </span><span class="nt">SoftwareVersions</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ZEN</span><span class="nv"> </span><span class="s">3.4</span><span class="nv"> </span><span class="s">(blue</span><span class="nv"> </span><span class="s">edition)&quot;</span>
+
+<span class="w">    </span><span class="c1"># --- Institution Information ---</span>
+<span class="w">    </span><span class="nt">InstitutionName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;University</span><span class="nv"> </span><span class="s">College</span><span class="nv"> </span><span class="s">London&quot;</span>
+<span class="w">    </span><span class="nt">InstitutionAddress</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Gower</span><span class="nv"> </span><span class="s">Street,</span><span class="nv"> </span><span class="s">London,</span><span class="nv"> </span><span class="s">WC1E</span><span class="nv"> </span><span class="s">6BT,</span><span class="nv"> </span><span class="s">United</span><span class="nv"> </span><span class="s">Kingdom&quot;</span>
+<span class="w">    </span><span class="nt">InstitutionalDepartmentName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Sainsbury</span><span class="nv"> </span><span class="s">Wellcome</span><span class="nv"> </span><span class="s">Centre&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="specification.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The specification</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="community.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Community</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#yaml-file-format">YAML file format</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-organisation-schema">Metadata organisation schema</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">Inheritance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sidecar-metadata-files">Sidecar metadata files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#suggested-metadata-keys">Suggested metadata keys</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#project-metadata"><code class="docutils literal notranslate"><span class="pre">project</span></code> metadata</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sub-metadata"><code class="docutils literal notranslate"><span class="pre">sub</span></code> metadata</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ses-metadata"><code class="docutils literal notranslate"><span class="pre">ses</span></code> metadata</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datatype-keys">Datatype keys</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ephys"><code class="docutils literal notranslate"><span class="pre">ephys</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#behav"><code class="docutils literal notranslate"><span class="pre">behav</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#anat"><code class="docutils literal notranslate"><span class="pre">anat</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/metadata.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p class="sphinx-version">
+Created using <a href="https://sphinx-doc.org/">Sphinx</a> 9.1.0.
+<br/>
+</p>
+<p class="theme-version">
+Built with the
+<a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
+0.19.0.
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><div class="things-in-a-row">
+    <a href="https://www.sainsburywellcome.org/web/">
+        <img src="_static/light-logo-swc.png" alt="Sponsors" class="only-light img-sponsor"/>
+        <img src="_static/dark-logo-swc.png" alt="Sponsors" class="only-dark img-sponsor"/>
+    </a>
+    <a href="https://www.ucl.ac.uk/gatsby/gatsby-computational-neuroscience-unit">
+        <img src="_static/light-logo-gatsby.png" alt="Sponsors" class="only-light img-sponsor"/>
+        <img src="_static/dark-logo-gatsby.png" alt="Sponsors" class="only-dark img-sponsor"/>
+    </a>
+    <a href="https://www.ucl.ac.uk/">
+        <img src="_static/light-logo-ucl.png" alt="Sponsors" class="only-light img-sponsor"/>
+        <img src="_static/dark-logo-ucl.png" alt="Sponsors" class="only-dark img-sponsor"/>
+    </a>
+</div></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

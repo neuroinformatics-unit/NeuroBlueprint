@@ -1,7 +1,7 @@
 # The specification
 
 The current version of **NeuroBlueprint** mainly aims to enforce a uniform and consistent [project folder structure](#project-folder-structure).
-In addition, it also includes some non-mandatory conventions for [naming files](#file-naming-conventions) and storing [tabular metadata](#tabular-metadata).
+In addition, it also includes some non-mandatory conventions for [naming files](#file-naming-conventions) and storing [metadata](metadata).
 
 :::{note}
 We mark requirements with italicised *keywords* that should be interpreted as described by the [Network Working Group](https://www.ietf.org/rfc/rfc2119.txt). In decreasing order of requirement, these are: *must* {octicon}`alert;1em;sd-text-danger`, *should* {octicon}`info;1em;sd-text-warning`, and *may* {octicon}`check-circle;1em;sd-text-success`.
@@ -12,7 +12,7 @@ We mark requirements with italicised *keywords* that should be interpreted as de
 Standardised project folders contain data that are hierarchically structured according to the [BIDS standard](https://bids-specification.readthedocs.io/en/stable/02-common-principles.html).
 
 For example:
-
+(neuroblueprint-folders)=
 <img src="_static/NeuroBlueprint_project_tree_light.png" alt="NeuroBlueprint logo" class="only-light img-responsive"/>
 <img src="_static/NeuroBlueprint_project_tree_dark.png" alt="NeuroBlueprint logo" class="only-dark img-responsive"/>
 
@@ -256,23 +256,8 @@ Below we provide some example file names adhering to the **NeuroBlueprint** nami
 
 ## Metadata conventions
 
-**NeuroBlueprint** imposes no absolute requirements on how to store metadata. That said, we do outline some best practices, in accordance with the [BIDS specification on tabular files](https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#tabular-files).
+**NeuroBlueprint** projects *may* include metadata, additional text information that
+describes the contents of the project. Metadata is included in `metadata.yaml` files placed
+within project folders.
 
-### Tabular metadata
-Tabular metadata, e.g. a table describing the animals in the project, *should* be saved as a tab-separated value file (TSV, ending with `.tsv`) , that is, a CSV file where commas are replaced by tabs. The tab character is a less ambiguous delimiter compared to commas, as it is less likely to appear in data. This makes TSV less prone to parsing errors.
-
-If you are using TSV files, we recommend adhering to the following conventions:
-* The first row of the file *should* contain descriptive column names, formatted as snake_case (e.g. `participant_id`, `species`, `date_of_birth`, `sex`, `group`). Avoid blank (that is, an empty string) or duplicate columns names.
-* Missing and non-applicable values *should* be coded as `n/a`.
-* Numerical values *should* employ the dot (.) as decimal separator and *may* be specified in scientific notation, using e or E to separate the significand from the exponent (e.g. `1.23e-4`)
-* TSV files *should* be in UTF-8 encoding.
-
-
-Here is an example table containing metadata for animal subjects:
-
-```
-subject_id  species         sex     group
-sub-01      mus musculus    M       control
-sub-02      mus musculus    F       control
-sub-03      mus musculus    M       treatment
-```
+See the [metadata](metadata.md) page for more details on our recommended approach.

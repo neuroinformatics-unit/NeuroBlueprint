@@ -1,2 +1,2 @@
 community.md:13: [redirected permanently] https://www.nwb.org to https://nwb.org/
-index.md:10: [redirected permanently] https://www.sainsburywellcome.org/ to https://www.sainsburywellcome.org/web/
+metadata.md:12: [redirected with Found] https://openminds.om-i.org/ to https://openminds.docs.om-i.org/en/latest/
