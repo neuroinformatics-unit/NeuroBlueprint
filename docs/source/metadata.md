@@ -22,9 +22,20 @@ metadata fields as you wish, but at the
 [end of this guide](metadata-keys) we recommend fields
 to go into metadata files.
 
-Please get in touch by raising a
-[GitHub Issue](https://github.com/neuroinformatics-unit/NeuroBlueprint/issues)
-if you would like additional keys added to the metadata fields.
+```{image} /_static/NeuroBlueprint_project_tree_with_metadata_dark.png
+:class: only-dark
+:alt: NeuroBlueprint folder tree with metadata file
+:align: center
+:width: 650px
+```
+```{image} /_static/NeuroBlueprint_project_tree_with_metadata_light.png
+:class: only-light
+:alt: NeuroBlueprint folder tree with metadata file
+:align: center
+:width: 650px
+```
+\
+*An example NeuroBlueprint project with a metadata file*.
 
 ## YAML file format
 
