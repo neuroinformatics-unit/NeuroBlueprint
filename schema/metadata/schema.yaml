@@ -1,0 +1,41 @@
+# NeuroBlueprint metadata schema
+# https://github.com/neuroinformatics-unit/NeuroBlueprint
+
+version: "0.5.0"
+
+# Valid top-level sections in a metadata.yaml file.
+# Each entry maps to a schema definition file in this directory.
+sections:
+  project: project.yaml
+  sub: sub.yaml
+  ses: ses.yaml
+  behav: datatypes/behav.yaml
+  ephys: datatypes/ephys.yaml
+  funcimg: datatypes/funcimg.yaml
+  anat: datatypes/anat.yaml
+  motion: datatypes/behav.yaml
+  ecephys: datatypes/ephys.yaml
+  icephys: datatypes/ephys.yaml
+  emg: datatypes/ephys.yaml
+  cscope: datatypes/funcimg.yaml
+  f2pe: datatypes/funcimg.yaml
+  fmri: datatypes/funcimg.yaml
+  fusi: datatypes/funcimg.yaml
+  2pe: datatypes/anat.yaml
+  bf: datatypes/anat.yaml
+  cars: datatypes/anat.yaml
+  conf: datatypes/anat.yaml
+  dic: datatypes/anat.yaml
+  df: datatypes/anat.yaml
+  fluo: datatypes/anat.yaml
+  mpe: datatypes/anat.yaml
+  nlo: datatypes/anat.yaml
+  oct: datatypes/anat.yaml
+  pc: datatypes/anat.yaml
+  pli: datatypes/anat.yaml
+  sem: datatypes/anat.yaml
+  spim: datatypes/anat.yaml
+  sr: datatypes/anat.yaml
+  tem: datatypes/anat.yaml
+  uct: datatypes/anat.yaml
+  mri: datatypes/anat.yaml

@@ -1,0 +1,28 @@
+# ses — information about an experimental session.
+# Reference: BIDS Sessions
+# https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/data-summary-files.html
+
+SessionId:
+  type: string
+SessionDate:
+  type: string
+  format: date
+Age:
+  type: number
+AgeUnits:
+  type: string
+  enum:
+    - year
+    - week
+    - day
+    - hour
+Weight:
+  type: number
+WeightUnits:
+  type: string
+Notes:
+  type: string
+Experimenter:
+  type: string
+HED:
+  type: string

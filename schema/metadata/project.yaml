@@ -1,0 +1,61 @@
+# project — high-level information about the dataset.
+# Reference: BIDS Dataset Description
+# https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/dataset-description.html
+
+Name:
+  type: string
+Authors:
+  type: array
+  items:
+    type: string
+Keywords:
+  type: array
+  items:
+    type: string
+Abstract:
+  type: string
+NeuroBlueprintVersion:
+  type: string
+License:
+  type: string
+Acknowledgements:
+  type: string
+HowToAcknowledge:
+  type: string
+Funding:
+  type: array
+  items:
+    type: string
+EthicsApprovals:
+  type: array
+  items:
+    type: string
+ReferencesAndLinks:
+  type: array
+  items:
+    type: string
+DatasetDOI:
+  type: string
+  format: uri
+HEDVersion:
+  type: string
+DatasetType:
+  type: string
+  enum:
+    - raw
+    - derivative
+SourceDatasets:
+  type: array
+  items:
+    type: object
+    properties:
+      URL:
+        type: string
+        format: uri
+      Version:
+        type: string
+DatasetLinks:
+  type: object
+  additionalProperties:
+    type: string
+    format: uri

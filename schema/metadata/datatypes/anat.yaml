@@ -1,0 +1,113 @@
+# anat — anatomy / microscopy acquisition metadata.
+# Reference: BIDS Microscopy
+# https://bids-specification.readthedocs.io/en/stable/modality-specific-files/microscopy.html
+
+# ---- Image Acquisition ----
+
+PixelSize:
+  type: array
+  items:
+    type: number
+  minItems: 2
+  maxItems: 3
+PixelSizeUnits:
+  type: string
+  enum:
+    - mm
+    - um
+    - nm
+Immersion:
+  type: string
+NumericalAperture:
+  type: number
+Magnification:
+  type: number
+ImageAcquisitionProtocol:
+  type: string
+OtherAcquisitionParameters:
+  type: string
+BodyPart:
+  type: string
+BodyPartDetails:
+  type: string
+BodyPartDetailsOntology:
+  type: string
+  format: uri
+SampleEnvironment:
+  type: string
+  enum:
+    - in vivo
+    - ex vivo
+    - in vitro
+SampleEmbedding:
+  type: string
+SampleFixation:
+  type: string
+SampleStaining:
+  anyOf:
+    - type: string
+    - type: array
+      items:
+        type: string
+SamplePrimaryAntibody:
+  anyOf:
+    - type: string
+    - type: array
+      items:
+        type: string
+SampleSecondaryAntibody:
+  anyOf:
+    - type: string
+    - type: array
+      items:
+        type: string
+SliceThickness:
+  type: number
+  unit: um
+TissueDeformationScaling:
+  type: number
+  unit: "%"
+SampleExtractionProtocol:
+  type: string
+SampleExtractionInstitution:
+  type: string
+ChunkTransformationMatrix:
+  anyOf:
+    - type: array
+      minItems: 3
+      maxItems: 3
+      items:
+        type: array
+        minItems: 3
+        maxItems: 3
+        items:
+          type: number
+    - type: array
+      minItems: 4
+      maxItems: 4
+      items:
+        type: array
+        minItems: 4
+        maxItems: 4
+        items:
+          type: number
+ChunkTransformationMatrixAxis:
+  type: array
+  items:
+    type: string
+Manufacturer:
+  type: string
+ManufacturersModelName:
+  type: string
+DeviceSerialNumber:
+  type: string
+StationName:
+  type: string
+SoftwareVersions:
+  type: string
+InstitutionName:
+  type: string
+InstitutionAddress:
+  type: string
+InstitutionalDepartmentName:
+  type: string
